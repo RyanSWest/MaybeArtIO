@@ -189,17 +189,7 @@ img {
     display:flex;
     flex-direction: row;
   }
- 
- .assets{
-    display:flex;
-    justify-content: space-between;
-    align-items:  center;
-    gap:40%;
-     padding:10px;
-    height: 100px;
-    width:100%;
-     
-    }
+  
      .gallery-button{
     border:3px solid cyan;
    background: linear-gradient(45deg, rgb(147, 51, 234), rgb(0, 0, 0));
@@ -230,16 +220,7 @@ body {
  
 
 
-  .Auction{
-    display:flex;
-    flex-direction: row;
-    color:cyan;
-    border:5px solid red;
-    border-radius:20px;
-    justify-content: center;
-    height: 100px;
-    /* padding:50px; */
-  }
+   
 
   .countdown{
     display:flex;
@@ -247,7 +228,8 @@ body {
       height: 15%;
       align-items: center;
       padding:10px;
-      width:100%;
+      width:75%;
+      align-self: center;
       
    }
 
@@ -281,6 +263,7 @@ body {
   border: 2px solid #00ffff;
   border-radius: 10px;;
   padding: 2rem;
+  width:75%;
   background: rgba(0, 0, 0, 0.8);
   animation: test-pulse 1s infinite;
 }
@@ -292,7 +275,16 @@ body {
 }
   .title {
   font-size: clamp(3rem, 8vw, 6rem); /* Min 2rem, preferred 8vw, max 6rem */
-  color:gradient(45deg, rgb(0, 255, 255), rgb(236, 72, 153), rgb(147, 51, 234));
+  font-family: 'Rajdhani', monospace;
+  font-weight: 700;
+  color: #00ccff;
+  text-shadow: 
+    0 0 5px #00ccff,
+    0 0 10px #00ccff;
+    
+   text-transform: uppercase;
+  letter-spacing: 0.1em;
+  justify-self: center;
 }
 .cyberpunk-span-intense-cyan {
   font-family: 'Rajdhani', monospace;
@@ -325,6 +317,7 @@ body {
 .cyberpunk-span-ice {
   font-family: 'Rajdhani', monospace;
   font-weight: 700;
+  font-size:xx-large;
   color: #87ceeb;
   text-shadow: 
     0 0 5px #87ceeb,
@@ -335,7 +328,7 @@ body {
 }
  .cyberpunk-title {
   font-family: 'Rajdhani', monospace;
-  font-size: 3rem;
+  font-size: x-large;
   font-weight: 900;
   text-shadow: 0 0 10px rgba(236, 72, 153, 0.4);
 
@@ -389,6 +382,7 @@ body {
   gap: 20px;
   width: 100%;
   height:35%;
+  margin-top:2rem;
    box-sizing: border-box; /* Add this */
 }
 
@@ -461,7 +455,7 @@ html, body {
 .image-text p {
   margin: 0;
   color: #e9e4e4;
-  line-height: 1.4;
+  line-height: 4;
 }
   .image-wrapper {
   /* Individual image containers */
@@ -520,15 +514,7 @@ html, body {
   object-fit: contain;
 }
 
-.image-text {
-  padding: 1rem;
-  font-family: Orbitron, monospace;
-  text-align: center;
-  background-color: navy;
-  font-size: large;
-  height:fit-content ;
-  height: fit-content;
-}
+ 
 
     
   /* .Auction{
@@ -571,18 +557,20 @@ html, body {
 /* Countdown timer container */
 .countdown-container {
   display: flex;
+  justify-self:center;
   gap: .5rem;
   margin-bottom: 4rem;
+  margin-top:4rem;
   border-color:cyan;
   font-family: RajDhani, monospace;
     border: 2px solid #00ffff;
-  border-radius: 10px;;
+  border-radius: 60px;
+  width:70%;
   padding: 2rem;
   background: rgba(0, 0, 0, 0.8);
-  animation: test-pulse 1s infinite;
- }
+  }
 .whatis{
-  display:flex;
+  display:flex; 
   font-family: Rajdhani, monospace;
   justify-content: center;
   align-items: center;
@@ -700,12 +688,13 @@ html, body {
   }
   .cyberpunk-text {
   font-family: 'Rajdhani', 'Rajdhani', monospace;
-  font-size: 3rem;
+  font-size: x-large;
   line-height: 1.6;
   color: #00ffff;
   text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
   letter-spacing: 0.05em;
   margin-bottom: 1rem;
+  align-self:center;
 }
 .cyberpunk-text h2{
   font-size: 1.5rem;
@@ -738,7 +727,14 @@ html, body {
   background: rgba(0, 0, 0, 0.8);
   animation: test-pulse 1s infinite;
 }
-
+.thisSucks{
+  display:flex;
+  width:100%;
+  flex-direction: row;
+  border:3px solid yellow;
+  justify-content: space-evenly;
+  align-items: center;
+}
 @keyframes test-pulse {
   0% { border-color: #00ffff; }
   50% { border-color: #bf00ff; }
@@ -768,7 +764,7 @@ html, body {
 
 .cyberpunk-h2 {
   font-family: 'Rajdhani', sans-serif;
-  font-size: 2.5rem;
+  font-size: large;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.15em;
@@ -782,7 +778,7 @@ html, body {
 }
 .cyberpunk-h2-glitch {
   font-family: 'Rajdhani', sans-serif;
-  font-size: 4rem;
+  font-size: xx-large;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -805,7 +801,7 @@ html, body {
 
 .cyberpunk-h2-glitch {
   font-family: 'Rajdhani','Orbitron', sans-serif;
-  font-size: 2.5rem;
+  font-size: xx-large;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -838,12 +834,13 @@ html, body {
 }
 .terminal-text {
   font-family: 'Share Tech Mono', 'Courier New', monospace;
-  font-size: 1rem;
-  color: #00aaff;
+  font-size: large;
+  color: #a8cbdc;
   background: rgba(0, 0, 0, 0.8);
+  width:60%;
   padding: 1rem;
    border-radius: 4px;
-  text-shadow: 0 0 10px #00ff00;
+  text-shadow: 0 0 10px #05010e;
   line-height: 1.4;
   margin-bottom: .5rem;
 }
@@ -913,7 +910,7 @@ html, body {
   font-family: 'Rajdhani', monospace;
   font-weight: 700;
   color: #ff0080;
-  font-size: medium;
+  font-size: x-large;
   text-shadow: 
     0 0 5px #ff0080,
     0 0 10px #ff0080,
@@ -925,7 +922,8 @@ html, body {
 .cyberpunk-span-blue {
   font-family: 'Rajdhani', monospace;
   font-weight: 700;
-  font-size:medium;
+  align-self: center;
+  font-size:xx-large;
   color: #00bfff;
   text-shadow: 
     0 0 5px #00bfff,
@@ -933,6 +931,16 @@ html, body {
     0 0 15px #00bfff;
   text-transform: uppercase;
   letter-spacing: 0.1em;
+}
+.title{
+
+color: #00bfff;
+  text-shadow: 
+    0 0 5px #00bfff,
+    0 0 10px #00bfff,
+    0 0 15px #00bfff;
+
+  
 }
 
   .cyberpunk-h2 {

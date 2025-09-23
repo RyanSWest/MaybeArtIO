@@ -23,6 +23,7 @@ import Bunny from'./imgs/Bunny.jpg';
 import Icecream from'./imgs/Icecream.jpg';
 import Scrawny from'./imgs/Scrawny.jpg';
 import Header from './Header'
+ 
 import'./index.css'
  
  export const Grid =()=>{

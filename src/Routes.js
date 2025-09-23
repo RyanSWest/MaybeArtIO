@@ -21,7 +21,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path= "/grid" element ={<Grid/>}/>
+        <Route path= "/grid" element ={<Grid/>}/> 
        </Routes>
     </BrowserRouter>
   );

@@ -29,7 +29,7 @@ import Scrawny from'./imgs/Scrawny.jpg';
 import Butler from './imgs/Butlerpic.jpg';
  import {About} from './About.jsx'; 
 import React, { useState, useEffect } from 'react'
-
+ 
 
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react'
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base'
@@ -99,7 +99,15 @@ useEffect(() => {
 
             
   
-              <h1 className="cyberpunk-h2-glitch" data-text='MAYBEART'>MAYBE ART</h1>
+ 
+                            <h1 className="title" data-text='MAYBEART'>MAYBE ART</h1>
+
+
+             <h2 className='cyberpunk-text'> Turning creativity into currency.
+
+</h2>  
+
+
                  <p className='terminal-text'> MAYBEART is a cryptocurrency on the Solana blockchain, backed by art. We empower artists and collectors through a marketplace where creators can sell their works, share royalties, and collaborate with a community that fuels innovation and growth.
 
 </p>
@@ -109,15 +117,20 @@ useEffect(() => {
             </div>
             
               <div className="whatis">
-              <h1 className="cyberpunk-span">WHAT IS MAYBEART?</h1>
+              <h1 className="cyberpunk-h2-gradient">WHAT IS MAYBEART?</h1>
               <p className="terminal-text">
                MAYBEART is a cryptocurrency on the Solana blockchain, backed by art, blending the worlds of blockchain and creativity. Our community empowers musicians, visual artists, collectors, and fans by providing a marketplace where creators can showcase and sell their works. Beyond traditional sales, artists can also offer fractional ownership of their music royalties, publishing rights, or artworks, giving supporters a direct stake in their success. Through grants, community-driven initiatives, and innovative token-powered projects, MAYBEART fosters a collaborative space where art and technology thrive together.
 
 
               </p>
               
+            </div> <div className="bitch"> 
+
+         
+
+
             </div>
-             
+              
 
             <div className="buttons">
               <button className="gallery-button">BUY MAYBEART TOKEN</button> 
@@ -128,13 +141,13 @@ useEffect(() => {
                  and Get Paid</button>
             </div>
             
-            <div className="countdown">
-              <h2 className="cyberpunk-span-blue">Countdown to October 30 Auction</h2>
+            <div className="bitch2">
+              <h1 className="cyberpunk-span-blue">Countdown to October 30 Auction</h1>
+                            <h2 className="cyberpunk-span-ice">Art and Music Drops </h2>
+
             </div>
             
-            <div className="countdown">
-              <h2 className="cyberpunk-span-ice">Art and Music Drops </h2>
-            </div>
+           
             
             <div className="countdown-container">
               <div className="time">
@@ -158,26 +171,25 @@ useEffect(() => {
            
             </div>
 
-
+            
             <div className='peices'> 
             <div className ='image-card'> 
            <img src= {Butler}
             className='momo'
            />     
            {/* <h1 className="cyberpunk-span">Vitamin</h1> */}
-           <div className="image-text">
-                    <p className='terminal-text'>John Butlers first show with the John Butler Trio!</p>
-                </div>
+           <div className="image-text-mono">
+                 </div>
             </div> 
-
-               <div className ='image-card'> 
-                <img src={Mono} className='momo'/>
-                     <div className="image-text">
-                   <p className='terminal-text'>Mono/Poly's New Album!!</p>
-                </div>
-            </div>
-            <div> </div>
+                
+               <div className ='image-card-mono'> 
+                <img src={Mono}
+                
+                className='momo'/>
+                   
+              </div>
             
+             
            
 
             {/* <div className="peices">
@@ -207,15 +219,8 @@ useEffect(() => {
             </div> */}
             
  
-            <div className="assets">
-              <h2 className="cyberpunk-span-intense-cyan">BROWSE ASSETS</h2>
-              
-              {/* <button className="gallery-button">Gallery</button> */}
-            </div>
-            <div className ='assets'> 
-              
-
-            </div>
+            
+            
             
              <div className="small-pics">
               <div className="image-wrapper">
