@@ -38,8 +38,7 @@ import { WalletModalProvider, WalletMultiButton } from '@solana/wallet-adapter-r
 import { clusterApiUrl } from '@solana/web3.js'
 import TransactionButton from './TransactionButton.jsx'
 import WalletButton from './WalletButton.jsx';
-import CyberpunkNavbar from "./Navbar.jsx";
-
+ 
 function App() { 
 
 
@@ -116,15 +115,16 @@ useEffect(() => {
 
 
               </p>
-              <Link to ='/about'>
-                <button className="gallery-button">MEET THE TEAM</button>
-              </Link>
+              
             </div>
              
 
             <div className="buttons">
-              <button className="cyberpunk-button">BUY MAYBEART TOKEN</button>
-              <button className="cyberpunk-button">Upload
+              <button className="gallery-button">BUY MAYBEART TOKEN</button> 
+               <Link to ='/about'>
+                <button className="gallery-button">MEET THE TEAM</button>
+              </Link>
+              <button className="gallery-button">Upload
                  and Get Paid</button>
             </div>
             
@@ -155,10 +155,7 @@ useEffect(() => {
               </div>
             </div>
 
-            <div className='mono'> 
-             
-
-               </div>
+           
             </div>
 
 
@@ -209,8 +206,7 @@ useEffect(() => {
               </div>
             </div> */}
             
-            <p className="cyberpunk-text"> Unreleased tracks from John Butler, and MonoPoly's new Album!</p>
-
+ 
             <div className="assets">
               <h2 className="cyberpunk-span-intense-cyan">BROWSE ASSETS</h2>
               
