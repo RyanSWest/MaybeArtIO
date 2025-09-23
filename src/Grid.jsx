@@ -22,7 +22,8 @@ import Wombat from'./imgs/Wombat.jpg';
 import Bunny from'./imgs/Bunny.jpg';
 import Icecream from'./imgs/Icecream.jpg';
 import Scrawny from'./imgs/Scrawny.jpg';
-
+import Header from './Header'
+import'./index.css'
  
  export const Grid =()=>{
 const stuff=[ {pic: {Baby},pos:'47% 35%'},{pic :{Kaiju}, pos:'75% 65%'},{pic :{Kaiju}, pos:'53% 43%'},{pic :{Kaiju}, pos:'65% 65%'} ,{pic :{Kaiju}, pos:'50% 25%'},{pic :{Kaiju}, pos:'47%'},{pic :{Kaiju}, pos:'65% 35%'},]
@@ -31,48 +32,75 @@ const stuff=[ {pic: {Baby},pos:'47% 35%'},{pic :{Kaiju}, pos:'75% 65%'},{pic :{K
 
 
 return ( 
+   
 
-    <div className ='grid-container'> 
-    <div className='grid-item-1'> 
-        <img src= {Baby} alt='img1'/>
-    </div>
-    <div className='grid-item-2'> 
-        <img src= {Wombat} alt='img1'/>
-    </div> 
-    <div className='grid-item-3'> 
-        <img src= {Rodan} alt='img1'/>
-    </div> 
-    <div className='grid-item-4'> 
-        <img src= {Drag2} alt='img1'/>
-        <div className='grid-item-5'> 
-        <img src= {Drag3} alt='img1'/>
-    </div> 
-
-    <div className='grid-item-6'> 
-        <img src= {Drag3} alt='img1'/>
-    </div>
-    <div className='grid-item-7'> 
-        <img src= {Baby} alt='img1'/>
-    </div> 
-    <div className='grid-item-8'> 
-        <img src= {Baby} alt='img1'/>
-    </div>
-    <div className='grid-item-9'> 
-        <img src= {Baby} alt='img1'/>
-    </div> 
+    <div>  
+ 
+        <h1 className= 'cyberpunk-span-intense-cyan' > NFT GALLERY</h1>
 
 
-
-    <div className='grid-item-10'> 
-        <img src= {Baby} alt='img1'/>
-    </div>
-    </div>
+ 
+     <div className="grid">
+               <div className="image-wrapper">
+                 <img src={Baby} alt="Art 1" />
+               </div>
+               <div className="image-wrapper">
+                 <img src={Taco} alt="Art 2" />
+               </div>
+               <div className="image-wrapper">
+                 <img src={Orang} alt="Art 3" />
+               </div>
+               <div className="image-wrapper">
+                 <img src={Bunny} alt="Art 3" />
+               </div>
+               <div className="image-wrapper">
+                 <img src={Gorilla} alt="Art 3" />
+               </div> 
+               <div className="image-wrapper">
+                 <img src={Raijin} alt="Art 3" />
+               </div>
+               <div className="image-wrapper">
+                 <img src={Scrawny} alt="Art 3" />
+               </div>
+               <div className="image-wrapper">
+                 <img src={Rath} alt="Art 3" />
+               </div>
+               <div className="image-wrapper">
+                 <img src={Bear} alt="Art 3" />
+               </div>
+               <div className="image-wrapper">
+                 <img src={Kaiju} alt="Art 3" />
+               </div>
+               <div className="image-wrapper">
+                 <img src={Drag2} alt="Art 3" />
+               </div>
+               <div className="image-wrapper">
+                 <img src={Drag} alt="Art 3" />
+               </div>
+               <div className="image-wrapper">
+                 <img src={Drag2} alt="Art 3" />
+               </div>
+               <div className="image-wrapper">
+                 <img src={Drag3} alt="Art 3" />
+               </div> 
+               <div className="image-wrapper">
+                 <img src={Rhino} alt="Art3"/>
+               </div>
+               <div className="image-wrapper">
+                 <img src={Rabbit} alt="Art3"/>
+               </div>
+               <div className='image-wrapper'> 
+                 <img src={AngryGorr} alt='img1'/>
+               </div> 
+               <div className='image-wrapper'> 
+                 <img src={Wombat} alt='img1'/>
+               </div>
+             </div>
      
-        
-
-    </div>
+        </div>
+ 
 )
 
 }
 
-// export default Grid
+export default Grid

@@ -79,7 +79,7 @@ export default function WalletButton() {
  
 
   return (
-    <div style={{ position: 'relative' }}>
+    <div  >
         {showDetails&& ( 
 
           <div> 
@@ -90,20 +90,13 @@ export default function WalletButton() {
              </div>
         )}
          
-       <button 
-      className='gallery-button'
-        onClick={() => wallet ? disconnect() : setShowWallets(!showWallets)}
-        // style={{
-        //   fontSize: '14px',
-        //   padding: '8px 16px',
-        //   backgroundColor: wallet ? '#4ade80' : '#8b5cf6',
-        //   color: 'white',
-        //   border: 'none',
-        //   borderRadius: '6px',
-        //   cursor: 'pointer'
-        // }}
-      >
+       <button className='cyberpunk-button'
+    
+        onClick={() => wallet ? disconnect() : setShowWallets(!showWallets)}>
+   
         {wallet ? `${wallet.slice(0,4)}...${wallet.slice(-4)}` : 'Connect Wallet'}
+
+        {/* <h3 className ='cyberpunk-h2'>Connect Wallet</h3> */}
       </button>
       
       {showWallets && !wallet && (
@@ -114,7 +107,7 @@ export default function WalletButton() {
           background: '#1f2937',
           border: '1px solid #374151',
           borderRadius: '6px',
-          padding: '1rem',
+          padding: '.25rem',
           zIndex: 1000,
           minWidth: '150px'
         }}>

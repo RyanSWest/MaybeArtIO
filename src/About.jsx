@@ -2,7 +2,8 @@
 import CFO from'./imgs/CFO.jpg'
 import './imgs/Ozzie.jpg'
 import MCO from './imgs/MCO.jpeg'
-import './index.css'
+import './index.css';
+import Header from './Header';
 export const About = ()=>{
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Space+Mono" />
 
@@ -13,9 +14,10 @@ return (
 
 
 
-        <div className = 'container'> 
+        <div className = 'main-wrapper'> 
 
-                      <h2 className ='cyberpunk-h2-glitch'>Ronald G. Shapiro – Chief Financial Officer, MaybeArt</h2>
+         <Header/>
+                      <h2 className ='cyberpunk-span'>Ronald G. Shapiro – Chief Financial Officer, MaybeArt</h2>
  
         <div className ='sq'>    
             
@@ -27,8 +29,7 @@ return (
 
                  <p className='bio'>  Ronald Shapiro is a seasoned executive with a unique blend of technical expertise, financial acumen, and strategic insight. With over 20 years of experience across diverse industries, Ronald has a proven track record of navigating complex business landscapes, identifying critical challenges, and implementing innovative solutions that drive growth and operational excellence. A Wharton MBA and CompTIA-certified professional, Ronald brings both analytical rigor and practical problem-solving skills to the leadership team at MaybeArt. As CFO, he oversees financial strategy, ensures robust operational frameworks, and supports the company’s mission to empower artists and art owners through tokenization and blockchain innovation. Renowned as a skilled troubleshooter and strategic advisor, Ronald thrives in dynamic environments, delivering results that align business objectives with creative vision.Wayne L. "Ozzie" Rea III (737) 266-1364 </p></div>
         </div>
-                         <h2 className= 'cyberpunk-h2-glitch'>Wayne “Ozzie” Rea III – Founder & CEO, MaybeArt</h2>             
-
+ 
         
                 <div className='cyberpunk-pulse-border'> 
                  
@@ -55,4 +56,4 @@ Ozzie’s work spans live music venues, digital art, and tokenized royalties, un
         </div>
     )
  }
-//  export default About
+//  export default Abouth2

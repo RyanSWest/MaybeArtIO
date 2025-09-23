@@ -1,8 +1,61 @@
 
-*{
+/* Global responsive reset */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* Prevents horizontal scroll */
+}
+
+/* Main container wrapper */
+.main-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem; /* Side padding so content doesn't touch edges */
+  width: 100%;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1200px) {
+  .main-wrapper {
+    padding: 0 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-wrapper {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-wrapper {
+    padding: 0 0.5rem;
+  }
+}
+
+/* Make images responsive */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive text */
+@media (max-width: 768px) {
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.4rem; }
+  p { font-size: 0.9rem; }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.2rem; }
+  p { font-size: 0.8rem; }
 }
 
 html, body {
@@ -23,7 +76,7 @@ body {
   line-height: 1.5;
 }
 
-:root {
+/* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 900;
@@ -36,12 +89,17 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+} */
 /* Reset and mobile-first */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+.momo{
+ 
+  height:max-content;
+  width:max-content;
 }
 
 body {
@@ -89,7 +147,7 @@ img {
 
 .grid {
   display:grid;
-  grid-template-columns: repeat(auto-fit, 4rem);
+  grid-template-columns: repeat(auto-fit, 8rem);
   gap: 1rem;
   justify-content: center;
   width:90%;
@@ -97,8 +155,8 @@ img {
 }
 
 .image-wrapper { 
-  width: 6rem;
-  height:6rem;
+  width: 8rem;
+  height:8rem;
   overflow: hidden;
   border-radius: 8px;
  }
@@ -107,8 +165,8 @@ img {
    
   top: 0;
   left: 0;
-  width: 5rem;
-  height:5rem;
+  width:8rem;
+  height:8rem;
   object-fit:cover;
  }
 
@@ -120,6 +178,15 @@ img {
     gap:1rem;
   }
  
+
+  .cards{
+    display: flex;
+    flex-direction: row;
+  }
+  .small-pics{
+    display:flex;
+    flex-direction: row;
+  }
  
  .assets{
     display:flex;
@@ -200,7 +267,7 @@ body {
 
   .token-image {
     display: block;
-    width: 30rem; /* Maintain aspect ratio */
+    width: 10rem; /* Maintain aspect ratio */
     border-radius: 300px; /* Optional: Add rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
     margin-top: 10px; /* Optional: Add some spacing above the image */
@@ -236,6 +303,7 @@ body {
     0 0 20px #00ccff;
   text-transform: uppercase;
   letter-spacing: 0.1em;
+  justify-self: center;
 }
 .cyberpunk-h2 {
   font-family: 'Rajdhani', sans-serif;
@@ -298,20 +366,20 @@ body {
 }
 .bitch{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: 20px;
   gap: 20px;
-  width: 100%;
+  width: 90%;
   height:35%;
    box-sizing: border-box; /* Add this */
 }
 
 .bitch2{
   display: flex;
-  flex-direction:row;
+  flex-direction:column;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -323,7 +391,7 @@ body {
 }
 
  
-.container{
+/* .container{
   display: block;
   flex-direction: column;
   align-items: center;
@@ -336,26 +404,41 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   max-width: 90vw; /* Prevent horizontal overflow */
-  max-height: 90vh; /* Prevent vertical overflow */
-  margin: 5vh 5vw; /* Add safe margins */
+  /* max-height: 90vh; /* Prevent vertical overflow */
+   
  
-  width:100%;
-  
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.centered {
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+ .centered {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   max-width: 90vw; /* Prevent horizontal overflow */
-  max-height: 90vh; /* Prevent vertical overflow */
+  max-height: 100%; /* Prevent vertical overflow */
   margin: 5vh 5vw; /* Add safe margins */
 }
 .peices{
  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  padding: 40px;
+  grid-template-columns: repeat(2, 1fr);
+  gap:2rem;
+  padding: 1rem;
 
 
 }
@@ -399,19 +482,25 @@ body {
   display: block;
 }
 .image-card {
-  max-width: 400px;
+  max-width: 50%;
   height:fit-content;
   margin: 0 auto;
   background: white;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   overflow: hidden;
+  justify-content: center;
+  align-items: center;
 }
+
 .image-card-mono{
-   max-width: 400px;
-  height:fit-content;
+   width:50%;
+  height:16rem;
   margin: 0 auto;
   background: white;
+  object-fit:cover;
+  justify-content: center;
+  align-items: center;
 
   border-radius: 20px;
   border-color:2px solid cyan;
@@ -424,7 +513,7 @@ body {
 
 .image-card img {
   width: 100%;
-  height: 7rem;
+  height: 16rem;
   display: block;
   object-fit: contain;
 }
@@ -434,8 +523,9 @@ body {
   font-family: Orbitron, monospace;
   text-align: center;
   background-color: navy;
-  font-size: .40rem;
+  font-size: large;
   height:fit-content ;
+  height: fit-content;
 }
 
     
@@ -608,7 +698,7 @@ body {
   }
   .cyberpunk-text {
   font-family: 'Rajdhani', 'Rajdhani', monospace;
-  font-size: 1rem;
+  font-size: 3rem;
   line-height: 1.6;
   color: #00ffff;
   text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
@@ -622,16 +712,17 @@ body {
 }
 .bio-pic{
   width: 100%;
-  height: 20rem;
+  height: 12rem;
   border-radius: 20px;
   margin-bottom: 1rem;
   object-fit: contain;
+  margin-top: 1rem;
  
  }
 .cyberpunk-label{
     font-family: 'Rajdhani', 'Rajdhani', monospace;
-  font-size: 5rem;
-  line-height: 2;
+  font-size: xx-large;
+  line-height: 6;
   color: #00ffff;
   text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
   letter-spacing: 0.05em;
@@ -648,8 +739,8 @@ body {
 
 @keyframes test-pulse {
   0% { border-color: #00ffff; }
-  50% { border-color: #ff0080; }
-  100% { border-color: #00ffff; }
+  50% { border-color: #bf00ff; }
+  100% { border-color: #060730; }
 }
 .cyberpunk-h2-gradient {
   font-family: 'Rajdhani', sans-serif;
@@ -657,7 +748,7 @@ body {
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  background: linear-gradient(45deg, #00ffff, #ff0080, #00ffff);
+  background: linear-gradient(45deg, #00ffff, #5f0874, #260caa);
   background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -820,6 +911,7 @@ body {
   font-family: 'Rajdhani', monospace;
   font-weight: 700;
   color: #ff0080;
+  font-size: medium;
   text-shadow: 
     0 0 5px #ff0080,
     0 0 10px #ff0080,
@@ -827,9 +919,11 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
+ 
 .cyberpunk-span-blue {
   font-family: 'Rajdhani', monospace;
   font-weight: 700;
+  font-size:medium;
   color: #00bfff;
   text-shadow: 
     0 0 5px #00bfff,
@@ -853,6 +947,7 @@ body {
   .cyberpunk-button {
   /* Centering */
   display: flex;
+  margin-top: 1rem;
   align-items: center;
   justify-content: center;
   
@@ -860,26 +955,26 @@ body {
   /* Size and spacing */
   /* padding: .25rem 1em; */
   /* min-height: auto; */
-  width:40%;
-  height: 5rem;
+  width:auto;
+  height: .75rem;
   
   /* Typography */
   font-family: 'Rajdhani', monospace;
-  font-size: .5rem;
+  font-size: x-small;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   text-decoration: none;
   
   /* Cyberpunk styling */
-  background: linear-gradient(45deg, #0f0f23, #1a1a2e);
+  background: linear-gradient(45deg, #0f0f23, #2e1a27);
   border: 2px solid #00ffff;
   color: #00ffff;
-  border-radius: 40px;
+  border-radius: 20px;
   
   /* Effects */
   box-shadow: 
-    0 0 20px rgba(0, 255, 255, 0.3),
+    0 0 20px rgba(40, 118, 118, 0.3),
     inset 0 0 20px rgba(0, 255, 255, 0.1);
   text-shadow: 0 0 10px #00ffff;
   
@@ -909,12 +1004,7 @@ body {
     0 0 15px rgba(255, 0, 128, 0.7),
     inset 0 0 15px rgba(255, 0, 128, 0.3);
 }
-.header{
-  border:2px solid green;
-  height: 5rem;
-  display:flex;
-  flex-direction: row;
-}
+ 
 button {
   border-radius: 8px;
   border: 1px solid transparent;

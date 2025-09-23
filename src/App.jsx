@@ -26,7 +26,8 @@ import Wombat from'./imgs/Wombat.jpg';
 import Bunny from'./imgs/Bunny.jpg';
 import Icecream from'./imgs/Icecream.jpg';
 import Scrawny from'./imgs/Scrawny.jpg';
-import {About} from './About.jsx'; 
+import Butler from './imgs/Butlerpic.jpg';
+ import {About} from './About.jsx'; 
 import React, { useState, useEffect } from 'react'
 
 
@@ -37,6 +38,7 @@ import { WalletModalProvider, WalletMultiButton } from '@solana/wallet-adapter-r
 import { clusterApiUrl } from '@solana/web3.js'
 import TransactionButton from './TransactionButton.jsx'
 import WalletButton from './WalletButton.jsx';
+import CyberpunkNavbar from "./Navbar.jsx";
 
 function App() { 
 
@@ -82,32 +84,43 @@ useEffect(() => {
       <WalletProvider wallets={wallets} autoConnect>
         <WalletModalProvider>
  
-          <div className="container">
+          <div class-name='main-wrapper'  >
 
-            <div className ='bitch'> 
-              {/* <WalletMultiButton/> */}
-              <Header/>
-
-            
-            </div>
-             
+         {/* <Header/> */}
           
-            <div className="bitch">
-
+          <Header/>
+             <WalletButton/>
+           
             
-  
-              <h1 className="cyberpunk-h2-glitch" data-text='MAYBEART'>MAYBEART</h1>
-            </div>
 
             <div className="bitch">
               <img src={Token} alt="Token" className="token-image" />
+  
+            <div className="bitch2">
+
+            
+  
+              <h1 className="cyberpunk-h2-glitch" data-text='MAYBEART'>MAYBE ART</h1>
+                 <p className='terminal-text'> MAYBEART is a cryptocurrency on the Solana blockchain, backed by art. We empower artists and collectors through a marketplace where creators can sell their works, share royalties, and collaborate with a community that fuels innovation and growth.
+
+</p>
+            </div>
+
+
             </div>
             
-            <div className="cyberpunk-pulse-border">
-              <h2 className="cyberpunk-span-blue">
-                Empowering Artists Tokenizing Creativity
-              </h2>
+              <div className="whatis">
+              <h1 className="cyberpunk-span">WHAT IS MAYBEART?</h1>
+              <p className="terminal-text">
+               MAYBEART is a cryptocurrency on the Solana blockchain, backed by art, blending the worlds of blockchain and creativity. Our community empowers musicians, visual artists, collectors, and fans by providing a marketplace where creators can showcase and sell their works. Beyond traditional sales, artists can also offer fractional ownership of their music royalties, publishing rights, or artworks, giving supporters a direct stake in their success. Through grants, community-driven initiatives, and innovative token-powered projects, MAYBEART fosters a collaborative space where art and technology thrive together.
+
+
+              </p>
+              <Link to ='/about'>
+                <button className="gallery-button">MEET THE TEAM</button>
+              </Link>
             </div>
+             
 
             <div className="buttons">
               <button className="cyberpunk-button">BUY MAYBEART TOKEN</button>
@@ -143,25 +156,34 @@ useEffect(() => {
             </div>
 
             <div className='mono'> 
-              <h2 className="cyberpunk-span-intense-cyan">We Are Working with Mono/Poly!</h2>
-              <div className='image-card-mono'> 
-                <img src={Mono} alt="Momo" className='momo'/>
-              </div>
-            </div>
-            
-            <div className="whatis">
-              <h1 className="cyberpunk-span">WHAT IS MAYBEART?</h1>
-              <p className="terminal-text">
-                MAYBEART is a Solana-based token designed to empower artists and
-                collectors. Holders can participate in auctions, mint NFTs and access
-                exclusive art and music
-              </p>
-              <Link to ='/about'>
-                <button className="gallery-button">MEET THE TEAM</button>
-              </Link>
+             
+
+               </div>
             </div>
 
-            <div className="peices">
+
+            <div className='peices'> 
+            <div className ='image-card'> 
+           <img src= {Butler}
+            className='momo'
+           />     
+           {/* <h1 className="cyberpunk-span">Vitamin</h1> */}
+           <div className="image-text">
+                    <p className='terminal-text'>John Butlers first show with the John Butler Trio!</p>
+                </div>
+            </div> 
+
+               <div className ='image-card'> 
+                <img src={Mono} className='momo'/>
+                     <div className="image-text">
+                   <p className='terminal-text'>Mono/Poly's New Album!!</p>
+                </div>
+            </div>
+            <div> </div>
+            
+           
+
+            {/* <div className="peices">
               <div className="image-card">
                 <img src={Vitamin} alt="WF" />
                 <div className="image-text">
@@ -185,16 +207,21 @@ useEffect(() => {
                   <p> Kalu James, Diego Rivera, DJ MCO, ThunderCat and More</p>
                 </div>
               </div>
-            </div>
+            </div> */}
             
-            <p className="cyberpunk-text"></p>
+            <p className="cyberpunk-text"> Unreleased tracks from John Butler, and MonoPoly's new Album!</p>
 
             <div className="assets">
               <h2 className="cyberpunk-span-intense-cyan">BROWSE ASSETS</h2>
-              <button className="gallery-button">Gallery</button>
+              
+              {/* <button className="gallery-button">Gallery</button> */}
+            </div>
+            <div className ='assets'> 
+              
+
             </div>
             
-            <div className="grid">
+             <div className="small-pics">
               <div className="image-wrapper">
                 <img src={Baby} alt="Art 1" />
               </div>
@@ -204,12 +231,12 @@ useEffect(() => {
               <div className="image-wrapper">
                 <img src={Orang} alt="Art 3" />
               </div>
-              <div className="image-wrapper">
+              {/* {/* <div className="image-wrapper">
                 <img src={Bunny} alt="Art 3" />
               </div>
               <div className="image-wrapper">
                 <img src={Gorilla} alt="Art 3" />
-              </div> 
+              </div>  
               <div className="image-wrapper">
                 <img src={Raijin} alt="Art 3" />
               </div>
@@ -248,8 +275,8 @@ useEffect(() => {
               </div> 
               <div className='image-wrapper'> 
                 <img src={Wombat} alt='img1'/>
-              </div>
-            </div>
+              </div> */}
+            </div> 
           </div>
         </WalletModalProvider>
       </WalletProvider>
