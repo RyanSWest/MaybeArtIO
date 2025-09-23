@@ -13,6 +13,7 @@ import './index.css'
 import App from './App.jsx'
 import Header from './Header.jsx'
 import Papers from './paper.jsx'
+import Home from './Home';
 const wallets = [new PhantomWalletAdapter()]
 const endpoint = clusterApiUrl('devnet')
 
@@ -25,7 +26,8 @@ createRoot(document.getElementById('root')).render(
             <Header/>
             <Routes> 
  
-              <Route path='/' element={<App />} />
+              <Route path='/' element={<App/>} />
+               <Route path='/home' element={<Home/>}/>
               <Route path='/about' element={<About />} />
               <Route path='/grid' element={<Grid/>}/> 
               <Route path='/whitepaper' element={<Papers/>}/>
