@@ -20,7 +20,6 @@ import Raijin from'./imgs/Raijin.jpg';
 import Rabbit from'./imgs/Rabbit.jpg';
 import Wombat from'./imgs/Wombat.jpg';
 import Bunny from'./imgs/Bunny.jpg';
-import Icecream from'./imgs/Icecream.jpg';
 import Scrawny from'./imgs/Scrawny.jpg';
 import Header from './Header'
  
