@@ -1,3 +1,6 @@
+import {Card, Container} from 'react-bootstrap';
+
+
 const Papers =()=> {
 
 
@@ -5,10 +8,17 @@ const Papers =()=> {
 
     return (
 
+<Container style ={{paddingTop:'6rem'}}> 
+ 
+          <Card> 
+            <Card.Title style ={{padding:'3rem'}}> 
+                  <h1 className='cyberpunk-span'> 1. Executive Summary</h1>
 
-        <div className="main-wrapper">
-      <h1 className='cyberpunk-span'> 1. Executive Summary</h1>
-        <p className='terminal-text'>  
+              
+            </Card.Title>
+             <Card.Body> 
+              <Card.Text> 
+                   <p className='cyber-text'>  
 MAYBEART is a Solana-based token platform that lets artists monetize both digital and
 physical art, as well as music royalties. Fans can acquire a stake in the works they love, creating
 deeper engagement and a sustainable revenue model.
@@ -16,8 +26,35 @@ Key Highlights:
 • Artist-first NFT marketplace.
 • Tokenized royalty sharing.
 • Community-driven governance via $MAYBEART token.</p>
+
+
+
+              </Card.Text>
+
+                
+              </Card.Body>
+              <Card.Footer >
+                @MaybeArt.com
+                
+                
+                 </Card.Footer> 
+          </Card>
+
+
+
+
+          <Card> 
+            <Card.Header> 
+
+              <Card.Title style ={{padding:'3rem'}}> 
 <h2 className="cyberpunk-span"> 2. Vision and Mission</h2>
-<p className="terminal-text">
+
+
+              </Card.Title>
+            </Card.Header>
+            <Card.Body> 
+              <Card.Text> 
+           <p className="cyber-text">
 Vision: Build a thriving ecosystem connecting creators and fans.
 Mission:
 • Enable artists to tokenize artworks and music.
@@ -26,8 +63,22 @@ Mission:
 • Build a community empowered by governance via $MAYBEART.
 </p>
 
+              </Card.Text>
+            </Card.Body>
+          </Card>
+      
+     <Card style ={{padding:'3rem'}}> 
+            <Card.Header style ={{padding:'3rem'}}> 
+
+              <Card.Title  > 
 <h2 className="cyberpunk-span"> 3. Tokenomics</h2>
- <p className ='terminal-text'>
+
+
+              </Card.Title>
+            </Card.Header>
+            <Card.Body> 
+              <Card.Text> 
+            <p  >
 Allocation % Description
 Artists & Grants 25% Incentives, art acquisition, grants
 Founders & Team 20% Compensation for founders, early contributors
@@ -38,8 +89,20 @@ Token Utility:
 • Participation in auctions & NFT drops.
 • Voting and governance rights.</p>
 
+              </Card.Text>
+            </Card.Body>
 
-        </div>
+              <Card.Footer >
+                @MaybeArt.com
+                
+                
+                 </Card.Footer> 
+          </Card>
+
+ 
+
+        
+        </Container>
     )
 }
 export default Papers

@@ -1,5 +1,16 @@
- 
+ .linkie{
 
+  color:aliceblue;
+  font-family: Rajdhani;
+  font-size: x-large;
+
+ }
+  :hover{
+    color:azure;
+    text-shadow: #00ffff;
+    font-style:italic;
+    font-size: xx-large;
+  }
 .wallet-adapter-modal-fade-in{
     display:block;
   z-index: 1000 !important;
@@ -102,7 +113,7 @@
   top: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  background: linear-gradient(135deg, #7d6d6d 0%, #1a1a1a 100%);
   border-bottom: 2px solid #00ffff;
   padding: 1rem 2rem;
   z-index: 1000;

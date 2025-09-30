@@ -9,32 +9,53 @@ import '@solana/wallet-adapter-react-ui/styles.css'
 
 import { About } from './About.jsx'
 import { Grid } from './Grid.jsx'
-import './index.css'
+import Register from './Register.jsx'
+import Login from './Login.jsx';
+import '../index.css'
 import App from './App.jsx'
 import Header from './Header.jsx'
 import Papers from './paper.jsx'
+import MaybeArtLandingPage from './Home2.jsx';
+import Landing from './Home3.jsx';
+import ImageUpload from './Upload.jsx';
+// import NFTMinter from './Nft.jsx'
 import Home from './Home';
+import Home2 from'./Home2';
+import Gallery from './Gallery.jsx';
+// import GalleryNFTMinter from './Minter.jsx'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { ThemeProvider } from 'react-bootstrap'
 const wallets = [new PhantomWalletAdapter()]
 const endpoint = clusterApiUrl('devnet')
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  // <StrictMode>
     <ConnectionProvider endpoint={endpoint}>
       <WalletProvider wallets={wallets}>
         <WalletModalProvider>
+          <ThemeProvider>  
           <Router> 
-            <Header/>
+             <Header/> 
             <Routes> 
  
-              <Route path='/' element={<App/>} />
+              <Route path='/' element={<Landing/>} />
+               <Route path='/landing'element={<Landing/>}/>
                <Route path='/home' element={<Home/>}/>
-              <Route path='/about' element={<About />} />
+                <Route path= '/login' element={<Login/>}/>
+                 {/* <Route path ='/mintNft'element ={<GalleryNFTMinter/>}/> */}
+                {/* <Route path ='/nft' element={<NFTMinter/>}/>  */}
+               <Route path ='/upload' element ={<ImageUpload/>}/>
+               <Route path='/about' element={<About />} />
               <Route path='/grid' element={<Grid/>}/> 
+              <Route path= '/gallery'element={<Gallery/>}/>
               <Route path='/whitepaper' element={<Papers/>}/>
+                      <Route path ='/register' element ={<Register/>}/>
+
             </Routes>
           </Router>
+           </ThemeProvider>
         </WalletModalProvider>
       </WalletProvider>
     </ConnectionProvider>
-  </StrictMode>
+  // </StrictMode>
 )

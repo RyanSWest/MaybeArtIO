@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './index.css';
+import '@solana/wallet-adapter-react-ui/styles.css';
 
 export default function WalletButton() {
   const [showWallets, setShowWallets] = useState(false)
