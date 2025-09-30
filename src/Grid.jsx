@@ -36,7 +36,7 @@ return (
 
     <div style= {{backgroundColor:'darkblue'}}>  
  
-        <h1 className= 'cyberpunk-span' > NFT GALLERY</h1>
+        <h1  style={{fontFamily:'Rajdhani', color:'darkslategrey',fontWeight:'700',fontStyle:'bolder'}} > NFT GALLERY</h1>
 
 
  
