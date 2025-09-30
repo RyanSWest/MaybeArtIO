@@ -944,8 +944,8 @@ html, body {
   font-size: x-large;
   text-shadow: 
     0 0 5px #000000,
-    0 0 10px #2d1a23,
-   text-transform: uppercase;
+    0 0 10px #2d1a23;
+  text-transform: uppercase;
   letter-spacing: 0.1em;
 }
  
@@ -1079,5 +1079,5 @@ button:focus-visible {
   }
 }
 body{
-  background-image: ;
-} */
+  background-image:'./imgs/IMG_1720.JPG' ;
+} 

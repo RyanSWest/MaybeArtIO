@@ -1903,8 +1903,7 @@ h1.banner-title {
   font-weight: 900;
   background: linear-gradient(297deg, var(--blue-color), var(--secondary-color), var(--blue-color));
   background: -webkit-linear-gradient(297deg, var(--blue-color), var(--secondary-color), var(--blue-color));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+   -webkit-text-fill-color: transparent;
   line-height: 7.26rem;
   letter-spacing: 0.18rem;
 }
@@ -2195,8 +2194,7 @@ h1.banner-title {
   height: 48px;
   background: linear-gradient(95deg, var(--primary-color), var(--secondary-color));
   background: -webkit-linear-gradient(95deg, var(--primary-color), var(--secondary-color));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+   -webkit-text-fill-color: transparent;
 }
 
 .footer-item .footer-menu a {

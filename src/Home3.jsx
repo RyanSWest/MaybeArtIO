@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
  import './index.css';
 
 import './new.css';
-import faint from './imgs/faint.jpg'
+import Faint from './imgs/Faint.jpg';
 import back from './imgs/back.png';
+import Guy from './imgs/IMG_720.JPG'
 import {Navbar,NavItem,Nav,NavDropdown, Container} from 'react-bootstrap';
 import {Card} from 'react-bootstrap';
 import Header from './Header.jsx';
@@ -40,7 +41,7 @@ import Footer from './Footer.jsx';
   width: '100vw',
   height: '100vh',
   backgroundImage:
-     `url(${faint})`,
+     `url(${GUY})`,
   
   // 'url("https://wallpaperaccess.com/full/1267581.jpg")',
   // './imgs/back.png',
