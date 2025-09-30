@@ -34,9 +34,9 @@ const stuff=[ {pic: {Baby},pos:'47% 35%'},{pic :{Kaiju}, pos:'75% 65%'},{pic :{K
 return ( 
    
 
-    <div>  
+    <div style= {{backgroundColor:'darkblue'}}>  
  
-        <h1 className= 'cyberpunk-span-intense-cyan' > NFT GALLERY</h1>
+        <h1 className= 'cyberpunk-span' > NFT GALLERY</h1>
 
 
  

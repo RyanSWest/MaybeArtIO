@@ -20,7 +20,7 @@ return (
 
          {/* <Header/> */}
 
-         <Container   > 
+         <Container  style={{paddingTop:'3rem'}} > 
 
           
             <Card style= {{justifyContent:'center', alignItems:'center',paddingTop:'5rem'}}> 
@@ -68,7 +68,7 @@ style={{objectFit:'contain', height:'10rem', borderRadius:''}}
 
                     <Card.Text> 
                 
-                <p className ='biox'> 
+                <p className ='bio'> 
                     Wayne “Ozzie” Rea III is an entrepreneur, blockchain strategist, and accomplished musician, blending technical expertise with creative vision. As Founder and CEO of MaybeArt, Ozzie leads a pioneering platform that empowers artists to monetize their work through tokenization, NFTs, and blockchain-based marketplaces.
 
 A recognized performer, Ozzie is an ARIA Top 100 artist and has co-written a track on an album that achieved 5× platinum status, bringing firsthand music industry insight to the MaybeArt ecosystem. He also holds the distinction of being the first to tokenize an oil and gas working interest, demonstrating his ability to merge traditional industries with cutting-edge blockchain solutions.
@@ -88,4 +88,4 @@ Ozzie’s work spans live music venues, digital art, and tokenized royalties, un
                        
     )
  }
-//  export default About
+ export default About

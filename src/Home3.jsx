@@ -8,22 +8,21 @@ import {Navbar,NavItem,Nav,NavDropdown, Container} from 'react-bootstrap';
 import {Card} from 'react-bootstrap';
 import Header from './Header.jsx';
 import Footer from './Footer.jsx';
-
+ 
  
 
  export default function Landing() {
   return (
     <Container>
 
-       <Header/>
-     
- {/* Background Layer 1: Gradient */}
-<div style={{
+       
+ <div style={{
   position: 'fixed',
   top: 0,
   left: 0,
   width: '100vw',
   height: '100vh',
+  paddingTop:'3rem',
   // background: 'linear-gradient(135deg, #467eea 0%, #464ba2 50%, #f093fb 100%)',
   // background:'navy',
   // opacity:'0.9',

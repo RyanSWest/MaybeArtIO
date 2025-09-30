@@ -1403,8 +1403,7 @@ blockquote cite {
 }
 
 .hero-title{
-  color:red;
-  font-weight: bolder;
+   font-weight: bolder;
   justify-self: center;
  
   font-size: clamp(3rem, 9vw, 8rem);
@@ -1422,9 +1421,9 @@ blockquote cite {
   text-transform: uppercase;
   letter-spacing: 0.1em;
 
-  @media screen {
+  /* @media screen {
     
-  }
+  } */
  }
 .nav-link {
   display: block;

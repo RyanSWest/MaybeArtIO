@@ -22,6 +22,7 @@ import ImageUpload from './Upload.jsx';
 import Home from './Home';
 import Home2 from'./Home2';
 import Gallery from './Gallery.jsx';
+import Navbar from './Navbar.jsx';
 // import GalleryNFTMinter from './Minter.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ThemeProvider } from 'react-bootstrap'
@@ -36,10 +37,11 @@ createRoot(document.getElementById('root')).render(
           <ThemeProvider>  
           <Router> 
              <Header/> 
+            
             <Routes> 
  
               <Route path='/' element={<Landing/>} />
-               <Route path='/landing'element={<Landing/>}/>
+               <Route path='/landing'element={<App/>}/>
                <Route path='/home' element={<Home/>}/>
                 <Route path= '/login' element={<Login/>}/>
                  {/* <Route path ='/mintNft'element ={<GalleryNFTMinter/>}/> */}

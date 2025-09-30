@@ -6,11 +6,10 @@
 
  }
   :hover{
-    color:azure;
+    color:rgb(41, 144, 144);
     text-shadow: #00ffff;
     font-style:italic;
-    font-size: xx-large;
-  }
+   }
 .wallet-adapter-modal-fade-in{
     display:block;
   z-index: 1000 !important;
