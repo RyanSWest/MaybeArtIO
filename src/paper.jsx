@@ -12,7 +12,7 @@ const Papers =()=> {
  
           <Card> 
             <Card.Title style ={{padding:'3rem'}}> 
-                  <h1 className='cyberpunk-span'> 1. Executive Summary</h1>
+                  <h1  > 1. Executive Summary</h1>
 
               
             </Card.Title>
@@ -54,7 +54,7 @@ Key Highlights:
             </Card.Header>
             <Card.Body> 
               <Card.Text> 
-           <p className="cyber-text">
+           <p >
 Vision: Build a thriving ecosystem connecting creators and fans.
 Mission:
 • Enable artists to tokenize artworks and music.
@@ -71,7 +71,7 @@ Mission:
             <Card.Header style ={{padding:'3rem'}}> 
 
               <Card.Title  > 
-<h2 className="cyberpunk-span"> 3. Tokenomics</h2>
+<h2  > 3. Tokenomics</h2>
 
 
               </Card.Title>
