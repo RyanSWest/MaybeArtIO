@@ -79,14 +79,14 @@ import Footer from './Footer.jsx';
           
           
           >
-                Maybe Art Token
+              The Maybe Art Token
                </h1>
              
 
-                   <h2  style ={{color:'black',justifySelf :'center', fontWeight: 'bolder', fontSize: 'xx-large'}}> Where Creativity     
+                   <h2  className='hero-sub'> Turning Creativity     
                    <span>   </span>
-                                                       <span style={{color:'black', fontWeight:'bold',fontStyle:'italic'}}
-                                                      >  becomes Currency</span> 
+                                                       <span  className='hero-sub'
+                                                      >  in to Currency</span> 
                                                        
                                      </h2>
        </div>

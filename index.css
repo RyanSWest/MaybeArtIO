@@ -1406,7 +1406,7 @@ blockquote cite {
    font-weight: bolder;
   justify-self: center;
  
-  font-size: clamp(4rem, 10vw, 9rem);
+  font-size: clamp(2rem, 8vw, 7rem);
   /* Minimum 2rem, scales with viewport, max 7rem */
   font-family:  'Rajdhani';
   text-shadow: #272727 rgb(4, 4, 9);
@@ -1420,10 +1420,31 @@ blockquote cite {
     0 0 15px #0a0206; */
   text-transform: uppercase;
   letter-spacing: 0.1em;
+   line-height: 1.1;
+  margin: 0;
+  text-align: center;
+  font-size: clamp(2rem, 8vw, 6rem);
+  padding: 0 1rem;
 
   /* @media screen {
     
   } */
+ }
+
+ .hero-sub{
+    font-size: clamp(1.5rem, 1vw, 3rem);
+    color:black;
+    font-family:  ;
+     line-height: 1;
+  margin: 0;
+  text-align: center;
+   padding: 0 1rem;
+   font-family: Rajdhani;
+   font-style:bolder;
+   margin-top: 2rem;
+
+
+ 
  }
 .nav-link {
   display: block;
