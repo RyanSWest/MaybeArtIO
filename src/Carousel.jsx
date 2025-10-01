@@ -3,8 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Mono from './imgs/mono.jpg';
 import Butlerpic from './imgs/Butlerpic.jpg';
 import'./index.css';
-import Token from './imgs/token.png'
-
+ 
 const Car = () => {
   return (
     <Carousel className= 'dark'>
