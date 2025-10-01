@@ -12,12 +12,9 @@ const Papers =()=> {
  
           <Card> 
             <Card.Title style ={{padding:'3rem'}}> 
-<<<<<<< HEAD
-                  <h1 style= {{fontWeight: '700',fontFamily:'Rajdhani',fontStyle:'bolder'}}> 1. Executive Summary</h1>
-=======
-                  <h1  > 1. Executive Summary</h1>
->>>>>>> c6abca6abe9abb519a64489f0f28812e89329da1
-
+                   <h1 style= {{fontWeight: '700',fontFamily:'Rajdhani',fontStyle:'bolder'}}> 1. Executive Summary</h1>
+         <h1  > 1. Executive Summary</h1>
+ 
               
             </Card.Title>
              <Card.Body> 
