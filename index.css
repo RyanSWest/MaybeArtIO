@@ -1412,7 +1412,7 @@ blockquote cite {
   text-shadow: #272727 rgb(4, 4, 9);
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-weight: 900;
-  color:rgb(250, 2, 2);
+  color:rgb(217, 0, 0);
   
   /* text-shadow: 
     0 0 5px #930d50,
@@ -1432,15 +1432,16 @@ blockquote cite {
  }
 
  .hero-sub{
-    font-size: clamp(1.5rem, 1vw, 3rem);
-    color:black;
-    font-family:  ;
-     line-height: 1;
-  margin: 0;
+    font-size: clamp(1rem, 3vw, 4rem);
+    color:rgb(0, 0, 0);
+    font-family:  Rajdhani;
+    font-style:bolder;
+    line-height: 2;
+   margin: 0;
   text-align: center;
    padding: 0 1rem;
-   font-family: Rajdhani;
-   font-style:bolder;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
    margin-top: 2rem;
 
 

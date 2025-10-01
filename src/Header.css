@@ -1,9 +1,11 @@
  .linkie{
 
-  color:aliceblue;
-  font-family: Rajdhani;
-  font-size: x-large;
-
+   color: 'white';
+    font-size: clamp(1.5rem, 1vw, 3rem);
+   font-family:'Rajdhani'; 
+    font-style:'bolder';
+    font-weight:'700';
+    margin-right: .5rem;
  }
   :hover{
     color:rgb(41, 144, 144);
@@ -122,3 +124,5 @@
   align-items: center;
  
   }
+
+  
