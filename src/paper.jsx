@@ -72,12 +72,9 @@ Mission:
             <Card.Header style ={{padding:'3rem'}}> 
 
               <Card.Title  > 
-<<<<<<< HEAD
-<h2  style= {{fontWeight: '700',fontFamily:'Rajdhani',fontStyle:'bolder'}}> 3. Tokenomics</h2>
-=======
+ 
 <h2  > 3. Tokenomics</h2>
->>>>>>> c6abca6abe9abb519a64489f0f28812e89329da1
-
+ 
 
               </Card.Title>
             </Card.Header>
