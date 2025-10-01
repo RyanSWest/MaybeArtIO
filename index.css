@@ -1406,13 +1406,13 @@ blockquote cite {
    font-weight: bolder;
   justify-self: center;
  
-  font-size: clamp(3rem, 9vw, 8rem);
+  font-size: clamp(4rem, 10vw, 9rem);
   /* Minimum 2rem, scales with viewport, max 7rem */
   font-family:  'Rajdhani';
   text-shadow: #272727 rgb(4, 4, 9);
-  font-family: 'Rajdhani', monospace;
-  font-weight: 700;
-  color: #ff0080;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: 900;
+  color: #ea0000;
   
   /* text-shadow: 
     0 0 5px #930d50,

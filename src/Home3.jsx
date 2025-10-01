@@ -23,11 +23,10 @@ import Footer from './Footer.jsx';
   width: '100vw',
   height: '100vh',
   paddingTop:'3rem',
-  // background: 'linear-gradient(135deg, #467eea 0%, #464ba2 50%, #f093fb 100%)',
+//   background: 'linear-gradient(135deg, #467eea 0%, #464ba2 50%, #f093fb 100%)',
   // background:'navy',
   // opacity:'0.9',
-  backgroundImage:{back},
-  zIndex: 1,
+   zIndex: 1,
   pointerEvents: 'none'
 }} />
 
@@ -39,6 +38,7 @@ import Footer from './Footer.jsx';
   left: 0,
   width: '100vw',
   height: '100vh',
+  opacity:0.5,
   backgroundImage:
      `url(${Guy})`,
   
@@ -83,10 +83,10 @@ import Footer from './Footer.jsx';
                </h1>
              
 
-                   <h2  style ={{color:'white',justifySelf :'center', fontWeight: 'bolder', fontSize: 'xx-large'}}> Where Creativity   
-                   
-                                                       <span style={{color:'white', fontWeight:'bold',fontStyle:'italic'}}
-                                                      > becomes Currency</span> 
+                   <h2  style ={{color:'black',justifySelf :'center', fontWeight: 'bolder', fontSize: 'xx-large'}}> Where Creativity     
+                   <span>   </span>
+                                                       <span style={{color:'black', fontWeight:'bold',fontStyle:'italic'}}
+                                                      >  becomes Currency</span> 
                                                        
                                      </h2>
        </div>

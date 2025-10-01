@@ -12,7 +12,7 @@ const Papers =()=> {
  
           <Card> 
             <Card.Title style ={{padding:'3rem'}}> 
-                  <h1 className='cyberpunk-span'> 1. Executive Summary</h1>
+                  <h1 style= {{fontWeight: '700',fontFamily:'Rajdhani',fontStyle:'bolder'}}> 1. Executive Summary</h1>
 
               
             </Card.Title>
@@ -47,7 +47,7 @@ Key Highlights:
             <Card.Header> 
 
               <Card.Title style ={{padding:'3rem'}}> 
-<h2 className="cyberpunk-span"> 2. Vision and Mission</h2>
+<h2 style=  {{fontWeight: '700',fontFamily:'Rajdhani',fontStyle:'bolder'}}> 2. Vision and Mission</h2>
 
 
               </Card.Title>
@@ -71,7 +71,7 @@ Mission:
             <Card.Header style ={{padding:'3rem'}}> 
 
               <Card.Title  > 
-<h2 className="cyberpunk-span"> 3. Tokenomics</h2>
+<h2  style= {{fontWeight: '700',fontFamily:'Rajdhani',fontStyle:'bolder'}}> 3. Tokenomics</h2>
 
 
               </Card.Title>
