@@ -38,6 +38,7 @@ return (
  
         <h1  style={{fontFamily:'Rajdhani', color:'darkslategrey',fontWeight:'700',fontStyle:'bolder'}} > NFT GALLERY</h1>
 
+                <h3 style={{fontFamily:'Rajdhani', color:'darkslategrey',fontWeight:'700',fontStyle:'bolder'}} >Ryan West</h3>
 
  
      <div className="grid">

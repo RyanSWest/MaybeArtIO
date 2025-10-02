@@ -9,7 +9,7 @@
   
 
   return (
-    <Container fluid>
+    <Container fluid  style={{display:'flex', alignContent:'center', alignItems:'center'}}>
                 {/* <embed src= {White}  style = {{width:'100%',height:"700rem"}}></embed> 
 
                <object src ={White}  style = {{width:'100%',height:"700rem"}}
@@ -17,16 +17,10 @@
                
                > </object> */}
 
-       <iframe src= {White} style ={{width:"100%", height:"700rem"}}></iframe>
+       <iframe src= {White} style ={{width:"100rem", height:"700rem", justifySelf:'center' }}></iframe>
 
 
-        <iframe
-        // className ='frame'
-        
-        src ={White}
-        style ={{width:'100%'}}
-        
-        />
+       
         
  
      </Container>
