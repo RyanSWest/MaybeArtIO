@@ -22,6 +22,7 @@ import ImageUpload from './Upload.jsx';
 import Home from './Home';
 import Home2 from'./Home2';
 import Gallery from './Gallery.jsx';
+import DisplayPDFs from './Pdf.jsx'
 import Navbar from './Navbar.jsx';
 // import GalleryNFTMinter from './Minter.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -50,7 +51,7 @@ createRoot(document.getElementById('root')).render(
                <Route path='/about' element={<About />} />
               <Route path='/grid' element={<Grid/>}/> 
               <Route path= '/gallery'element={<Gallery/>}/>
-              <Route path='/whitepaper' element={<Papers/>}/>
+              <Route path='/whitepaper' element={<DisplayPDFs/>}/>
                       <Route path ='/register' element ={<Register/>}/>
 
             </Routes>
