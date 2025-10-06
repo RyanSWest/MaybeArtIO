@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Container } from 'react-bootstrap';
 
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
@@ -94,7 +95,7 @@ const RegistrationForm = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-5" 
+    <Container fluid className="min-h-screen flex items-center justify-center p-5" 
          style={{ 
            background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
          }}>
@@ -242,7 +243,7 @@ const RegistrationForm = () => {
 
         </div>
       </div>
-    </div>
+    </Container>
   );
 };
 

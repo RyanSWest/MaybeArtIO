@@ -18,21 +18,65 @@ import Logo from './imgs/Logo.png';
                {/* <Navbar.Nav.Item to='/upload'> Upload</Navbar.Nav.Item> */}
 
      <a href='/'>   <span  style ={{padding: '1rem',color: 'white', fontSize: 'medium', fontFamily:'Rajdhani',fontStyle:'bolder' , fontWeight:'700',padding:'1rem'}}> Home</span>  </a> 
-             <Nav.Item> Upload</Nav.Item>
-          <Nav.Item href='/register'> <span  style ={{color: 'white', fontSize: 'medium',fontFamily:'Rajdhani' , fontStyle:'bolder',fontWeight:'700',padding:'1rem' }}> Register</span>   </Nav.Item>
+ 
+             <Nav.Link  href='/register'>   
+                     <span  style ={{color: 'white', fontSize: 'medium',fontFamily:'Rajdhani' , fontStyle:'bolder',fontWeight:'700',padding:'1rem' }}> Register</span>   
 
-     {/* <Nav.Item href='/about'> <span  style ={{color: 'white', fontSize: 'medium',fontFamily:'Rajdhani' , fontStyle:'bolder',fontWeight:'700',padding:'1rem' }}> About</span>   </Nav.Item>
-     <Nav.Item to ='/grid'><span style ={{color: 'white', fontSize: 'medium' ,fontFamily:'Rajdhani' , fontStyle:'bolder',fontWeight:'700',padding:'1rem' }}>NFT  Gallery</span>  </Nav.Item>
-     <Nav.Item to ='/whitepaper'> <span style ={{color: 'white', fontSize: 'medium' ,fontFamily:'Rajdhani' , fontStyle:'bolder',fontWeight:'700' ,padding:'1rem'}}> Whitepaper</span>  </Nav.Item>
-        */}
+
+
+             </Nav.Link>
+
+               <Nav.Link  href='/login'>   
+                     <Nav.Item  > <span  style ={{color: 'white', fontSize: 'medium',fontFamily:'Rajdhani' , fontStyle:'bolder',fontWeight:'700',padding:'1rem' }}> Login</span>   </Nav.Item>
+
+
+
+             </Nav.Link>
+
+             <Nav.Link href ='/about'> 
+          <Nav.Item href='/about'> <span  style ={{color: 'white', fontSize: 'medium',fontFamily:'Rajdhani' , fontStyle:'bolder',fontWeight:'700',padding:'1rem' }}> About</span>   </Nav.Item>
+
+
+             </Nav.Link>
+
+<Nav.Link href ='/upload'> 
+          <Nav.Item  > <span  style ={{color: 'white', fontSize: 'medium',fontFamily:'Rajdhani' , fontStyle:'bolder',fontWeight:'700',padding:'1rem' }}> Upload</span>   </Nav.Item>
+
+
+             </Nav.Link>
+
+
+ 
+
+
+<Nav.Link href ='/grid'> 
+          
+            <span  style ={{color: 'white', fontSize: 'medium',fontFamily:'Rajdhani' , fontStyle:'bolder',fontWeight:'700',padding:'1rem' }}>NFT Gallery</span>  
+           
+
+
+             </Nav.Link>
+             
+ <Nav.Link href='/whitepaper'>whitepaper
+ 
+ 
+       <span style ={{color: 'white', fontSize: 'medium' ,fontFamily:'Rajdhani' , fontStyle:'bolder',fontWeight:'700' ,padding:'1rem'}}> Whitepaper</span> 
+
+ 
+ </Nav.Link>
+
+      
        <Navbar.Collapse> 
         <NavDropdown> 
 
-          <NavDropdown.Item href='/about'> </NavDropdown.Item> 
-        About
+         
         </NavDropdown>
          </Navbar.Collapse>
        {/* <WalletButton  /> */}
+      
+       <li>   
+        xxx
+       </li>
        
      </Navbar>
 

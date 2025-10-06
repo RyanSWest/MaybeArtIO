@@ -17,7 +17,8 @@ const ImageUpload = () => {
 
   const API_URL = 'https://daring-vitality-production-a0f4.up.railway.app';
  
-    const getUsers ='https://squi-d-lite-production.up.railway.app/api/users'
+    // const getUsers ='https://squi-d-lite-production.up.railway.app/api/users'
+    const getUsers ='https://daring-vitality-production-a0f4.up.railway.app/api/users'
 
     const getEmBoys =async ()=> {
 
