@@ -1409,6 +1409,8 @@ blockquote cite {
   font-size: clamp(2rem, 8vw, 7rem);
   /* Minimum 2rem, scales with viewport, max 7rem */
   font-family:  'Rajdhani';
+  flex-grow: 1;
+  padding-bottom: 5rem;
   text-shadow: #272727 rgb(4, 4, 9);
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-weight: 900;
@@ -1424,7 +1426,7 @@ blockquote cite {
   margin: 0;
   text-align: center;
   font-size: clamp(2rem, 8vw, 6rem);
-  padding: 0 1rem;
+  
 
   /* @media screen {
     
@@ -1442,6 +1444,7 @@ blockquote cite {
   font-weight: 700;
    padding: 0 1rem;
     margin-top: 2rem;
+     padding-bottom: 4rem;
 
 
  

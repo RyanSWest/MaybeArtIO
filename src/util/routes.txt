@@ -1,0 +1,102 @@
+# Test your Express API with curl
+
+# 1. Test server is running
+curl http://daring-vitality-production-a0f4.up.railway.app/
+
+# 2. Register a new user
+curl -X POST https://daring-vitality-production-a0f4.up.railway.app/api/register \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "John Doe",
+    "email": "john@example.com",
+    "password": "password123"
+  }'
+
+# 3. Register another user for testing
+curl -X POST https://daring-vitality-production-a0f4.up.railway.app/api/register \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Jane Smith", 
+    "email": "jane@example.com",
+    "password": "mypassword"
+  }'
+
+# 4. Try to register duplicate user (should fail)
+curl -X POST http://daring-vitality-production-a0f4.up.railway.app/api/register \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "John Duplicate",
+    "email": "john@example.com", 
+    "password": "newpass"
+  }'
+
+# 5. Login with valid credentials
+curl -X POST https://daring-vitality-production-a0f4.up.railway.app/api/login \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "john@example.com",
+    "password": "newpass"
+  }'
+
+# 6. Login with invalid credentials (should fail)
+curl -X POST http://daring-vitality-production-a0f4.up.railway.app/api/login \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "john@example.com",
+    "password": "wrongpassword"
+  }'
+
+# 7. Get all users
+curl http://daring-vitality-production-a0f4.up.railway.app/api/users
+
+# 8. Upload gallery art via URL
+curl -X POST https://daring-vitality-production-a0f4.up.railway.app/api/gallery/upload \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "john@example.com",
+    "url": "https://picsum.photos/400/300"
+  }'
+
+# 9. Upload gallery art via file (create a test file first)
+echo "Test image content" > test-image.txt
+curl -X POST http://daring-vitality-production-a0f4.up.railway.app/api/gallery/upload \
+   -F "email=john@example.com"
+   -F "C:\Users\bluem\Downloads\RENDERS\TACO.jpg" \
+
+
+
+curl https://squi-d-lite-production.up.railway.app/api/gallery/image/1
+# 10. Get user gallery
+curl https://daring-vitality-production-a0f4.up.railway.app/api/gallery/john@example.com
+
+curl https://daring-vitality-production-a0f4.up.railway.app/api/gallery/Tetsuo@gmail.com
+
+
+# 11. Get gallery for non-existent user (should fail)
+curl http://daring-vitality-production-a0f4.up.railway.app/api/gallery/nonexistent@example.com
+
+# Error cases to test:
+
+# 12. Register with missing fields
+curl -X POST http://daring-vitality-production-a0f4.up.railway.app/api/register \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Incomplete User"
+  }'
+
+# 13. Login with missing fields  
+curl -X POST http://daring-vitality-production-a0f4.up.railway.app/api/login \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "john@example.com"
+  }'
+
+# 14. Upload to gallery without file or URL
+curl -X POST http://daring-vitality-production-a0f4.up.railway.app/api/gallery/upload \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "john@example.com"
+  }'
+
+# Clean up test file
+rm test-image.txt

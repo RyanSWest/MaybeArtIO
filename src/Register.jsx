@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
@@ -8,11 +9,14 @@ const RegistrationForm = () => {
     bio: ''
   });
   
+  const Nav =useNavigate()
+  const url = 'https://daring-vitality-production-a0f4.up.railway.app/'
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState({ text: '', type: '' });
 
   // API Base URL - change this to your Railway URL
-  const API_BASE = 'http://localhost:3000';
+  const API_BASE = 'https://daring-vitality-production-a0f4.up.railway.app/';
+      // const API_BASE='https://squi-d-lite-production.up.railway.app'
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -43,7 +47,7 @@ const RegistrationForm = () => {
     setLoading(true);
 
     try {
-      const response = await fetch(`${API_BASE}/api/register`, {
+      const response = await fetch(`${API_BASE}api/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -68,6 +72,7 @@ const RegistrationForm = () => {
         // Auto-redirect after success (optional)
         setTimeout(() => {
           alert('Account created! You can now start uploading your art.');
+          Nav('/upload')
         }, 2000);
       } else {
         setMessage({ 
@@ -84,6 +89,7 @@ const RegistrationForm = () => {
       });
     } finally {
       setLoading(false);
+      
     }
   };
 

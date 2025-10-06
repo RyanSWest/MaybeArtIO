@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Container, Row, Col, Form, Button, Card, Alert, Spinner } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
+import { Container, Row, Col, Form, Button, Card, Alert, Spinner, Image } from 'react-bootstrap';
 import axios from 'axios';
 
 const ImageUpload = () => {
@@ -8,21 +8,61 @@ const ImageUpload = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [userEmail, setUserEmail] = useState('');
-  const [uploadType, setUploadType] = useState('file'); // 'file' or 'url'
+  const [uploadType, setUploadType] = useState('file');
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
-  const [messageType, setMessageType] = useState(''); // 'success' or 'danger'
+  const [messageType, setMessageType] = useState('');
+  const [pics, setPics] = useState([]);
+  const [preview, setPreview] = useState(null);
 
-  // Change this to your deployed API URL
-  const API_URL = 'http://localhost:3000'; // Update this when deployed!
+  const API_URL = 'https://daring-vitality-production-a0f4.up.railway.app';
+ 
+    const getUsers ='https://squi-d-lite-production.up.railway.app/api/users'
+
+    const getEmBoys =async ()=> {
+
+      const res = await axios.get(`${getUsers}`)
+      .then((res)=> {
+
+             console.log('THE BOYS',res.data)
+
+
+      })
+     }
+     
+    const getEmGallery = async ()=> {
+      const res = await axios.get(`${API_URL}/api/gallery/all`)
+
+      .then((res) =>{
+        console.log("GALLERY MOGO", res.data)
+      })
+    }
+
+   getEmGallery()
+    getEmBoys()
+  // Fetch gallery
+  const getterGo = async () => {
+    if (userEmail.length > 0) {
+      try {
+        const res = await axios.get(`${API_URL}/api/gallery/${userEmail}`);
+        console.log("REZZ", res.data);
+        setPics(res.data.gallery);
+      } catch (error) {
+        console.error("Error fetching gallery:", error);
+      }
+    }
+  };
+
+  // Fetch gallery when userEmail changes
+  useEffect(() => {
+    getterGo();
+  }, [userEmail]);
 
   const handleFileSelect = (e) => {
     setSelectedFile(e.target.files[0]);
     setMessage('');
   };
- 
-  // const faggy = localStorage.getItem(user)
-  // console.log("USER",faggy)
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -30,30 +70,33 @@ const ImageUpload = () => {
 
     try {
       if (uploadType === 'file') {
-  // File upload
-  if (!selectedFile) {
-    setMessage('Please select a file');
-    setMessageType('danger');
-    setLoading(false);
-    return;
-  }
+        // File upload
+        if (!selectedFile) {
+          setMessage('Please select a file');
+          setMessageType('danger');
+          setLoading(false);
+          return;
+        }
 
-  const formData = new FormData();
-  formData.append('art', selectedFile);
-  formData.append('email', userEmail);
-  if (title) formData.append('title', title);
-  if (description) formData.append('description', description);
+        const formData = new FormData();
+        formData.append('art', selectedFile);
+        formData.append('email', userEmail);
 
-  // ✅ FIXED: Remove the headers completely for file uploads
-  const response = await axios.post(`${API_URL}/api/gallery/upload`, formData);
+        if (title) formData.append('title', title);
+        if (description) formData.append('description', description);
 
-  setMessage('File uploaded successfully!');
-  setMessageType('success');
-  setSelectedFile(null);
-  setTitle('');
-  setDescription('');
-}
-       else {
+        const response = await axios.post(`${API_URL}/api/gallery/upload`, formData);
+
+        setMessage('File uploaded successfully!');
+        setMessageType('success');
+        setSelectedFile(null);
+        setTitle('');
+        setDescription('');
+        
+        // ✅ FIX: Refresh gallery after file upload
+        await getterGo();
+        
+      } else {
         // URL upload
         if (!imageUrl) {
           setMessage('Please enter an image URL');
@@ -74,6 +117,9 @@ const ImageUpload = () => {
         setImageUrl('');
         setTitle('');
         setDescription('');
+        
+        // ✅ Refresh gallery after URL upload
+        await getterGo();
       }
     } catch (error) {
       console.error('Upload error:', error);
@@ -85,8 +131,44 @@ const ImageUpload = () => {
   };
 
   return (
-    <Container className="mt-4">
-      <Row className="justify-content-center">
+    <Container className="mt-4" style={{ paddingTop: '6rem' }}>
+      <h1>Gallery for: {userEmail}</h1>
+      
+      <Row>
+        <Col>
+          <h3>Your Uploads</h3>
+          {pics.length === 0 ? (
+            <p>No uploads yet. Upload your first artwork!</p>
+          ) : (
+            <Row>
+              {pics.map((item, index) => (
+                <Col md={4} key={item.id || index} className="mb-4">
+                  <Card>
+                    <Card.Img 
+                      variant="top" 
+                      src={item.type === 'file' 
+                        ? `${API_URL}/api/gallery/image/${item.id}` 
+                        : item.url
+                      } 
+                      alt={item.title || 'Art'}
+                      style={{ height: '200px', objectFit: 'cover' }}
+                    />
+                    <Card.Body>
+                      <Card.Title>{item.title || 'Untitled'}</Card.Title>
+                      <Card.Text>{item.description || 'No description'}</Card.Text>
+                      <small className="text-muted">
+                        Uploaded: {new Date(item.createdAt).toLocaleDateString()}
+                      </small>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              ))}
+            </Row>
+          )}
+        </Col>
+      </Row>
+
+      <Row className="justify-content-center mt-4">
         <Col md={8}>
           <Card>
             <Card.Header>
@@ -124,7 +206,7 @@ const ImageUpload = () => {
                       onChange={() => setUploadType('file')}
                     />
                     <Form.Check
-                      inline
+                      inlineF
                       type="radio"
                       label="Image URL"
                       name="uploadType"

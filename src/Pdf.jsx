@@ -10,14 +10,14 @@
 
   return (
     <Container fluid  style={{display:'flex', alignContent:'center', alignItems:'center'}}>
-                {/* <embed src= {White}  style = {{width:'100%',height:"700rem"}}></embed> 
+                {/* {/* <embed src= {White}  style = {{width:'100%',height:"700rem"}}></embed>  */}
 
-               <object src ={White}  style = {{width:'100%',height:"700rem"}}
+               {/* <object src ={White}  style = {{width:'100%',height:"700rem"}}
                 
                
-               > </object> */}
+               > </object>  */}
 
-       <iframe src= {White} style ={{width:"100rem", height:"700rem", justifySelf:'center' }}></iframe>
+       <iframe src= {White} style ={{width:"100%", height:"700rem", justifySelf:'center' }}></iframe>
 
 
        

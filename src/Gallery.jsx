@@ -5,17 +5,31 @@ import axios from 'axios';
 
 const Gallery = ()=> {
     const[pics,setPics]=useState([])
+      const API_URL = 'https://daring-vitality-production-a0f4.up.railway.app'; // Update this when deployed!
 
+
+
+      const goGetem = async()=>{
+
+        try{
+        axios.get (`${API_URL}/api/gallery/john@example.com`)
+    .then((res)=> {
+      console.log("REZZ", res.data)
+      setPics(res.data.gallery)
+    })}
+    catch (err){
+        console.log("ERR", err)
+
+
+
+    }
+
+      }
+
+    //   goGetem()
     useEffect(() => {
     
-
-     axios.get('http://localhost:3000/api/gallery/all')
-     .then((res) => {  console.log("REXXXX",res.data)
-
-
-        setPics(res.data.uploads)
-      })
-       
+    goGetem()
 
     }, [ ])
 
@@ -31,7 +45,8 @@ return (
         {pics.map((e,i)=>{
             return (
                 <div>
-                <div className= 'image-wrapper'>
+                <div className= 'image-wrapper' key={e.id}>
+                    <p>{e.url}</p>
                     
                          <img src ={e.url} />
                      
@@ -42,7 +57,7 @@ return (
                  </div>
             )
         })}
-
+        <img src ='https://i.imgur.com/bJFGrlq.jpeg'/>
 
         </div>
         {/* {pics.map((e,i)=>{

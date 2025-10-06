@@ -13,19 +13,18 @@ import Footer from './Footer.jsx';
 
  export default function Landing() {
   return (
-    <Container>
+    <Container style= {{flexGrow:'1'}}>
 
        
  <div style={{
   position: 'fixed',
   top: 0,
   left: 0,
+  flex:1,
   width: '100vw',
   height: '100vh',
   paddingTop:'3rem',
-//   background: 'linear-gradient(135deg, #467eea 0%, #464ba2 50%, #f093fb 100%)',
-  // background:'navy',
-  // opacity:'0.9',
+    opacity:'0.9',
    zIndex: 1,
   pointerEvents: 'none'
 }} />
@@ -34,6 +33,7 @@ import Footer from './Footer.jsx';
 {/* Background Layer 2: Semi-transparent Image */}
 <div style={{
   position: 'fixed',
+  flex:'1',
   top: 0,
   left: 0,
   width: '100vw',
@@ -49,7 +49,7 @@ import Footer from './Footer.jsx';
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat',
-  // opacity: 0.9,
+  opacity: '0.6',
   zIndex: 2,
   pointerEvents: 'none'
 }} > 
@@ -60,7 +60,7 @@ import Footer from './Footer.jsx';
 
 
 
- <div style={{ position: 'relative', zIndex: 3, justifyContent:'center',alignContent:'center' }}>
+ <div style={{  flex:'1',position: 'relative', zIndex: 3, justifyContent:'center',alignContent:'center' }}>
         {/* Your gallery, forms, etc. */}
  {/* <img src = {back}
  style={{position:'relative',className:'img-fluid',
@@ -75,8 +75,7 @@ import Footer from './Footer.jsx';
           <h1 
           
           className="hero-title" 
-          // className ='cyberpunk-title'
-          
+b          
           
           >
               The Maybe Art Token
@@ -90,7 +89,10 @@ import Footer from './Footer.jsx';
                                                        
                                      </h2>
        </div>
-     
+
+
+       
+     <Footer/>
        
      </Container>
   );

@@ -1,11 +1,14 @@
 import{useState} from 'react';
-import{Link, Navigate} from 'react-router-dom'
+import{Link, useNavigate} from 'react-router-dom'
  import './index.css';
  import {Form} from 'react-bootstrap';
+ import {createContext}  from 'react';
+ import UserContext from './util/userContext';
 const Login =()=> {
          const [loading, setLoading] = useState(false);
-       
- 
+        const navigate =useNavigate()
+          const user   = createContext(UserContext);
+          console.log('YO MUTHA',user)
       const [formData, setFormData] = useState({
         email: '',
         password: '',
@@ -15,7 +18,7 @@ const Login =()=> {
     const [message,setMessage]= useState({ text: '', type: '' })
 
     // Fix: Add http://
-    const API_BASE='http://localhost:3000'
+    const API_BASE='https://daring-vitality-production-a0f4.up.railway.app'
 
     const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -71,7 +74,7 @@ const handleSubmit = async (e) => {
         setTimeout(() => {
           alert('Login successful!');
         }, 2000);
-        localStorage.setItem('user', JSON.stringify(data.user));
+        localStorage.setItem('user',  (data.user));
 
              // Navigate to upload page after successful login
         setTimeout(() => {
@@ -94,6 +97,9 @@ const handleSubmit = async (e) => {
       setLoading(false);
     }
   };
+
+  const V =localStorage.getItem('user')
+  console.log("YOU FUCKA", V)
 
     return (
       
