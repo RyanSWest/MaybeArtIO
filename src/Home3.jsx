@@ -13,7 +13,7 @@ import Footer from './Footer.jsx';
 
  export default function Landing() {
   return (
-    <Container style= {{flexGrow:'1'}}>
+    <Container style= {{flexGrow:'1'}} fluid>
 
        
  <div style={{

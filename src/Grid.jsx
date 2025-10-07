@@ -23,7 +23,7 @@ import Scrawny from'./imgs/Scrawny.jpg';
 import Header from './Header'
 import axios from 'axios';
 import './Grid.css';
-import {Row,Col, Container,Modal} from 'react-bootstrap';
+import {Row,Col, Container,Modal, Card} from 'react-bootstrap';
 import {useState, useEffect} from 'react'
  
 // import'./index.css'
@@ -44,16 +44,21 @@ const [showModal, setShowModal] = useState(false);
 return ( 
     
 
-    <div style= {{backgroundColor:'darkblue'}}>  
- 
-        <h1  style={{fontFamily:'Rajdhani', color:'darkslategrey',fontWeight:'700',fontStyle:'bolder'}} > NFT GALLERY</h1>
+    <Container className ='bg-dark'style= {{backgroundImage:'./imgs/back.png',zIndex:'1'}}>  
+
+        
+      
+      
+      
+       
+         <h1  style={{fontFamily:'Rajdhani', color:'darkslategrey',fontWeight:'700',fontStyle:'bolder'}} > NFT GALLERY</h1>
 
                 <h3 style={{fontFamily:'Rajdhani', color:'darkslategrey',fontWeight:'700',fontStyle:'bolder'}} >Ryan West</h3>
          
 
 
 
-           <Container fluid style={{paddingTop:'5rem',backgroundColor:'black'}}>
+           <Container className ='bg-dark' fluid style={{paddingTop:'5rem',backgroundColor:'black'}}>
       <Row>
         <Col><div className="image-wrapper" 
          
@@ -199,9 +204,10 @@ return (
           <p className="mt-3">{selectedImage?.description}</p>
         </Modal.Body>
       </Modal>
+      
     </>
  
-        </div>
+        </Container>
  
 )
 

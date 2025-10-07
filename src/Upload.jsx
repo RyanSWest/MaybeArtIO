@@ -14,6 +14,7 @@ const ImageUpload = () => {
   const [messageType, setMessageType] = useState('');
   const [pics, setPics] = useState([]);
   const [preview, setPreview] = useState(null);
+   
 
   const API_URL = 'https://daring-vitality-production-a0f4.up.railway.app';
  

@@ -28,9 +28,11 @@ import DisplayPDFs from './Pdf.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ThemeProvider } from 'react-bootstrap';
 import UserContext from './util/userContext.js';
+import Auction from './Auction.jsx';
 import {useState} from 'react';
 import Expo from './util/expo.js';
-import {builder} from '@builder.io/react'
+import {builder} from '@builder.io/react';
+import Block from './Block.jsx';
 const wallets = [new PhantomWalletAdapter()]
 const endpoint = clusterApiUrl('devnet')
  
@@ -61,6 +63,11 @@ const endpoint = clusterApiUrl('devnet')
               <Route path='/grid' element={<Grid/>}/> 
               <Route path= '/gallery'element={<Gallery/>}/>
               <Route path='/whitepaper' element={<DisplayPDFs/>}/>
+
+
+              {/* <Route path ='/auction' element={<Auction/>}/> */}
+                            <Route path ='/auction' element={<Block/>}/>
+
                       <Route path ='/register' element ={<Register/>}/>
 
             </Routes>

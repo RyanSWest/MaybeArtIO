@@ -1,11 +1,11 @@
 import './index.css'
-
+import {Container, Button} from 'react-bootstrap';
 const Count = ()=> {
 
 
 
  var now = new Date().getTime();
-  var countDownDate = new Date("Oct 31, 2025 15:37:25").getTime();
+  var countDownDate = new Date("Nov 30, 2025 15:37:25").getTime();
 
   // Find the distance between now and the count down date
   var distance = countDownDate - now;
@@ -22,22 +22,29 @@ const Count = ()=> {
 
 
     return  ( 
-          <div className="countdown-container">
-              <div className="time">
-                <h1 className="time-unit">{days} :</h1>
-                <h1 className="time-unit-small">DAYS </h1>
+          <div className="countdown-container" 
+          
+          
+         
+            
+            
+            
+            >
+              <div style ={{backgroundColor:'black'}}>
+                <h1 style ={{fontSize:'large',marginRight:'.5rem', fontFamily:'Rajdhani'}}>{days} :</h1>
+                <h1  style ={{fontSize:'large',marginRight:'.5rem', fontFamily:'Rajdhani'}}>DAYS </h1>
               </div>
-              <div className="time">
-                <h1 className="time-unit">{hours} :</h1>
-                <h1 className="time-unit-small">HRS </h1>
+              <div style ={{backgroundColor:'black'}}>
+                <h1 style = {{fontSize:'large',marginRight:'.5rem', fontFamily:'Rajdhani'}}>{hours} :</h1>
+                <h1 style ={{fontSize:'large',marginRight:'.5rem', fontFamily:'Rajdhani'}}>HRS </h1>
               </div>
-              <div className="time">
-                <h1 className="time-unit">{minutes}</h1>
-                <h1 className="time-unit-small">MIN</h1>
+              <div style ={{backgroundColor:'black'}}>
+                <h1 style={{fontSize:'large',marginRight:'.5rem', fontFamily:'Rajdhani'}}>{minutes}</h1>
+                <h1 style= {{fontSize:'large',marginRight:'.5rem', fontFamily:'Rajdhani'}}>MIN</h1>
               </div>
-              <div className="time">
-                <h1 className="time-unit">{seconds}</h1>
-                <h1 className="time-unit-small">SEC</h1>
+              <div style ={{ marginBottom: '4rem',backgroundColor:'black'}}>
+                <h1  style ={{fontSize:'large',marginRight:'.5rem', fontFamily:'Rajdhani'}}>{seconds}</h1>
+                <h1 style ={{fontSize:'large',marginRight:'.5rem', fontFamily:'Rajdhani'}}>SEC</h1>
               </div>
             </div>
     )
