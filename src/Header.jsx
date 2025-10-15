@@ -86,7 +86,7 @@ export default function Header() {
           }}
         >
           {" "}
-          Login
+         Buy Token
         </span>
       </Link>
 
