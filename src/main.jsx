@@ -9,6 +9,7 @@ import '@solana/wallet-adapter-react-ui/styles.css'
 
 import { About } from './About.jsx'
 import Grid  from './Grid.jsx'
+import NewPage from './NewPage.jsx';
 import Register from './Register.jsx'
 import Login from './Login.jsx';
 import '../index.css'
@@ -23,6 +24,7 @@ import Home from './Home';
 import Home2 from'./Home2';
 import Gallery from './Gallery.jsx';
 import DisplayPDFs from './Pdf.jsx'
+import PaymentIntegration from './buyToken.jsx'
  import BuyToken from './buyToken.jsx'
 // import GalleryNFTMinter from './Minter.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -47,16 +49,16 @@ const endpoint = clusterApiUrl('devnet')
                       <UserContext.Provider value={{Expo}}  > 
 
           <Router> 
-             <Header/> 
+             {/* <Header/>  */}
             
             <Routes> 
  
-              <Route path='/' element={<Landing/>} />
+              <Route path='/' element={<NewPage/>} />
                <Route path='/landing'element={<App/>}/>
                <Route path='/home' element={<Home/>}/>
                 <Route path= '/login' element={<Login/>}/>
                  {/* <Route path='/gallery' element ={<Gallery/>}/> */}
-                <Route path='/buyToken' element={<TransferToken/>}/>
+                <Route path='/buyToken' element={<PaymentIntegration/>}/>
                   {/* <Route path ='/mintNft'element ={<GalleryNFTMinter/>}/>  */}
                  {/* <Route path ='/nft' element={<NFTMinter/>}/>   */}
                <Route path ='/upload' element ={<ImageUpload/>}/>
