@@ -32,6 +32,7 @@ import Auction from './Auction.jsx';
 import {useState} from 'react';
 import Expo from './util/expo.js';
 import {builder} from '@builder.io/react';
+import TransferToken  from './BuyIt.jsx'
 import Block from './Block.jsx';
 const wallets = [new PhantomWalletAdapter()]
 const endpoint = clusterApiUrl('devnet')
@@ -55,7 +56,7 @@ const endpoint = clusterApiUrl('devnet')
                <Route path='/home' element={<Home/>}/>
                 <Route path= '/login' element={<Login/>}/>
                  {/* <Route path='/gallery' element ={<Gallery/>}/> */}
-                <Route path='/buyToken' element={<BuyToken/>}/>
+                <Route path='/buyToken' element={<TransferToken/>}/>
                   {/* <Route path ='/mintNft'element ={<GalleryNFTMinter/>}/>  */}
                  {/* <Route path ='/nft' element={<NFTMinter/>}/>   */}
                <Route path ='/upload' element ={<ImageUpload/>}/>

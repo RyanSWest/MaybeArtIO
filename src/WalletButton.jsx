@@ -1,14 +1,50 @@
 import React, { useState, useEffect } from 'react'
 import './index.css';
 import '@solana/wallet-adapter-react-ui/styles.css';
-
+import {WalletMultiButton} from '@solana/wallet-adapter-react-ui';
 export default function WalletButton() {
   const [showWallets, setShowWallets] = useState(false)
   const [showDetails, setShowDetails] = useState(false)
   const [wallet, setWallet] = useState(null)
   const [balance, setBalance] = useState(null)
 
-  useEffect(() => {
+  // useEffect(() => {
+  //   // Check if already connected
+  //   if (window.solana && window.solana.isConnected) {
+  //     setWallet(window.solana.publicKey.toString())
+  //     getBalance()
+  //     showDetails(true)
+  //   }
+  // }, [])
+
+ const getBalance = async () => {
+  if (window.solana && window.solana.publicKey) {
+    try {
+      const response = await fetch('https://api.devnet.solana.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          jsonrpc: '2.0',
+          id: 1,
+          method: 'getBalance',
+          params: [window.solana.publicKey.toString()]
+        })
+      });
+      const data = await response.json();
+      if (response.ok) {
+        setBalance((data.result.value / 1000000000).toFixed(4));
+        console.log('Balance fetched:', data.result.value);
+      } else {
+        console.error('Error fetching balance:', data.error);
+      }
+    } catch (err) {
+      console.error('Balance fetch failed:', err);
+    }
+  }
+};
+
+
+    useEffect(() => {
     // Check if already connected
     if (window.solana && window.solana.isConnected) {
       setWallet(window.solana.publicKey.toString())
@@ -17,35 +53,17 @@ export default function WalletButton() {
     }
   }, [])
 
-  const getBalance = async () => {
-    if (window.solana && window.solana.publicKey) {
-      try {
-        // This is a simple balance check - you'd need RPC connection for real balance
-        const response = await fetch('https://api.devnet.solana.com', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            jsonrpc: '2.0',
-            id: 1,
-            method: 'getBalance',
-            params: [window.solana.publicKey.toString()]
-          })
-        })
-        const data = await response.json()
-        setBalance((data.result.value / 1000000000).toFixed(4))
-      } catch (err) {
-        console.error('Balance fetch failed:', err)
-      }
-    }
-  }
-
   const connectPhantom = async () => {
     if (window.solana) {
       try {
         const response = await window.solana.connect()
         setWallet(response.publicKey.toString())
+        console.log("WALLET",response.publicKey.toString())
         setShowWallets(false)
         getBalance()
+
+
+        console.log("YO MOFO", balance)
       } catch (err) {
         console.error('Phantom connection failed:', err)
       }
@@ -53,6 +71,8 @@ export default function WalletButton() {
       alert('Phantom wallet not found! Please install it.')
     }
   }
+
+  
 
   const connectSolflare = async () => {
     if (window.solflare) {
@@ -81,6 +101,9 @@ export default function WalletButton() {
 
   return (
     <div  >
+
+
+      {/* <WalletMultiButton/> */}
         {showDetails&& ( 
 
           <div> 

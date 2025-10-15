@@ -112,6 +112,29 @@ const NFTMinter = () => {
       };
 
       setMessage('Uploading metadata...');
+
+      const verifyMintedNFT = async (mintAddress) => {
+  try {
+    setMessage('🔍 Verifying NFT...');
+    
+    const nft = await metaplex.nfts().findByMint({ 
+      mintAddress: new PublicKey(mintAddress) 
+    });
+    
+    console.log('✅ Verification Results:', {
+      name: nft.name,
+      symbol: nft.symbol,
+      uri: nft.uri,
+      royalty: nft.sellerFeeBasisPoints / 100 + '%',
+      mutable: nft.isMutable
+    });
+    
+    setMessage(`✅ Verified! View: https://solscan.io/token/${mintAddress}?cluster=devnet`);
+    
+  } catch (error) {
+    setMessage(`⚠️ Verification error: ${error.message}`);
+  }
+};
       
       // Upload metadata
       const metadataUri = await metaplex.storage().uploadJson(metadata);

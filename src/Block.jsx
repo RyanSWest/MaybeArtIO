@@ -7,14 +7,28 @@ import { Button, Container, Badge } from "react-bootstrap";
 const Block = () => {
   return (
     <Container fluid>
-      <div className="position-relative">
+      <div className="position-relative"> 
+
+           <div className="position-absolute top-3 start-0"  
+       
+        
+        >
+          <img
+            src={Token}
+            alt="Logo"
+            className="rounded-circle img-fluid"
+            style={{  position:"fixed", width: "15rem", height: "15rem", objectFit: "cover" ,borderRadius:'50px', marginTop:'7rem',zIndex:'3'}}
+
+           
+          />
+        </div>
         <img
           className="img-fluid w-100"
           src={Back}
           //  'https://wallpaperaccess.com/full/1519085.jpg'
 
           alt="Metaverse background"
-          style={{ height: "50rem", objectFit: "cover", opacity: ".50" }}
+          style={{ height: "50rem", objectFit: "cover", opacity: ".70" }}
         />
 
         
@@ -91,15 +105,7 @@ const Block = () => {
           <Car />
         </div>
 
-        {/* Top left image with background */}
-        <div className="position-absolute top-3 start-0 m-3 z-index-1">
-          <img
-            src={Token}
-            alt="Logo"
-            className="rounded-circle"
-            style={{ width: "15rem", height: "15rem", objectFit: "cover" ,borderRadius:'50px'}}
-          />
-        </div>
+        
       </div>
     </Container>
   );

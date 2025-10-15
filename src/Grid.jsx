@@ -20,6 +20,7 @@ import Rabbit from'./imgs/Rabbit.jpg';
 import Wombat from'./imgs/Wombat.jpg';
 import Bunny from'./imgs/Bunny.jpg';
 import Scrawny from'./imgs/Scrawny.jpg';
+import RUSS2 from './imgs/RUSSL/RUSS2.jpg';
 import Header from './Header'
 import axios from 'axios';
 import './Grid.css';
@@ -159,11 +160,18 @@ return (
    <div className='image-wrapper'> 
                  <img src={Wombat} alt='img1'/>
                  </div>  
+                  <div className='image-wrapper'> 
+                 <img src={RUSS2} alt='img1'/>
+                 </div>  
+               
                
  
  </Col>
+\
+      {/* <Russ/> */}
 
       </Row>
+
     </Container>
 
 
