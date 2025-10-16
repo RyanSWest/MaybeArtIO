@@ -101,7 +101,7 @@ export default function WalletButton() {
 
   return (
     <div  >
-
+      <p> balance</p>  {balance}
 
       {/* <WalletMultiButton/> */}
         {showDetails&& ( 

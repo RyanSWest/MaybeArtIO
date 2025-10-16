@@ -71,7 +71,7 @@ return (
                 
                
  
-                                <Card.Title   > <h1>Wayne 'Ozzie' Rea</h1>Wayne 'Ozzie' Rea</Card.Title>
+                                <Card.Title   >  Wayne Lee  "Ozzie" Rea</Card.Title>
 
 
                 </Card.Header>
@@ -79,7 +79,7 @@ return (
                  
               
 
-                 <Card.Subtitle>CFO Maybe-Art</Card.Subtitle>
+                 <Card.Subtitle>Founder Maybe-Art</Card.Subtitle>
                 <Card.Body> 
 <CardImg src={MCO} 
 style={{objectFit:'contain', height:'10rem', borderRadius:'30px',padding:'1rem'}} 

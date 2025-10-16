@@ -1,213 +1,210 @@
-import React, { useState } from 'react';
-import { CreditCard, DollarSign, CheckCircle, XCircle } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { CreditCard, Wallet, CheckCircle, XCircle, Loader } from 'lucide-react';
+import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 
-
-
-// const {units, setUnits} =useState(0);
-
-// Mock payment processing functions (replace with actual API calls)
-const processStripePayment = async (amount, cardDetails) => {
-  // Simulate API call
-  await new Promise(resolve => setTimeout(resolve, 2000));
-  
-  // Simulate 90% success rate
-  if (Math.random() > 0.1) {
-    return { success: true, transactionId: 'stripe_' + Date.now() };
-  } else {
-    throw new Error('Payment declined');
-  }
-};
-
-const processPayPalPayment = async (amount) => {
-  // Simulate API call
-  await new Promise(resolve => setTimeout(resolve, 2000));
-  
-  // Simulate 95% success rate
-  if (Math.random() > 0.05) {
-    return { success: true, transactionId: 'paypal_' + Date.now() };
-  } else {
-    throw new Error('PayPal payment failed');
-  }
-};
-
-function StripeForm({ onSuccess, onError }) {
-  const [loading, setLoading] = useState(false);
-  const [cardNumber, setCardNumber] = useState('');
-  const [expiry, setExpiry] = useState('');
-  const [cvc, setCvc] = useState('');
-  const [amount, setAmount] = useState('10.00');
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-
-    try {
-      const result = await processStripePayment(amount, {
-        cardNumber,
-        expiry,
-        cvc
-      });
-      onSuccess(result);
-    } catch (error) {
-      onError(error.message);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">
-          Amount (USD)
-        </label>
-        <input
-          type="number"
-          step="0.01"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          required
-        />
-      </div>
-      
-      <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">
-          Card Number
-        </label>
-        <input
-          type="text"
-          placeholder="4242 4242 4242 4242"
-          value={cardNumber}
-          onChange={(e) => setCardNumber(e.target.value)}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          required
-        />
-      </div>
-
-      <div className="grid grid-cols-2 gap-4">
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Expiry (MM/YY)
-          </label>
-          <input
-            type="text"
-            placeholder="12/25"
-            value={expiry}
-            onChange={(e) => setExpiry(e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            required
-          />
-        </div>
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            CVC
-          </label>
-          <input
-            type="text"
-            placeholder="123"
-            value={cvc}
-            onChange={(e) => setCvc(e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            required
-          />
-        </div>
-      </div>
-
-      <button
-        type="submit"
-        disabled={loading}
-        className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
-      >
-        {loading ? 'Processing...' : 'Pay with Stripe'}
-      </button>
-    </form>
-  );
-}
-
-function PayPalForm({ onSuccess, onError }) {
-  const [loading, setLoading] = useState(false);
-  const [amount, setAmount] = useState('10.00');
-
-  const handlePayPalClick = async () => {
-    setLoading(true);
-
-    try {
-      const result = await processPayPalPayment(amount);
-      onSuccess(result);
-    } catch (error) {
-      onError(error.message);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  return (
-    <div className="space-y-4">
-      <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">
-          Amount (USD)
-        </label>
-        <input
-          type="number"
-          step="0.01"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
-          required
-        />
-      </div>
-
-      <button
-        onClick={handlePayPalClick}
-        disabled={loading}
-        className="w-full bg-yellow-500 text-gray-900 py-3 rounded-lg font-semibold hover:bg-yellow-600 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
-      >
-        {loading ? 'Processing...' : 'Pay with PayPal'}
-      </button>
-    </div>
-  );
-}
-
-export default function PaymentIntegration() {
+const BuyToken = () => {
+  const stripe = useStripe();
+  const elements = useElements();
   const [activeTab, setActiveTab] = useState('stripe');
   const [status, setStatus] = useState(null);
   const [message, setMessage] = useState('');
+  const [amount, setAmount] = useState('10');
+  const [tokensAmount, setTokensAmount] = useState(0);
+  const [loading, setLoading] = useState(false);
+  const [walletAddress, setWalletAddress] = useState('');
 
-  const handleSuccess = (result) => {
-    setStatus('success');
-    setMessage(`Payment successful! Transaction ID: ${result.transactionId}`);
-    setTimeout(() => {
-      setStatus(null);
-      setMessage('');
-    }, 5000);
+  const TOKEN_PRICE_USD = 0.015;
+  const TOKEN_SYMBOL = 'UNITY';
+  const API_URL = 'http://localhost:3001';
+
+  // Listen for wallet connect event
+
+  const [tokenBalance, setTokenBalance] = useState(null);
+
+const getTokenBalance = async (wallet) => {
+  try {
+    const response = await fetch('https://api.devnet.solana.com', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        jsonrpc: '2.0',
+        id: 1,
+        method: 'getTokenAccountsByOwner',
+        params: [
+          wallet,
+          { mint: '4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU' },
+          { encoding: 'jsonParsed' }
+        ]
+      })
+    });
+    
+    const data = await response.json();
+    if (data.result.value.length > 0) {
+      const balance = data.result.value[0].account.data.parsed.info.tokenAmount.uiAmount;
+      setTokenBalance(balance);
+    }
+  } catch (error) {
+    console.error('Error fetching balance:', error);
+  }
+};
+  useEffect(() => {
+    const handleConnect = () => {
+      if (window.solana && window.solana.publicKey) {
+        setWalletAddress(window.solana.publicKey.toString());
+      }
+    };
+
+    if (window.solana) {
+      window.solana.on('connect', handleConnect);
+      if (window.solana.isConnected && window.solana.publicKey) {
+        setWalletAddress(window.solana.publicKey.toString());
+      }
+      return () => {
+        if (window.solana.off) {
+          window.solana.off('connect', handleConnect);
+        }
+      };
+    }
+  }, []);
+
+  useEffect(() => {
+    const tokens = Math.floor(amount / TOKEN_PRICE_USD);
+    setTokensAmount(tokens);
+  }, [amount]);
+
+  const handleStripePayment = async (e) => {
+    e.preventDefault();
+
+    if (!walletAddress) {
+      setStatus('error');
+      setMessage('Connect wallet first');
+      setTimeout(() => setStatus(null), 3000);
+      return;
+    }
+
+    if (!stripe || !elements) {
+      setStatus('error');
+      setMessage('Stripe not loaded');
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const intentRes = await fetch(`${API_URL}/api/stripe/create-payment-intent`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          amount: parseFloat(amount),
+          buyerWallet: walletAddress,
+        }),
+      });
+
+      const { clientSecret } = await intentRes.json();
+
+      const { paymentIntent, error } = await stripe.confirmCardPayment(clientSecret, {
+        payment_method: {
+          card: elements.getElement(CardElement),
+          billing_details: { name: 'Customer' }
+        }
+      });
+
+      if (error) {
+        throw new Error(error.message);
+      }
+
+      if (paymentIntent.status === 'succeeded') {
+        const confirmRes = await fetch(`${API_URL}/api/stripe/confirm-payment`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ paymentIntentId: paymentIntent.id }),
+        });
+
+const result = await confirmRes.json();
+console.log('Full confirm response:', JSON.stringify(result, null, 2));
+        if (result.status === 'succeeded') {
+          setStatus('success');
+          setMessage(`Success! ${result.amount} tokens sent!`);
+          setAmount('10');
+          etTokenBalance()
+        } else {
+          throw new Error(result.error || 'Payment verification failed');
+        }
+      }
+    } catch (error) {
+      setStatus('error');
+      setMessage(error.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
-  const handleError = (error) => {
-    setStatus('error');
-    setMessage(error);
-    setTimeout(() => {
-      setStatus(null);
-      setMessage('');
-    }, 5000);
+  const handlePayPalPayment = async () => {
+    if (!walletAddress) {
+      setStatus('error');
+      setMessage('Connect wallet first');
+      setTimeout(() => setStatus(null), 3000);
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const orderRes = await fetch(`${API_URL}/api/paypal/create-order`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          amount: parseFloat(amount),
+          buyerWallet: walletAddress,
+        }),
+      });
+
+      const { orderId } = await orderRes.json();
+
+      await new Promise(resolve => setTimeout(resolve, 2000));
+       console.log("CLICK LICK CLIK CLICK !!!!!!!!!!!!!!!!")
+      const captureRes = await fetch(`${API_URL}/api/paypal/capture-order`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          orderId,
+          amount: parseFloat(amount),
+          buyerWallet: walletAddress,
+        }),
+      });
+
+   const result = await confirmRes.json();
+console.log('Confirm response:', result);
+
+if (result.status === 'succeeded') {
+  setStatus('success');
+  setMessage(`Success! ${result.tokensTransferred} tokens sent!`);
+  setAmount('10');
+} else {
+  console.log('Error - result status:', result.status);
+  throw new Error(result.error || 'Payment failed');
+}
+    } catch (error) {
+      setStatus('error');
+      setMessage(error.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-8">
-      <div className="max-w-2xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-100 p-8">
+      <div className="max-w-md mx-auto">
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">
-            Payment Integration Demo
-          </h1>
-          <p className="text-gray-600">
-            Complete payment integration with Stripe and PayPal
-          </p>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">Buy {TOKEN_SYMBOL}</h1>
+          <p className="text-gray-600">Exchange USD for {TOKEN_SYMBOL} tokens</p>
+          <p className="text-sm text-gray-500 mt-2">${TOKEN_PRICE_USD} per token</p>
         </div>
 
         {status && (
           <div className={`mb-6 p-4 rounded-lg flex items-center gap-3 ${
-            status === 'success' 
-              ? 'bg-green-100 border border-green-300 text-green-800' 
+            status === 'success'
+              ? 'bg-green-100 border border-green-300 text-green-800'
               : 'bg-red-100 border border-red-300 text-red-800'
           }`}>
             {status === 'success' ? (
@@ -215,58 +212,109 @@ export default function PaymentIntegration() {
             ) : (
               <XCircle className="w-6 h-6" />
             )}
-            <span className="font-medium">{message}</span>
+            <span className="text-sm">{message}</span>
           </div>
         )}
 
         <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+          <div className="p-6 border-b bg-purple-50">
+            <p className="text-sm font-semibold text-gray-900">
+              Wallet: {walletAddress ? '✓ ' + walletAddress.slice(0, 15) + '...' : '✗ Not Connected'}
+             </p>
+          </div>
+          {tokenBalance && (
+  <div className="bg-green-50 p-3 rounded-lg mt-4">
+    <p className="text-sm text-gray-600">Your new balance:</p>
+    <p className="text-xl font-bold text-green-600">{tokenBalance} {TOKEN_SYMBOL}</p>
+  </div>
+)}
+
+          <div className="p-6 border-b space-y-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Amount (USD)</label>
+              <input
+                type="number"
+                step="0.01"
+                min="0"
+                value={amount}
+                onChange={(e) => setAmount(e.target.value)}
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+              />
+            </div>
+            <div className="bg-purple-50 p-3 rounded-lg">
+              <p className="text-sm text-gray-600">You will receive:</p>
+              <p className="text-2xl font-bold text-purple-600">{tokensAmount.toLocaleString()} {TOKEN_SYMBOL}</p>
+            </div>
+          </div>
+
           <div className="flex border-b">
             <button
               onClick={() => setActiveTab('stripe')}
-              className={`flex-1 py-4 px-6 font-semibold flex items-center justify-center gap-2 transition-colors ${
+              className={`flex-1 py-3 px-4 font-semibold text-white ${
                 activeTab === 'stripe'
-                  ? 'bg-blue-600 text-white'
-                  : 'bg-gray-50 text-gray-700 hover:bg-gray-100'
+                  ? 'bg-blue-600'
+                  : 'bg-blue-400 hover:bg-blue-500'
               }`}
             >
-              <CreditCard className="w-5 h-5" />
               Stripe
             </button>
             <button
               onClick={() => setActiveTab('paypal')}
-              className={`flex-1 py-4 px-6 font-semibold flex items-center justify-center gap-2 transition-colors ${
+              className={`flex-1 py-3 px-4 font-semibold text-black ${
                 activeTab === 'paypal'
-                  ? 'bg-yellow-500 text-gray-900'
-                  : 'bg-gray-50 text-gray-700 hover:bg-gray-100'
+                  ? 'bg-yellow-500'
+                  : 'bg-yellow-400 hover:bg-yellow-500'
               }`}
             >
-              <DollarSign className="w-5 h-5" />
               PayPal
             </button>
           </div>
 
           <div className="p-6">
-            {activeTab === 'stripe' ? (
-              <StripeForm onSuccess={handleSuccess} onError={handleError} />
-            ) : (
-              <PayPalForm onSuccess={handleSuccess} onError={handleError} />
+            {activeTab === 'stripe' && (
+              <div className="space-y-4">
+                <div className="border border-gray-300 rounded-lg p-4 bg-white">
+                  <CardElement
+                    options={{
+                      style: {
+                        base: {
+                          fontSize: '16px',
+                          color: '#424770',
+                          '::placeholder': { color: '#aab7c4' },
+                        },
+                        invalid: { color: '#9e2146' },
+                      },
+                    }}
+                  />
+                </div>
+                <button
+                  onClick={handleStripePayment}
+                  disabled={loading || !walletAddress}
+                  className="w-full bg-blue-600 text-black py-3 rounded-lg font-semibold hover:bg-blue-700 disabled:bg-gray-400"
+                >
+
+
+                    PUSH!!!!
+                  {loading ? 'Processing...' : `Pay $${amount*.015}`}
+               
+                </button>
+              </div>
+            )}
+
+            {activeTab === 'paypal' && (
+              <button
+                onClick={handlePayPalPayment}
+                disabled={loading || !walletAddress}
+                className="w-full bg-yellow-500 text-black py-3 rounded-lg font-semibold hover:bg-yellow-600 disabled:bg-gray-400"
+              >
+                {loading ? 'Processing...' : `Pay $${amount} with PayPal`}
+              </button>
             )}
           </div>
-        </div>
-
-        <div className="mt-6 bg-blue-50 border border-blue-200 rounded-lg p-4">
-          <h3 className="font-semibold text-blue-900 mb-2">Demo Mode</h3>
-          <p className="text-sm text-blue-800">
-            This is a demonstration with simulated payments. In production, you'll need:
-          </p>
-          <ul className="text-sm text-blue-800 mt-2 space-y-1 list-disc list-inside">
-            <li>Backend API endpoints for secure payment processing</li>
-            <li>Real API keys from Stripe and PayPal developer dashboards</li>
-            <li>Proper error handling and validation</li>
-            <li>PCI compliance for handling card data</li>
-          </ul>
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default BuyToken;

@@ -111,6 +111,11 @@
     100% { opacity: 0; }
   }
 
+  .pay-button{
+    background-color: #007fff;
+  }
+
+
   .hero-description {
     font-size: 1.4rem;
     color: #ffcc00;
@@ -145,7 +150,7 @@
     transition: all 0.3s ease;
     box-shadow: 0 0 12px #fff;
   }
-
+   
   .hero-buttons a.whitepaper {
     background: #ff007f;
     color: white;
