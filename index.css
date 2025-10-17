@@ -1411,6 +1411,7 @@ blockquote cite {
   font-family:  'Rajdhani';
   flex-grow: 1;
   padding-bottom: 5rem;
+  padding-top:150px;
   text-shadow: #272727 rgb(4, 4, 9);
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-weight: 900;

@@ -98,8 +98,7 @@ export default function Header() {
             fontFamily: "Rajdhani",
             fontStyle: "bolder",
             fontWeight: "700",
-            padding: "1rem",
-          }}
+           }}
         >
           {" "}
           Login
