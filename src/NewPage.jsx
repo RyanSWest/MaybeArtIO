@@ -9,7 +9,7 @@ import Faint from './imgs/BigOne.jpg';
 import Rabbit from './imgs/Bunny.jpg';
 import ICE from './imgs/BigTwo.jpg';
 import Block from './Block';
-import {Scrollbars} from 'react-scrollbars';
+// import {Scrollbars} from 'react-scrollbars';
 
 const images = [
   './imgs/Faint.jpg',
@@ -30,7 +30,7 @@ export default function MaybeArtHero() {
   return (
      
     <Container className='fluid'>  
-    <Scrollbars style ={{width:'100%',  height:'400rem'}}> 
+    {/* <Scrollbars style ={{width:'100%',  height:'400rem'}}>  */}
     <section className="hero-section">
   <h1 className="strokeme">MAYBEART</h1>
   <div className="new-subtitle">Turning Creativity Into Currency</div>
@@ -58,7 +58,7 @@ export default function MaybeArtHero() {
     {/* <a href="/buytoken" className="buy">BUY $MAYBEART TOKEN</a> */}
   </div>
 </section>
-</Scrollbars>
+{/* </Scrollbars> */}
 <Block/>
  
 

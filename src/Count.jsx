@@ -24,27 +24,29 @@ const Count = ()=> {
     return  ( 
           <div className="countdown-container" 
           
-          
+            
          
             
             
             
             >
-              <div style ={{backgroundColor:'black'}}>
-                <h1 style ={{fontSize:'large',marginRight:'.5rem', fontFamily:'Rajdhani'}}>{days} :</h1>
-                <h1  style ={{fontSize:'large',marginRight:'.5rem', fontFamily:'Rajdhani'}}>DAYS </h1>
+
+              
+              <div style ={{backgroundColor:'black',color:'cyan'}}>
+                <h1 style ={{fontSize:'large',marginRight:'.5rem', fontFamily:'Rajdhani',color:'cyan'}}>{days} :</h1>
+                <h1  style ={{fontSize:'large',marginRight:'.5rem', fontFamily:'Rajdhani',color:'cyan'}}>DAYS </h1>
               </div>
               <div style ={{backgroundColor:'black'}}>
-                <h1 style = {{fontSize:'large',marginRight:'.5rem', fontFamily:'Rajdhani'}}>{hours} :</h1>
-                <h1 style ={{fontSize:'large',marginRight:'.5rem', fontFamily:'Rajdhani'}}>HRS </h1>
+                <h1 style = {{fontSize:'large',marginRight:'.5rem', fontFamily:'Rajdhani',color:'cyan'}}>{hours} :</h1>
+                <h1 style ={{fontSize:'large',marginRight:'.5rem', fontFamily:'Rajdhani',color:'cyan'}}>HRS </h1>
               </div>
               <div style ={{backgroundColor:'black'}}>
-                <h1 style={{fontSize:'large',marginRight:'.5rem', fontFamily:'Rajdhani'}}>{minutes}</h1>
-                <h1 style= {{fontSize:'large',marginRight:'.5rem', fontFamily:'Rajdhani'}}>MIN</h1>
+                <h1 style={{fontSize:'large',marginRight:'.5rem', fontFamily:'Rajdhani',color:'cyan'}}>{minutes}</h1>
+                <h1 style= {{fontSize:'large',marginRight:'.5rem', fontFamily:'Rajdhani',color:'cyan'}}>MIN</h1>
               </div>
-              <div style ={{ marginBottom: '4rem',backgroundColor:'black'}}>
-                <h1  style ={{fontSize:'large',marginRight:'.5rem', fontFamily:'Rajdhani'}}>{seconds}</h1>
-                <h1 style ={{fontSize:'large',marginRight:'.5rem', fontFamily:'Rajdhani'}}>SEC</h1>
+              <div style ={{ marginBottom: '4rem',backgroundColor:'black',color:'cyan'}}>
+                <h1  style ={{fontSize:'large',marginRight:'.5rem', fontFamily:'Rajdhani',color:'cyan'}}>{seconds}</h1>
+                <h1 style ={{fontSize:'large',marginRight:'.5rem', fontFamily:'Rajdhani',color:'cyan'}}>SEC</h1>
               </div>
             </div>
     )

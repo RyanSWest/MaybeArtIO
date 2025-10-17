@@ -64,7 +64,7 @@ return (
                  style={{maxHeight:'8rem', padding:'1rem'}}
                  />
                 <Card.Header style = {{display:'flex', flexDirection:'row', padding:'1rem',        
-                      justifyContent:'center',
+                      justifyContent:'center', color:'navy'
 
 
                 }}>   
