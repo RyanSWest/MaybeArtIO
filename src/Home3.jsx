@@ -49,8 +49,7 @@ import Footer from './Footer.jsx';
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat',
-  opacity: '0.6',
-  zIndex: 2,
+   zIndex: 2,
   pointerEvents: 'none'
 }} > 
  
