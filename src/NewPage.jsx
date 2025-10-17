@@ -29,7 +29,7 @@ export default function MaybeArtHero() {
 
   return (
      
-    <Container className='fluid'>  
+    <Container className='scrollable' fluid>  
     {/* <Scrollbars style ={{width:'100%',  height:'400rem'}}>  */}
     <section className="hero-section">
   <h1 className="strokeme">MAYBEART</h1>

@@ -30,9 +30,15 @@ const Count = ()=> {
             
             
             >
-
+             {/* <h1 className ='cyberpunk-span-blue'>Countdown</h1> */}
               
-              <div style ={{backgroundColor:'black',color:'cyan'}}>
+              <div 
+              
+              
+              style ={{backgroundColor:'black',color:'cyan'}} 
+              
+              
+              >
                 <h1 style ={{fontSize:'large',marginRight:'.5rem', fontFamily:'Rajdhani',color:'cyan'}}>{days} :</h1>
                 <h1  style ={{fontSize:'large',marginRight:'.5rem', fontFamily:'Rajdhani',color:'cyan'}}>DAYS </h1>
               </div>

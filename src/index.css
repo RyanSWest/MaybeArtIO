@@ -553,6 +553,7 @@ html, body {
   width:85%;
   padding: 1rem;
   height:8rem;
+  color:cyan;
    }
 .whatis{
   display:flex; 
@@ -893,6 +894,14 @@ html, body {
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
+.blueBlock{
+  /* background-image: url('https://wallpaperaccess.com/full/1519085.jpg'); */
+  background-image: './imgs/back.png';
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 100vh}
  
 .cyberpunk-span-blue {
   font-family: 'Rajdhani', monospace;

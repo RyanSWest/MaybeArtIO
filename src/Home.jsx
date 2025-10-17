@@ -1,7 +1,5 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg';
-import Hero from './Hero.jsx'
+  import Hero from './Hero.jsx'
 // import './App.css'
 import Car from './Carousel.jsx'
 import Count from './Count.jsx';

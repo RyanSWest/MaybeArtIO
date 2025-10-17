@@ -13,7 +13,7 @@ import Footer from './Footer.jsx';
 
  export default function Landing() {
   return (
-    <Container style= {{flexGrow:'1'}} fluid>
+    <Container style= {{flexGrow:'1'}} fluid className='scrollable'>
 
        
  <div style={{
@@ -92,7 +92,7 @@ b
 
 
        
-     <Footer/>
+     {/* <Footer/> */}
        
      </Container>
   );

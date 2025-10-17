@@ -35,6 +35,7 @@ import Block from './Block.jsx'
 import StripePaymentForm from './StripeForm.jsx'
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
+import Header2 from './Header2.jsx';
 
 const stripePromise =  loadStripe('pk_test_51J8tvhBaRV6ucR0OrArDHIRwgEmvaEbpoAwNI8lAgkgkDBaIobUPUQG2OlNLgvxa2nhy5GkowyB9Al2Oi5fq2NH600f28HxBnx'
 )
@@ -51,7 +52,7 @@ createRoot(document.getElementById('root')).render(
         <UserAuthProvider>
           <ThemeProvider>
             <Router>
-                <Header />
+                <Header2 />
 
                 <Routes>
                   <Route path ='/' element ={<Landing/>} />

@@ -6,7 +6,7 @@ import MCO from './imgs/MCO.jpeg'
 import './About.css';
 import Header from './Header';
 import Logo from './imgs/Logo.png';
-import {Card, CardImg,CardImgOverlay, Container}from 'react-bootstrap';
+import {Card, CardImg,CardImgOverlay,Image, Container}from 'react-bootstrap';
 export const About = ()=>{
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Space+Mono" />
 
@@ -25,8 +25,8 @@ return (
 
           
             <Card style= {{justifyContent:'center', alignItems:'center',paddingTop:'5rem'}}> 
-                <Card.Title>Ronald Shapiro</Card.Title>
-                 <Card.Subtitle>CFO Maybe-Art</Card.Subtitle>
+                <Card.Title className='guy-title'>Ronald Shapiro</Card.Title>
+                 <Card.Subtitle className ='guy-subtitle'>CFO Maybe-Art</Card.Subtitle>
                 <Card.Body> 
 <CardImg src={CFO} style={{objectFit:'contain', height:'10rem', borderRadius:'10px'}}  />
 
@@ -56,22 +56,23 @@ return (
 
 
 
-            <Card style ={{justifyContent:'center',alignItems:'center',padding:'3rem' }}> 
-                   <img src={Logo}   
+            <Card style ={{justifyContent:'center',alignItems:'center',padding:'3rem', color:'navy'}}> 
+                   <Image src={Logo}   roundedCircle
 
                  
                  
                  style={{maxHeight:'8rem', padding:'1rem'}}
                  />
                 <Card.Header style = {{display:'flex', flexDirection:'row', padding:'1rem',        
-                      justifyContent:'center', color:'navy'
+                      justifyContent:'center', color:'navy', alignContent:'center',alignItems:'center'
 
 
                 }}>   
+                 
                 
                
  
-                                <Card.Title   >  Wayne Lee  "Ozzie" Rea</Card.Title>
+                                <Card.Title className='guy-title' >  Wayne Lee  "Ozzie" Rea</Card.Title>
 
 
                 </Card.Header>
@@ -79,7 +80,7 @@ return (
                  
               
 
-                 <Card.Subtitle>Founder Maybe-Art</Card.Subtitle>
+                 <Card.Subtitle className='guy-subtitle'>Founder Maybe-Art</Card.Subtitle>
                 <Card.Body> 
 <CardImg src={MCO} 
 style={{objectFit:'contain', height:'10rem', borderRadius:'30px',padding:'1rem'}} 
@@ -87,7 +88,7 @@ style={{objectFit:'contain', height:'10rem', borderRadius:'30px',padding:'1rem'}
 
  />
 
-                    <Card.Text> 
+                    <Card.Text  > 
                 
                
                     Wayne “Ozzie” Rea III is an entrepreneur, blockchain strategist, and accomplished musician, blending technical expertise with creative vision. As Founder and CEO of MaybeArt, Ozzie leads a pioneering platform that empowers artists to monetize their work through tokenization, NFTs, and blockchain-based marketplaces.

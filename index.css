@@ -1433,8 +1433,90 @@ blockquote cite {
   } */
  }
 
+ .guy-title{
+   font-weight: bolder;
+  justify-self: center;
+ 
+  font-size: clamp(2rem, 8vw, 7rem);
+  /* Minimum 2rem, scales with viewport, max 7rem */
+  font-family:  'Rajdhani';
+  flex-grow: 1;
+  padding-bottom: 5rem;
+  text-shadow: #272727 rgb(4, 4, 9);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: 900;
+  color:rgb(217, 0, 0);
+  
+  /* text-shadow: 
+    0 0 5px #930d50,
+    0 0 10px #000000,
+    0 0 15px #0a0206; */
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+   line-height: 1.1;
+  margin: 0;
+  text-align: center;
+  font-size: clamp(1rem, 4vw, 3rem);
+  
+
+  /* @media screen {
+    
+  } */
+ }
+ 
+
+
  .hero-sub{
     font-size: clamp(1rem, 3vw, 4rem);
+    color:rgb(0, 0, 0);
+    font-family:  Rajdhani italic;
+    font-style:italic;
+    line-height: 2;
+   margin: 0;
+  text-align: center;
+  font-weight: 700;
+   padding: 0 1rem;
+    margin-top: 2rem;
+     padding-bottom: 4rem;
+
+
+ 
+ }
+
+     /* Firefox scrollbar */
+        .scrollable {
+            scrollbar-color: #888 #f1f1f1;
+            scrollbar-width: thin;
+        }
+
+        /* Themed scrollbar - blue */
+        .scrollable.blue::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #0066ff, #004cc3);
+        }
+
+        .scrollable.blue::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #004cc3, #003399);
+        }
+
+        .scrollable.blue {
+            scrollbar-color: #0066ff #f1f1f1;
+        }
+
+        /* Themed scrollbar - purple */
+        .scrollable.purple::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #9d4edd, #7209b7);
+        }
+
+        .scrollable.purple::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #7209b7, #560bad);
+        }
+
+        .scrollable.purple {
+            scrollbar-color: #9d4edd #f1f1f1;
+        }
+
+ .guy-subtitle{
+    font-size: clamp(.5rem, 1.5vw, 2rem);
     color:rgb(0, 0, 0);
     font-family:  Rajdhani italic;
     font-style:italic;
@@ -2303,31 +2385,7 @@ iconify-icon.pagination-arrow{
 }
 
 
-
-/* Item Detail Page Style
---------------------------------------------------------------*/
-img.item-detail-image{
-  width: -webkit-fill-available;
-}
-
-iconify-icon.share-icon{
-  font-size: 2rem;
-  color: var(--primary-color);
-}
-
-
-/* Item Detail Page Style
---------------------------------------------------------------*/
-
-.form-select {
-  --bs-form-select-bg-img: url('https://api.iconify.design/ion/caret-down.svg?color=white');
-}
-
-.form-select:focus {
-  border-color: #272727;
-  outline: 0;
-  box-shadow: none;
-}
+ 
 
 
 /* faq Page Style
@@ -2352,25 +2410,7 @@ iconify-icon.share-icon{
   box-shadow: none;
 }
 
-.accordion-button:not(.collapsed) {
-  color: #F2F2F2;
-  background-color: transparent;
-}
-
-.accordion {
-  --bs-accordion-border-color: none;
-  --bs-accordion-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, border-radius 0.15s ease;
-}
-
-.accordion-button::after {
-  background-image: url('https://api.iconify.design/ion/caret-down.svg?color=white');
-}
-
-.accordion-button:not(.collapsed)::after {
-  background-image: url('https://api.iconify.design/ion/caret-down.svg?color=white');
-  transform: rotate(-180deg);
-}
-
+ 
 
 /* signup/login Page Style
 --------------------------------------------------------------*/

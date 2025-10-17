@@ -106,7 +106,7 @@ export default function Header() {
         </span>
       </Nav.Link>
 
-      <Nav.Link href="/about">
+      {/* <Nav.Link href="/about">
         <Nav.Item href="/about">
           {" "}
           <span
@@ -122,9 +122,9 @@ export default function Header() {
             {" "}
             About
           </span>{" "}
-        </Nav.Item>
-      </Nav.Link>
-      <Nav.Link href="/auction">
+        </Nav.Item> */}
+      {/* </Nav.Link> */}
+      {/* <Nav.Link href="/auction">
         <span
           style={{
             color: "white",
@@ -134,11 +134,11 @@ export default function Header() {
             fontWeight: "700",
             padding: "1rem",
           }}
-        >
-          {" "}
+        > */}
+          {/* {" "}
           Auction
         </span>
-      </Nav.Link>
+      </Nav.Link> */}
 
       <Nav.Link href="/upload">
         <Nav.Item>
@@ -159,7 +159,7 @@ export default function Header() {
         </Nav.Item>
       </Nav.Link>
 
-      <Nav.Link href="/grid">
+      {/* <Nav.Link href="/grid">
         <span
           style={{
             color: "white",
@@ -172,9 +172,9 @@ export default function Header() {
         >
           NFT Gallery
         </span>
-      </Nav.Link>
+      </Nav.Link> */}
 
-      <Nav.Link href="/whitepaper">
+      {/* <Nav.Link href="/whitepaper">
         whitepaper
         <span
           style={{
@@ -189,9 +189,9 @@ export default function Header() {
           {" "}
           Whitepaper
         </span>
-      </Nav.Link>
+      </Nav.Link> */}
 
-      <Navbar.Collapse mountOnEnter>
+      {/* <Navbar.Collapse mountOnEnter>
         <NavDropdown></NavDropdown>
         <ToggleButton onChange={true} style={{ id: "toggle" }}>
           {" "}
@@ -199,7 +199,7 @@ export default function Header() {
       </Navbar.Collapse>
       <WalletButton />
 
-      <li>xxx</li>
+      <li>xxx</li> */}
     </Navbar>
 
     // </div>
