@@ -8,7 +8,10 @@ import {
 import { Link } from "react-router-dom";
 import Logo from "./imgs/Logo.png";
 import "./Header.css";
+import WalletButton from "./WalletButton";
+// import {Link} from 'react-router-dom';
 
+import {useUser} from './util/UserContextProvider'
 const navStyle = {
   color: "white",
   fontSize: "medium",
@@ -18,7 +21,8 @@ const navStyle = {
 };
 
 export default function Header2() {
-  return (
+  const user =useUser()
+   return (
     <Navbar
       bg="dark"
       variant="dark"
@@ -30,7 +34,7 @@ export default function Header2() {
       }}
     >
       <Container fluid>
-        <Navbar.Brand href="/" className="d-flex align-items-center gap-2">
+        <Navbar.Brand to="/" className="d-flex align-items-center gap-2">
           <Image
             src={Logo}
             style={{ height: "3rem", width: "3rem" }}
@@ -45,21 +49,28 @@ export default function Header2() {
 
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto gap-3">
-            <Nav.Link href="/" style={navStyle}>
+
+               <Link to ='/'
+               style={navStyle}>Home</Link>
+
+            <Link to="/" style={navStyle}>
               Home
-            </Nav.Link>
-            <Nav.Link href="/register" style={navStyle}>
+            </Link>
+            <Link to="/register" style={navStyle}>
               Register
-            </Nav.Link>
-            <Nav.Link href="/buyToken" style={navStyle}>
+            </Link>
+            <Link to="/buyToken" style={navStyle}>
               Buy Token
-            </Nav.Link>
-            <Nav.Link href="/login" style={navStyle}>
+            </Link>
+
+           
+            <Link to="/login" style={navStyle}>
               Login
-            </Nav.Link>
-            <Nav.Link href="/upload" style={navStyle}>
+            </Link>
+            <Link to="/upload" style={navStyle}>
               Upload
-            </Nav.Link>
+            </Link>
+            <WalletButton/>
           </Nav>
         </Navbar.Collapse>
       </Container>

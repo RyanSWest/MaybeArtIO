@@ -84,8 +84,7 @@ export default function MaybeArtLanding() {
       </Navbar>
 
       {/* Hero Section */}
-
- 
+  
       <section className="hero-section">
         <Container>
        

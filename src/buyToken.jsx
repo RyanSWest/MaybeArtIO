@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { CreditCard, Wallet, CheckCircle, XCircle, Loader } from 'lucide-react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
+import WalletButton from './WalletButton';
 
 const BuyToken = () => {
   const stripe = useStripe();
@@ -14,9 +15,11 @@ const BuyToken = () => {
   const [walletAddress, setWalletAddress] = useState('');
 
   const TOKEN_PRICE_USD = 0.015;
-  const TOKEN_SYMBOL = 'UNITY';
-  const API_URL = 'http://localhost:3001';
-
+  const TOKEN_SYMBOL = 'MaybeArt';
+  const API_URL = 'https://squi-d-lite-production.up.railway.app'
+ 
+ 
+//  
   // Listen for wallet connect event
 
   const [tokenBalance, setTokenBalance] = useState(null);
@@ -32,7 +35,12 @@ const getTokenBalance = async (wallet) => {
         method: 'getTokenAccountsByOwner',
         params: [
           wallet,
-          { mint: '4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU' },
+          { mint: 'E5fqgV1UpossDXRND77XyzeJdg2Q8dkopT3poa1pHrS6'
+            
+            // '4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU'
+          
+          
+          },
           { encoding: 'jsonParsed' }
         ]
       })
@@ -126,7 +134,7 @@ console.log('Full confirm response:', JSON.stringify(result, null, 2));
           setStatus('success');
           setMessage(`Success! ${result.amount} tokens sent!`);
           setAmount('10');
-          etTokenBalance()
+          // getTokenBalance()
         } else {
           throw new Error(result.error || 'Payment verification failed');
         }
@@ -199,6 +207,7 @@ if (result.status === 'succeeded') {
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Buy {TOKEN_SYMBOL}</h1>
           <p className="text-gray-600">Exchange USD for {TOKEN_SYMBOL} tokens</p>
           <p className="text-sm text-gray-500 mt-2">${TOKEN_PRICE_USD} per token</p>
+          <WalletButton/>
         </div>
 
         {status && (

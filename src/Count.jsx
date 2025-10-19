@@ -22,7 +22,7 @@ const Count = ()=> {
 
 
     return  ( 
-          <div className="countdown-container" 
+          <div className="countdown-container" style={{position:'fixed'}}
           
             
          
@@ -30,7 +30,7 @@ const Count = ()=> {
             
             
             >
-             {/* <h1 className ='cyberpunk-span-blue'>Countdown</h1> */}
+             <h1 className ='cyberpunk-span-blue'>Countdown</h1>
               
               <div 
               

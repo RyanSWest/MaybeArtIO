@@ -4,8 +4,9 @@
 // Register.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useUser } from './UserContextProvider';
+// import { useUser } from './UserContextProvider';
 import { Loader, AlertCircle, CheckCircle } from 'lucide-react';
+import { useUser } from './util/UserContextProvider';
 
 export default function Register() {
   const navigate = useNavigate();
@@ -119,7 +120,7 @@ export default function Register() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-purple-600 text-white py-2 rounded-lg font-semibold hover:bg-purple-700 disabled:bg-gray-400 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+            className="cyberpunk-button"
           >
             {loading ? (
               <>
@@ -136,7 +137,7 @@ export default function Register() {
           Already have an account?{' '}
           <button
             onClick={() => navigate('/login')}
-            className="text-purple-600 hover:underline font-semibold"
+            className="cyber-button"
           >
             Login here
           </button>

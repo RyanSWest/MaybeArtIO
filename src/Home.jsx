@@ -4,7 +4,8 @@ import { useState } from 'react'
 import Car from './Carousel.jsx'
 import Count from './Count.jsx';
  import Header from './Header.jsx';
- import './new.css'
+ import './new.css';
+ import {Link} from 'react-router-dom';
  import{Navbar,Nav, NavDropdown, Dropdown, Container} from 'react-bootstrap';
  
 function Home() {

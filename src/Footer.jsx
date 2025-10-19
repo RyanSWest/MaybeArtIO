@@ -1,37 +1,28 @@
-import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
-import{Navbar,Button,Image, Container} from 'react-bootstrap';
-import Logo from './imgs/Logo.png'
-function Footer() {
+export default function Footer() {
   return (
-   <Navbar
-      bg="dark"
-      variant="dark"
-      expand="lg"
-      sticky="bottom"
-      className="w-100"
+    <footer
       style={{
-        padding: "0.5rem 1rem",
+        backgroundColor: "rgba(20, 20, 20, 0.7)",
+        color: "white",
+        padding: "1rem 2rem",
+        marginTop: "2rem",
+        borderTop: "2px solid #0066ff",
+        fontFamily: "Rajdhani",
+        textAlign: "center",
+        fontSize: "0.85rem",
       }}
     >
-      <Container fluid>
-        <Navbar.Brand href="/" className="d-flex align-items-center gap-2">
-          <Image
-            src={Logo}
-            style={{ height: "3rem", width: "3rem" }}
-            roundedCircle
-          />
-          <span className="d-none d-sm-inline" style={{ fontWeight: "700" }}>
-            MaybeArt.IO
-          </span>
-        </Navbar.Brand>
-
-       <Button></Button>
-      </Container>
-    </Navbar>
-
- 
+      <p style={{ color: 'white',margin: 0, marginBottom: "0.5rem" }}>
+        &copy; 2024 MaybeArt.IO. All rights reserved.
+      </p>
+      <div style={{ display: "flex", justifyContent: "center", gap: "2rem" }}>
+        <a href="#" style={{ color: "white", textDecoration: "none" }}>
+          Privacy
+        </a>
+        <a href="#" style={{ color: "white", textDecoration: "none" }}>
+          Terms
+        </a>
+      </div>
+    </footer>
   );
 }
-
-export default Footer;

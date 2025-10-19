@@ -2,8 +2,8 @@
     position: relative;
     width: 100%;
     height: 100vh;
-    background: linear-gradient(to bottom, #110022, #220044);
-    color: white;
+    background: linear-gradient(to bottom, #0c0018, #110121);
+    color: rgb(0, 1, 22);
     overflow: hidden;
     display: flex;
     flex-direction: column;

@@ -11,6 +11,7 @@ import '@solana/wallet-adapter-react-ui/styles.css'
 import { UserAuthProvider } from './util/UserContextProvider.jsx';
 import { About } from './About.jsx'
 import Grid from './Grid.jsx'
+import HeroCTA from './copy.jsx';
 import NewPage from './NewPage.jsx'
 import Login from './Login.jsx'
 import '../index.css'
@@ -23,6 +24,7 @@ import Home from './Home'
 import Gallery from './Gallery.jsx'
 import DisplayPDFs from './Pdf.jsx'
 import BuyToken from './buyToken.jsx';
+import Register from './Register.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { ThemeProvider } from 'react-bootstrap'
 // import UserContext from './util/userContext.js'
@@ -37,7 +39,8 @@ import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 import Header2 from './Header2.jsx';
 
-const stripePromise =  loadStripe('pk_test_51J8tvhBaRV6ucR0OrArDHIRwgEmvaEbpoAwNI8lAgkgkDBaIobUPUQG2OlNLgvxa2nhy5GkowyB9Al2Oi5fq2NH600f28HxBnx'
+const stripePromise =  loadStripe('pk_live_51J8tvhBaRV6ucR0OPtOmn7BsXPaNLPzSt6hswYJelRzOQZUykfCHHPp1q6YXYYaMP8Ehz3IDuwqPvhVFkdHY4Zny00VOS91sxQ'
+
 )
 const wallets = [new PhantomWalletAdapter()]
 const endpoint = clusterApiUrl('devnet')
@@ -56,10 +59,12 @@ createRoot(document.getElementById('root')).render(
 
                 <Routes>
                   <Route path ='/' element ={<Landing/>} />
+                  {/* <Route path ='/copy'element={<HeroCTA}/> */}
                   <Route path='/new' element={<NewPage />} />
                   <Route path='/landing' element={<App />} />
-                  <Route path='/home' element={<Home />} />
+                  <Route path='/home' element={<HeroCTA />} />
                   <Route path='/login' element={<Login />} />
+                  <Route path ='/register' element={<Register/>}/>
                   <Route path='/buyToken' element={<BuyToken />} />
                   <Route path='/upload' element={<ImageUpload />} />
                   <Route path='/about' element={<About />} />

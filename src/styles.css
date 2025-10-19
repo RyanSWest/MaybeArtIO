@@ -1,0 +1,23 @@
+/* Minimal styles to reflect original intent.
+   Replace these with your project's real styles.
+*/
+
+.max-width_small {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px;
+  color: #ffffff;
+  background: linear-gradient(180deg, #161616 0%, #0f0f0f 100%);
+  border-radius: 8px;
+}
+
+.subheading {
+  margin: 0 0 16px 0;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: #e7e7e7;
+}
+
+.button is-secondary on-inverse w-button{
+    padding:4rem;
+}

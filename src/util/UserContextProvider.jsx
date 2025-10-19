@@ -1,25 +1,23 @@
- 
-//   export default function App() {  
- 
- import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const UserAuthContext = createContext();
-  //  const UserContext = createContext()
-
 
 export const UserAuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const API_URL = 'https://squi-d-lite-production.up.railway.app';
+
   // Check if user is already logged in on mount
   useEffect(() => {
     const checkUserSession = async () => {
       try {
-        const token = localStorage.getItem('authToken');
+        const token = sessionStorage.getItem('authToken');
+        console.log('Token found:', token);
+        
         if (token) {
-          // Verify token with backend
-          const response = await fetch('http://localhost:3001/api/auth/verify', {
+          const response = await fetch(`${API_URL}/api/auth/verify`, {
             method: 'GET',
             headers: {
               'Authorization': `Bearer ${token}`,
@@ -27,15 +25,20 @@ export const UserAuthProvider = ({ children }) => {
             }
           });
 
+          console.log('Verify response:', response.status);
+          
           if (response.ok) {
-            const userData = await response.json();
-            setUser(userData);
+            const data = await response.json();
+            console.log('User verified:', data.user);
+            setUser(data.user);
           } else {
-            localStorage.removeItem('authToken');
+            sessionStorage.removeItem('authToken');
+            setUser(null);
           }
         }
       } catch (err) {
         console.error('Session check failed:', err);
+        setUser(null);
       } finally {
         setLoading(false);
       }
@@ -49,7 +52,7 @@ export const UserAuthProvider = ({ children }) => {
     setError(null);
 
     try {
-      const response = await fetch('http://localhost:3000/api/register', {
+      const response = await fetch(`${API_URL}/api/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password, name })
@@ -61,6 +64,8 @@ export const UserAuthProvider = ({ children }) => {
         throw new Error(data.error || data.message || 'Registration failed');
       }
 
+      // Store token and set user
+      sessionStorage.setItem('authToken', data.token);
       setUser(data.user);
       return { success: true, user: data.user };
     } catch (err) {
@@ -76,7 +81,7 @@ export const UserAuthProvider = ({ children }) => {
     setError(null);
 
     try {
-      const response = await fetch('http://localhost:3001/api/auth/login', {
+      const response = await fetch(`${API_URL}/api/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
@@ -88,8 +93,8 @@ export const UserAuthProvider = ({ children }) => {
         throw new Error(data.message || 'Login failed');
       }
 
-      // Store token
-      localStorage.setItem('authToken', data.token);
+      // Store token and set user
+      sessionStorage.setItem('authToken', data.token);
       setUser(data.user);
 
       return { success: true, user: data.user };
@@ -103,9 +108,9 @@ export const UserAuthProvider = ({ children }) => {
 
   const logout = async () => {
     try {
-      const token = localStorage.getItem('authToken');
+      const token = sessionStorage.getItem('authToken');
       if (token) {
-        await fetch('http://localhost:3001/api/auth/logout', {
+        await fetch(`${API_URL}/api/auth/logout`, {
           method: 'POST',
           headers: {
             'Authorization': `Bearer ${token}`,
@@ -116,7 +121,7 @@ export const UserAuthProvider = ({ children }) => {
     } catch (err) {
       console.error('Logout failed:', err);
     } finally {
-      localStorage.removeItem('authToken');
+      sessionStorage.removeItem('authToken');
       setUser(null);
     }
   };

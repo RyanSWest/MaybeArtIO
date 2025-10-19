@@ -49,7 +49,7 @@ export default function WalletButton() {
     if (window.solana && window.solana.isConnected) {
       setWallet(window.solana.publicKey.toString())
       getBalance()
-      showDetails(true)
+      // showDetails(true)
     }
   }, [])
 
