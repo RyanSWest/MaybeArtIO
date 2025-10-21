@@ -56,7 +56,7 @@ export default function HeroCTA({
         data-wf-id='["d4b0a9ae-0b5e-0079-36b1-7e2693aac5d4"]'
         className="button-group"
       >
-        <a
+        <Link to = '/register'
           href={joinHref}
           data-w-id="d4b0a9ae-0b5e-0079-36b1-7e2693aac5d1"
           data-wf-id='["d4b0a9ae-0b5e-0079-36b1-7e2693aac5d1"]'
@@ -66,7 +66,7 @@ export default function HeroCTA({
           aria-label="Join now"
         >
           Join now
-        </a>
+        </Link>
 
 
 <Link to='/grid'> Browse Art</Link>

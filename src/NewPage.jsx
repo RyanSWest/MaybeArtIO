@@ -36,8 +36,7 @@ export default function MaybeArtHero() {
 
   <div className="carousel-container">
     <img src= {Faint} alt="Featured Art 1"/>
-    <img src= {ICE} alt="Featured Art 2"/>
-    <img src= {Rabbit} alt="Featured Art 3"/>
+     <img src= {Rabbit} alt="Featured Art 3"/>
   </div>
 
   <div className="hero-description">ARTISTS & MUSICIANS</div>

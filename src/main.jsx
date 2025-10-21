@@ -59,7 +59,7 @@ createRoot(document.getElementById('root')).render(
         <UserAuthProvider>
           <ThemeProvider>
             <Router>
-                <Header />
+                <Header2 />
 
                 <Routes>
                   <Route path ='/' element ={<Landing/>} />

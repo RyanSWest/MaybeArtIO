@@ -28,7 +28,7 @@ import {Row,Col, Container,Modal, Card} from 'react-bootstrap';
 import {useState, useEffect} from 'react'
  
 import'./index.css'
-import Russ from './Russ';
+// import Russ from './Russ';
  
  export const Grid =()=>{
 const stuff=[ {pic: {Baby},pos:'47% 35%'},{pic :{Kaiju}, pos:'75% 65%'},{pic :{Kaiju}, pos:'53% 43%'},{pic :{Kaiju}, pos:'65% 65%'} ,{pic :{Kaiju}, pos:'50% 25%'},{pic :{Kaiju}, pos:'47%'},{pic :{Kaiju}, pos:'65% 35%'},]
