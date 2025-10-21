@@ -7,8 +7,7 @@ import {Link} from 'react-router-dom';
 import './new.css';
 import Faint from './imgs/BigOne.jpg';
 import Rabbit from './imgs/Bunny.jpg';
-import ICE from './imgs/BigTwo.jpg';
-import Block from './Block';
+ import Block from './Block';
 // import {Scrollbars} from 'react-scrollbars';
 
 const images = [
