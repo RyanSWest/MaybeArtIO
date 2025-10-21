@@ -17,8 +17,7 @@ const BuyToken = () => {
   const TOKEN_PRICE_USD = 0.015;
   const TOKEN_SYMBOL = 'MaybeArt';
   const API_URL = 'https://squi-d-lite-production.up.railway.app'
- 
- 
+  
 //  
   // Listen for wallet connect event
 
@@ -26,7 +25,7 @@ const BuyToken = () => {
 
 const getTokenBalance = async (wallet) => {
   try {
-    const response = await fetch('https://api.devnet.solana.com', {
+    const response = await fetch('https://api.mainnet.solana.com', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -79,6 +78,7 @@ const getTokenBalance = async (wallet) => {
     const tokens = Math.floor(amount / TOKEN_PRICE_USD);
     setTokensAmount(tokens);
   }, [amount]);
+  
 
   const handleStripePayment = async (e) => {
     e.preventDefault();
@@ -166,9 +166,11 @@ console.log('Full confirm response:', JSON.stringify(result, null, 2));
           buyerWallet: walletAddress,
         }),
       });
+      
 
+      console.log("ADRESS", walletAddress)
       const { orderId } = await orderRes.json();
-
+          
       await new Promise(resolve => setTimeout(resolve, 2000));
        console.log("CLICK LICK CLIK CLICK !!!!!!!!!!!!!!!!")
       const captureRes = await fetch(`${API_URL}/api/paypal/capture-order`, {

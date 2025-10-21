@@ -13,7 +13,7 @@ const StripePaymentForm = ({ amount, walletAddress, TOKEN_SYMBOL }) => {
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState(null);
   const [message, setMessage] = useState('');
-  const API_URL = 'http://localhost:3001';
+  const API_URL = 'https://squi-d-lite-production.up.railway.app'
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -144,7 +144,7 @@ const StripePaymentForm = ({ amount, walletAddress, TOKEN_SYMBOL }) => {
   );
 };
 
-const BuyToken = () => {
+const BuyTokens = () => {
   const { publicKey, connected } = useWallet();
   const [status, setStatus] = useState(null);
   const [message, setMessage] = useState('');
@@ -269,4 +269,4 @@ const BuyToken = () => {
   );
 };
 
-export default BuyToken;
+export default BuyTokens;
