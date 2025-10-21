@@ -6,8 +6,7 @@ import "./index.css";
 
 import Russ2 from "./imgs/RUSSL/RUSS2.jpg";
 import Russ3 from "./imgs/RUSSL/RUSS3.jpg";
-import Russ4 from "./imgs/RUSSL/RUSS4.jpg";
-import Russ5 from "./imgs/RUSSL/RUSS5.jpg";
+ import Russ5 from "./imgs/RUSSL/RUSS5.jpg";
 import Russ6 from "./imgs/RUSSL/RUSS6.jpg";
 import "./new.css";
 
@@ -25,8 +24,7 @@ const Russ = () => {
             <Image src={Russ3} />
           </div>
           <div className="crap">
-            <Image src={Russ4} />
-          </div>
+           </div>
 
            
         </Col>

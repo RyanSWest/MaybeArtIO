@@ -50,8 +50,7 @@ export default function Header() {
             fontFamily: "Rajdhani",
             fontStyle: "bolder",
             fontWeight: "700",
-            padding: "1rem",
-          }}
+           }}
         >
           {" "}
           Home
@@ -158,7 +157,7 @@ export default function Header() {
         </Nav.Item>
       </Nav.Link>
 
-      {/* <Nav.Link href="/grid">
+       <Nav.Link href="/grid">
         <span
           style={{
             color: "white",
@@ -171,7 +170,7 @@ export default function Header() {
         >
           NFT Gallery
         </span>
-      </Nav.Link> */}
+      </Nav.Link> 
 
       {/* <Nav.Link href="/whitepaper">
         whitepaper
