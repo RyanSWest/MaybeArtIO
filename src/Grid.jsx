@@ -23,11 +23,11 @@ import Scrawny from'./imgs/Scrawny.jpg';
 import RUSS2 from './imgs/RUSSL/RUSS2.jpg';
 import Header from './Header'
 import axios from 'axios';
-import './Grid.css';
+// import './Grid.css';
 import {Row,Col, Container,Modal, Card} from 'react-bootstrap';
 import {useState, useEffect} from 'react'
  
-// import'./index.css'
+import'./index.css'
 import Russ from './Russ';
  
  export const Grid =()=>{
@@ -157,13 +157,13 @@ return (
                  <img src={Drag3} alt="Art 3" />
                </div> 
            
-   <div className='image-wrapper'> 
+   {/* <div className='image-wrapper'> 
                  <img src={Wombat} alt='img1'/>
                  </div>  
                   <div className='image-wrapper'> 
                  <img src={RUSS2} alt='img1'/>
                  </div>  
-               
+                */}
                
  
  </Col>
