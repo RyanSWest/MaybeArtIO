@@ -35,13 +35,13 @@ const PayPalTokenPurchase = ({
 
     <>  
 
-
-    <div>   
+ 
+    <div style = {{justifyContent:'center',alignContent:'center'}}>   
 
 
        <Link to ='https://www.paypal.com/ncp/payment/JUUKRXQZAEF42
 
-'>   <h1 style={{color:'blue'}}> BUY NOW</h1>BUY NOW</Link>  
+'>   <h1  className ='cyberpunk-text'style={{color:'blue'}}>BUY 10$ Presale!</h1> </Link>  
     </div>
     <PayPalScriptProvider
       options={{ "client-id": clientId, currency, intent: "capture" }}

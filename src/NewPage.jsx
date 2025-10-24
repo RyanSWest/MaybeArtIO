@@ -15,6 +15,7 @@ import './maybeart.css'
 import HeroCTA from './copy.jsx';
 import HeroSub from './copy2.jsx';
 import Car from './Carousel.jsx';
+import Count from './Count.jsx';
 const images = [
   './imgs/Ice.jpg',
   './imgs/Logo.png',
@@ -109,15 +110,17 @@ export default function MaybeArtHero() {
 <HeroCTA/>
   <Car/>
   <HeroSub/> 
-
+  <Count/>
   <HeroCTA/>
-</section>
-{/* </Scrollbars> */}
-<Car/>
-<HeroSub/>
+
+  <HeroSub/>
 <HeroCTA/>
  
 <Block/>
+</section>
+{/* </Scrollbars> */}
+ 
+ 
  
 
 
