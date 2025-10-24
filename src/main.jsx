@@ -22,6 +22,7 @@ import Landing from './Home3.jsx'
 import ImageUpload from './Upload.jsx'
 import Home from './Home'
 import Gallery from './Gallery.jsx'
+import PayPalTokenPurchase from './pay.jsx'
 import DisplayPDFs from './Pdf.jsx'
 import BuyToken from './buyToken.jsx';
 import Register from './Register.jsx';
@@ -37,6 +38,7 @@ import Block from './Block.jsx';
  import StripeForm  from './StripeForm.jsx';
  import BuyTokens from './StripeForm.jsx';
 import StripePaymentForm from './StripeForm.jsx'
+import TokenExchange from './usdc.jsx';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 import Header2 from './Header2.jsx';
@@ -67,9 +69,11 @@ createRoot(document.getElementById('root')).render(
                   <Route path='/new' element={<NewPage />} />
                   <Route path='/landing' element={<App />} />
                   <Route path='/home' element={<HeroCTA />} />
+                  <Route path ='/us'element={<TokenExchange/>}/>
                   <Route path='/login' element={<Login />} />
                   <Route path ='/register' element={<Register/>}/>
-                  <Route path='/buyToken' element={<BuyToken />} />
+                  <Route path='/buyToken' element={<PayPalTokenPurchase />} />
+                  <Route path ='/buy' element={<BuyToken />}/>
                   <Route path ='/faggy' element ={<StripePaymentForm/>} />
                   <Route path='/upload' element={<ImageUpload />} />
                   <Route path='/about' element={<About />} />

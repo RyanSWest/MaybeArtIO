@@ -53,16 +53,14 @@ export default function Header2() {
                <Link to ='/'
                style={navStyle}>Home</Link>
 
-            <Link to="/" style={navStyle}>
-              Home
-            </Link>
+           
             <Link to="/register" style={navStyle}>
               Register
             </Link>
             <Link to="/buyToken" style={navStyle}>
               Buy Token
             </Link>
-
+            <Link to ='/us' style={navStyle}>Exchange </Link>
            
             <Link to="/login" style={navStyle}>
               Login
