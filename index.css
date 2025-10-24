@@ -105,12 +105,10 @@ CSS STRUCTURE:
   --accent-color: #000000;
   --dark-color: #04040C;
   --light-color: #000000;
-  --dim-light-color: rgba(240, 240, 240, 0.7);
+  --dim-light-color: rgba(0, 0, 0, 0.7);
   ;
   --primary-color: #040309;
-  --secondary-color: #A95BF3;
-  --blue-color: #000000;
-  --swiper-pagination: #D9D8E2;
+  
 }
 
 /* Fonts */
@@ -1486,8 +1484,10 @@ blockquote cite {
 
      /* Firefox scrollbar */
         .scrollable {
-            scrollbar-color: #888 #f1f1f1;
-            scrollbar-width: thin;
+            scrollbar-color: #888 #490b32;
+            scrollbar-width: thick;
+            justify-content: center;
+            align-items: center;
         }
 
         /* Themed scrollbar - blue */

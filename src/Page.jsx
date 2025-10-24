@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js';
 import './index.css'
-import {Button, Card} from 'react-bootstrap'
+import {Button, Card, Image} from 'react-bootstrap'
 import MaybeNeon from './MaybeNeon';
 export default function DApp() {
   const [email, setEmail] = useState('');
@@ -25,10 +25,8 @@ export default function DApp() {
   };
 
   const features = [
-    { icon: '🖼️'},<h3 className ='cyberpunk-span'  >Mint NFTS</h3>,
- <Button variant='outline-primary'><h3 className ='cyberpunk-text'> Music and media releases</h3> </Button>,
- <Button varaint='secondary'> Physical Right and Copyright Sale</Button>,
-     { icon: '🛍️', text: 'Physical art & copyright sales' },
+    { icon: '🖼️', text: 'Mint NFTs' },
+    { icon: '🛍️', text: 'Physical art & copyright sales' },
     { icon: '📡', text: 'Music and media releases' }
   ];
 
@@ -41,8 +39,8 @@ export default function DApp() {
   alignItems: 'center',          // centre horizontally
   minHeight: '100vh',            // fill full height of viewport
   background: '#000000',         // dark background
-  backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(88, 28, 135, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(147, 51, 234, 0.2) 0%, transparent 50%)',
-  color: '#ffffff',
+  // backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(88, 28, 135, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(147, 51, 234, 0.2) 0%, transparent 50%)',
+  color: 'black',
   padding: '32px',
   fontFamily: 'Rajdhani, "Segoe UI", Roboto, sans-serif'
       }}>
@@ -59,12 +57,17 @@ export default function DApp() {
                   maxWidth: '100%', 
                   margin: '0 auto',
                   display: 'block',
-                  filter: 'drop-shadow(0 0 30px rgba(147, 51, 234, 0.6))'
+                  // filter: 'drop-shadow(0 0 30px rgba(147, 51, 234, 0.6))'
                 }} 
               />
             </div>
-            
-            <h1 style={{
+            <Card> 
+              <Card.Text> </Card.Text>
+              <Card.Image src='https://tse4.mm.bing.net/th/id/OIP.ehIy2gH088CkrKIK4nVucQHaEK?pid=Api&P=0&h=220' /> 
+            </Card>
+
+
+            {/* <h1 style={{
               fontSize: '64px',
               fontWeight: '900',
               background: 'linear-gradient(90deg, #a78bfa 0%, #ec4899 50%, #a78bfa 100%)',
@@ -76,7 +79,7 @@ export default function DApp() {
               letterSpacing: '2px'
             }}>
               MAYBEART
-            </h1>
+            </h1> */}
             
             <div style={{
               height: '3px',
@@ -112,8 +115,9 @@ export default function DApp() {
                   onMouseLeave={() => setHoveredCard(null)}
                   style={{
                     background: hoveredCard === idx 
-                      ? 'linear-gradient(135deg, rgba(88, 28, 135, 0.5) 0%, rgba(0, 0, 0, 0.7) 100%)'
-                      : 'linear-gradient(135deg, rgba(88, 28, 135, 0.3) 0%, rgba(0, 0, 0, 0.6) 100%)',
+                      ? 'linear-gradient(135deg, rgba(111, 45, 168, 0.5) 0%, rgba(0, 0, 0, 0.7) 100%)'
+: 'linear-gradient(135deg, rgba(111, 45, 168, 0.3) 0%, rgba(0, 0, 0, 0.6) 100%)',
+
                     border: hoveredCard === idx 
                       ? '1px solid rgba(147, 51, 234, 0.7)' 
                       : '1px solid rgba(147, 51, 234, 0.3)',
@@ -136,7 +140,7 @@ export default function DApp() {
 
           {/* Main Purchase Section */}
           <section style={{
-            background: 'linear-gradient(135deg, rgba(88, 28, 135, 0.5) 0%, rgba(0, 0, 0, 0.9) 100%)',
+            background: 'linear-gradient(135deg, rgba(#000080 , #0000FF	, 88, 0.5) 0%, rgba(0, 0, 0, 0.9) 100%)',
             border: '2px solid rgba(147, 51, 234, 0.5)',
             borderRadius: '24px',
             padding: '48px',
@@ -154,8 +158,7 @@ export default function DApp() {
                 padding: '8px 24px',
                 borderRadius: '20px',
                 marginBottom: '24px',
-                boxShadow: '0 4px 15px rgba(147, 51, 234, 0.5)',
-                letterSpacing: '1px'
+                 letterSpacing: '1px'
               }}>
                 EXCLUSIVE PRE-ORDER
               </div>

@@ -1,0 +1,47 @@
+.hero-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-img {
+  height: 420px;
+  object-fit: cover;
+  filter: brightness(45%) saturate(110%);
+}
+
+/* Dark gradient overlay */
+.overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(20, 10, 40, 0.75) 0%,
+    rgba(15, 10, 30, 0.85) 40%,
+    rgba(5, 5, 25, 0.95) 100%
+  );
+  box-shadow: inset 0 0 80px rgba(88, 28, 135, 0.45);
+  z-index: 1;
+}
+
+/* Centered text overlay */
+.hero-text {
+  z-index: 2; /* make sure it’s above the overlay */
+  max-width: 800px;
+  background: linear-gradient(
+    135deg,
+    rgba(111, 45, 168, 0.25),
+    rgba(0, 0, 0, 0.6)
+  );
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(147, 51, 234, 0.25);
+  box-shadow: 0 0 20px rgba(88, 28, 135, 0.3);
+}
+
+/* Headline and text colors */
+.hero-text h2 {
+  color: #c084fc; /* soft neon purple */
+}
+
+.hero-text p {
+  color: #e5e7eb;
+}
