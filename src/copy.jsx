@@ -57,19 +57,13 @@ export default function HeroCTA({
         className="button-group"
       >
         <Link to = '/register'
-          href={joinHref}
-          data-w-id="d4b0a9ae-0b5e-0079-36b1-7e2693aac5d1"
-          data-wf-id='["d4b0a9ae-0b5e-0079-36b1-7e2693aac5d1"]'
-          className="button on-inverse w-button"
-          data-palette="Link"
-          onClick={handleJoin}
-          aria-label="Join now"
+        
         >
-          Join now
+         <h1 className='cyberpunk-text'> Join Now</h1>
         </Link>
 
 
-<Link to='/grid'> Browse Art</Link>
+<Link to='/grid'> <h1 className ='cyberpunk-text'>Browse Art</h1> Browse Art</Link>
         <a
           href= '/grid'
           data-w-id="d4b0a9ae-0b5e-0079-36b1-7e2693aac5d3"

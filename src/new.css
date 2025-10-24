@@ -1,17 +1,93 @@
-  .hero-section {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background: linear-gradient(to bottom, #0c0018, #110121);
-    color: rgb(0, 1, 22);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-family: 'Arial', sans-serif;
-  }
+  
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* fills viewport */
+  background: linear-gradient(to bottom, #0c0018, #110121);
+  color: rgb(0, 1, 22);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* align content to top */
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  padding-top: 1rem; /* just a small space below navbar */
+  padding-left: 1rem;
+  border:2px solid white;
+  padding-right: 1rem;
+  padding-bottom: 1rem; /* optional */
+}
+
+.hero-title {
+  margin-top: 0; /* remove extra space above the title */
+}
+
+
+.hero-word {
+  display: inline-block;
+  margin: 0 0.3em;
+}
+
+.hero-may, .hero-art {
+  color: transparent;
+  -webkit-text-stroke: 2px #ff00c8;
+  text-shadow:
+    0 0 8px #ff00c8,
+    0 0 16px #ff00c8,
+    0 0 32px #ff00c8,
+    0 0 64px #ff00c8;
+}
+
+.hero-be {
+  color: #ffffff;
+  text-shadow:
+    0 0 8px #ffffff,
+    0 0 16px #ffffff,
+    0 0 32px #ffffff;
+}
+
+.hero-subtitle {
+  margin-top: 1.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #00eaff;
+  text-shadow:
+    0 0 6px rgba(56,189,248,.9),
+    0 0 14px rgba(56,189,248,.6),
+    0 0 30px rgba(56,189,248,.4);
+}
+
+
+.hero-may, .hero-art {
+  color: transparent;              /* hollow inside */
+  -webkit-text-stroke: 2px #ff00c8; /* pink outline */
+  text-shadow:
+    0 0 8px #ff00c8,
+    0 0 16px #ff00c8,
+    0 0 32px #ff00c8,
+    0 0 64px #ff00c8;
+}
+
+.hero-be {
+  color: #ffffff;                  /* solid white */
+  text-shadow:
+    0 0 8px #ffffff,
+    0 0 16px #ffffff,
+    0 0 32px #ffffff;
+}
+
+.hero-subtitle {
+  margin-top: 20px;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #00eaff;
+  text-shadow:
+    0 0 6px rgba(56,189,248,.9),
+    0 0 14px rgba(56,189,248,.6),
+    0 0 30px rgba(56,189,248,.4);
+}
+
 
   .new-title {
     font-size: 5rem;
@@ -54,8 +130,8 @@
  .hero-section {
     position: relative;
     width: 100%;
-    height:200vh;
-    background: linear-gradient(to bottom, #110022, #7e2dcf);
+    height:350vh;
+    background: linear-gradient(to bottom, #2d0259, #1a072d);
     color: white;
     overflow: hidden;
     display: flex;
@@ -175,8 +251,8 @@
             width: 300px;
             height: 400px;
             overflow-y: scroll;
-            padding: 15px;
-            background: white;
+margin: 0;
+  padding: 0;            background: white;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             min-height: 100vh;

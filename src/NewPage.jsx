@@ -8,10 +8,15 @@ import './new.css';
 import Faint from './imgs/BigOne.jpg';
 import Rabbit from './imgs/Bunny.jpg';
  import Block from './Block';
+ import Ice from './imgs/Ice.jpg';
 // import {Scrollbars} from 'react-scrollbars';
-
+import './ozz.css';
+import './maybeart.css'
+import HeroCTA from './copy.jsx';
+import HeroSub from './copy2.jsx';
+import Car from './Carousel.jsx';
 const images = [
-  './imgs/Faint.jpg',
+  './imgs/Ice.jpg',
   './imgs/Logo.png',
   './imgs/kaiju2.jpg'
 ];
@@ -29,13 +34,59 @@ export default function MaybeArtHero() {
   return (
      
     <Container className='scrollable' fluid>  
+
+    
     {/* <Scrollbars style ={{width:'100%',  height:'400rem'}}>  */}
     <section className="hero-section">
-  <h1 className="strokeme">MAYBEART</h1>
+
+        <div className="maybe-art-title-wrapper">
+          
+             {/* <h1
+        className="text-[6rem] font-extrabold uppercase relative"
+        style={{
+          fontFamily: "Anton, sans-serif", // wider font
+          letterSpacing: "0.2em",           // more space between letters
+          color: "transparent",             // hollow letters
+          WebkitTextStroke: "3px #ff00c8",  // thick pink outline
+          textShadow: `
+            0 0 10px #ff00c8,
+            0 0 20px #ff00c8,
+            0 0 40px #ff00c8,
+            0 0 80px #ff00c8
+          `,
+        }}
+      >
+        MAY BE ART
+      </h1> */}
+      <h1
+        className="text-8xl font-extrabold uppercase relative"
+        style={{
+          color: "transparent",
+          fontFamily:'Rajdhani',
+          fontSize: '6rem',
+          marginTop:'3rem',
+          
+           
+
+          WebkitTextStroke: "2px #ff00c8",
+          textShadow: `
+            0 0 8px #ff00c8,
+            0 0 16px #ff00c8,
+            0 0 32px #ff00c8,
+            0 0 64px #ff00c8
+          `,
+        }}
+      >
+        MAY BE ART
+      </h1>              {/* <div className="maybe-art-reflection"></div> */}
+            </div>
+  {/* <h1 className="strokeme">MAYBEART</h1> */}
+  
+
   <div className="new-subtitle">Turning Creativity Into Currency</div>
 
   <div className="carousel-container">
-    <img src= {Faint} alt="Featured Art 1"/>
+    <img src= {Ice} alt="Featured Art 1"/>
      <img src= {Rabbit} alt="Featured Art 3"/>
   </div>
 
@@ -55,8 +106,17 @@ export default function MaybeArtHero() {
     <Link to ='/buyToken' className ='buy'> BUY $MAYBEART TOKEN </Link>
     {/* <a href="/buytoken" className="buy">BUY $MAYBEART TOKEN</a> */}
   </div>
+<HeroCTA/>
+  <Car/>
+  <HeroSub/> 
+
+  <HeroCTA/>
 </section>
 {/* </Scrollbars> */}
+<Car/>
+<HeroSub/>
+<HeroCTA/>
+ 
 <Block/>
  
 

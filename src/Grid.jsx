@@ -45,14 +45,14 @@ const [showModal, setShowModal] = useState(false);
 return ( 
     
 
-    <Container className ='bg-dark'style= {{backgroundImage:'./imgs/back.png',zIndex:'1'}}>  
+    <Container className ='bg-dark'>  
 
         
       
       
       
        
-         <h1  style={{fontFamily:'Rajdhani', color:'darkslategrey',fontWeight:'700',fontStyle:'bolder'}} > NFT GALLERY</h1>
+         <h1  style={{fontFamily:'Rajdhani', color:'darkslategrey',fontWeight:'700',fontStyle:'bolder',paddingTop:'3rem'}} > NFT GALLERY</h1>
 
                 <h3 style={{fontFamily:'Rajdhani', color:'darkslategrey',fontWeight:'700',fontStyle:'bolder'}} >Ryan West</h3>
          
