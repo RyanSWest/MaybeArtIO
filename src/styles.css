@@ -21,3 +21,11 @@
 .button is-secondary on-inverse w-button{
     padding:4rem;
 }
+
+.what{
+
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  color:white;
+}

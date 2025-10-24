@@ -42,8 +42,10 @@ import TokenExchange from './usdc.jsx';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 import Header2 from './Header2.jsx';
+import MaybeNeon from './MaybeNeon.jsx'
 import TestPayPal from './buyToken.jsx';
-// import MaybeArtLanding from './Ozz.jsx'
+import DApp from '../../../Downloads/Page.jsx'
+ // import MaybeArtLanding from './Ozz.jsx'
 // const stripePromise =  loadStripe('pk_live_51J8tvhBaRV6ucR0OPtOmn7BsXPaNLPzSt6hswYJelRzOQZUykfCHHPp1q6YXYYaMP8Ehz3IDuwqPvhVFkdHY4Zny00VOS91sxQ'
 
 // )
@@ -65,7 +67,7 @@ createRoot(document.getElementById('root')).render(
                 <Header2 />
 
                 <Routes>
-                  <Route path ='/' element ={<NewPage/>} />
+                  <Route path ='/' element ={<MaybeNeon/>} />
                   <Route path ='/copy'element={<HeroCTA/>}/>
                   <Route path='/new' element={<NewPage />} />
                   <Route path='/landing' element={<App />} />

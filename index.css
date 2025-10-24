@@ -107,7 +107,7 @@ CSS STRUCTURE:
   --light-color: #000000;
   --dim-light-color: rgba(240, 240, 240, 0.7);
   ;
-  --primary-color: #6847F5;
+  --primary-color: #040309;
   --secondary-color: #A95BF3;
   --blue-color: #000000;
   --swiper-pagination: #D9D8E2;
@@ -144,7 +144,7 @@ body {
   font-weight: 300;
   line-height: 2;
   color: var(--dark-color) !important;
-  color:blue;
+  color:rgb(1, 1, 16);
   margin: 0;
 }
 

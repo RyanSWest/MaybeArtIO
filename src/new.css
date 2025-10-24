@@ -12,7 +12,7 @@
   justify-content: flex-start; /* align content to top */
   text-align: center;
   font-family: 'Arial', sans-serif;
-  padding-top: 1rem; /* just a small space below navbar */
+  padding-top: 10rem; /* just a small space below navbar */
   padding-left: 1rem;
   border:2px solid white;
   padding-right: 1rem;
@@ -130,7 +130,7 @@
  .hero-section {
     position: relative;
     width: 100%;
-    height:350vh;
+    height:450vh;
     background: linear-gradient(to bottom, #2d0259, #1a072d);
     color: white;
     overflow: hidden;

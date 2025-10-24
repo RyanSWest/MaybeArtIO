@@ -41,8 +41,8 @@ export default function MaybeArtHero() {
     <section className="hero-section">
 
         <div className="maybe-art-title-wrapper">
-          
-             {/* <h1
+{/*           
+              <h1
         className="text-[6rem] font-extrabold uppercase relative"
         style={{
           fontFamily: "Anton, sans-serif", // wider font
@@ -56,16 +56,15 @@ export default function MaybeArtHero() {
             0 0 80px #ff00c8
           `,
         }}
-      >
-        MAY BE ART
-      </h1> */}
+      // > */}
+ 
       <h1
         className="text-8xl font-extrabold uppercase relative"
         style={{
           color: "transparent",
           fontFamily:'Rajdhani',
           fontSize: '6rem',
-          marginTop:'3rem',
+          marginTop:'10rem',
           
            
 
