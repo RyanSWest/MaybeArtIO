@@ -11,7 +11,7 @@ function Bricks() {
     <section >Bricks
      <div className ='sponji'> 
      <Button>EINS</Button>
-         <Button>EINS</Button>
+         <Button variant='primary'>EINS</Button>
      <Button>EINS</Button>
 
      <Button>EINS</Button>
