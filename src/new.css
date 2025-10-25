@@ -58,6 +58,11 @@
     0 0 30px rgba(56,189,248,.4);
 }
 
+.what{
+  display:flex;
+  flex-direction: column;
+  background-color: black;
+}
 
 .hero-may, .hero-art {
   color: transparent;              /* hollow inside */
@@ -210,11 +215,19 @@
     margin: 5px 0;
   }
 
+  .par{
+    font-size: x-small;
+    color:'white';
+    font-family: 'Rajdhani';
+  }
   .hero-buttons {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
+    padding:8px;
     justify-content: center;
+    background-color: #0c0018;
+    margin-top: 4rem;
   }
 
   .hero-buttons a {
@@ -252,7 +265,7 @@
             height: 400px;
             overflow-y: scroll;
 margin: 0;
-  padding: 0;            background: white;
+  padding: 0;            background: rgb(0, 0, 0);
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             min-height: 100vh;

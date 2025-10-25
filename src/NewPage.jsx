@@ -110,10 +110,8 @@ export default function MaybeArtHero() {
   <Car/>
   <HeroSub/> 
   <Count/>
-  <HeroCTA/>
-
-  <HeroSub/>
-<HeroCTA/>
+  
+ 
  
 <Block/>
 </section>

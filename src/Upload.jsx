@@ -3,7 +3,7 @@ import { Container, Row, Col, Form, Button, Card, Alert, Spinner } from 'react-b
 import axios from 'axios';
 import { useUser } from './util/UserContextProvider';
 import { useNavigate, useLocation } from 'react-router-dom';
-
+import './login.css';
 const Upload = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [imageUrl, setImageUrl] = useState('');
@@ -124,16 +124,16 @@ const Upload = () => {
   }
 
   return (
-    <Container fluid style={{ padding: '2rem', background: 'linear-gradient(to bottom, #0c0018, #110121)', minHeight: '100vh' }}>
+    <Container fluid style={{ padding: '2rem', background: 'dark)', minHeight: '100vh' }}>
       <h1 className="neon-title mb-4">Gallery for: {user.user?.email}</h1>
 
       <Row className="mb-4">
         {pics.length === 0 ? (
-          <Col><p className="text-light">No uploads yet. Upload your first artwork!</p></Col>
+          <Col><p className="text-dark">No uploads yet. Upload your first artwork!</p></Col>
         ) : (
           pics.map((item, idx) => (
             <Col md={4} key={item.id || idx} className="mb-4">
-              <Card className="neon-card">
+              <Card className="login">
                 <Card.Img
                   variant="top"
                   src={item.type === 'file' ? `${API_URL}/api/gallery/image/${item.id}` : item.url}

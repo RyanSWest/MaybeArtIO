@@ -43,6 +43,7 @@ import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 import Header2 from './Header2.jsx';
 import MaybeNeon from './MaybeNeon.jsx'
+// import MaybeNeon from './Neon.jsx'
 import TestPayPal from './buyToken.jsx';
 import DApp from '../../../Downloads/Page.jsx'
  // import MaybeArtLanding from './Ozz.jsx'

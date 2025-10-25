@@ -1,48 +1,45 @@
-import React from "react";
-import { Image, Card, Container } from "react-bootstrap";
-import Neon from "./imgs/maybe.jpg";
-import Dapp from "./Page.jsx";
-import "./index.css";
-import Faint from "./imgs/BigOne.jpg";
-import Rabbit from "./imgs/Bunny.jpg";
-import Block from "./Block";
-import Ice from "./imgs/Ice.jpg";
-import Dap2 from "./Dap2.jsx";
-import HorizontalExample from "./Stack.jsx";
-import { Link } from "react-router-dom";
-import CanuDO from "./canUDo.jsx";
-import Home from "./Home.jsx";
-import ButlerPic from "./imgs/Butlerpic.jpg";
-import { Row, Col } from "react-bootstrap";
-// import HeroSection from   './Heroic'
+// import React from "react";
+// import { Image, Card, Container } from "react-bootstrap";
+// import Neon from "./imgs/maybe.jpg";
+// import Dapp from "./Page.jsx";
+// import "./index.css";
+// import Faint from "./imgs/BigOne.jpg";
+// import Rabbit from "./imgs/Bunny.jpg";
+// import Block from "./Block";
+// import Ice from "./imgs/Ice.jpg";
+// import Dap2 from "./Dap2.jsx";
+// import HorizontalExample from "./Stack.jsx";
+// import { Link } from "react-router-dom";
+// import CanuDO from "./canUDo.jsx";
+// import Home from "./Home.jsx";
+// import ButlerPic from "./imgs/Butlerpic.jpg";
+// import { Row, Col } from "react-bootstrap";
+// // import HeroSection from   './Heroic'
 
-export default function MaybeNeon() {
-  return (
-    <Container
-      className="scrollable"
-      style={{
-        width: "100%",
-        paddingTop: "13rem",
-        height: "1000vh",
-        justifyContent: "center",
-      }}
-      fluid
-    >
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "100vh",
-          backgroundColor: "#000",
-        }}
-      >
-        <Image className="img-fluid" src={Neon} />
-      </div>
-      
-
-    </Container>
-  )}
+// export default function MaybeNeon() {
+//   return (
+//     <Container
+//       className="scrollable"
+//       style={{
+//         width: "100%",
+//         paddingTop: "8rem",
+//         height: "1000vh",
+//         justifyContent: "center",
+//       }}
+//       fluid
+//     >
+//       <div
+//         style={{
+//           display: "flex",
+//           justifyContent: "center",
+//           alignItems: "center",
+//           height: "100vh",
+//           backgroundColor: "#000",
+//         }}
+//       >
+//         <Image className="img-fluid" src={Neon} />
+//       </div>
+     
 
 //       <section style={{ display: "flex", justifyContent: "space-evenly" }}>
 //         <div className="hero-buttons">

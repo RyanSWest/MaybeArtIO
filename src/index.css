@@ -568,6 +568,42 @@ html, body {
  
 
  
+/* === DARK THEME RESET === */
+body, .container-fluid, .container {
+  background-color: #060014 !important;
+  color: #e2d9ff !important;
+}
+
+/* Force all cards to dark mode */
+.card {
+  background-color: rgba(15, 5, 30, 0.9) !important;
+  border: 1px solid rgba(147, 51, 234, 0.25) !important;
+  color: #eee !important;
+  box-shadow: 0 0 25px rgba(147, 51, 234, 0.15);
+}
+
+/* Text + Form controls */
+.form-control, .form-label, .form-check-label {
+  background-color: rgba(20, 10, 30, 0.7) !important;
+  color: #e2d9ff !important;
+  border-color: rgba(147, 51, 234, 0.3) !important;
+}
+
+.form-control::placeholder {
+  color: #a38fc7 !important;
+}
+
+/* Buttons */
+.btn, .neon-button {
+  background: linear-gradient(90deg, #6d28d9, #3b0764) !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+.btn:hover, .neon-button:hover {
+  background: linear-gradient(90deg, #9333ea, #581c87) !important;
+  box-shadow: 0 0 18px rgba(147, 51, 234, 0.4);
+}
 
  
       .img-container {
