@@ -1,8 +1,8 @@
 import { Container, Row, Col, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Ice from "../assets/Ice.png";
-import Rabbit from "../assets/Rabbit.png";
-import Faint from "../assets/Faint.png";
+// import Ice from " ./imgs/Ice.jpg";
+import Rabbit from "./imgs/Rabbit.png";
+import Faint from "'.imgs/Faint.png";
 
 export default function HeroSection() {
   return (
@@ -30,7 +30,7 @@ export default function HeroSection() {
       {/* IMAGE CAROUSEL SECTION */}
       <Row className="justify-content-center align-items-center mb-4 text-center">
         <Col xs={12} md={4} className="mb-3 mb-md-0">
-          <img src={Ice} alt="Featured Art 1" className="img-fluid rounded" />
+          {/* <img src={Ice} alt="Featured Art 1" className="img-fluid rounded" /> */}
         </Col>
         <Col xs={12} md={4} className="mb-3 mb-md-0">
           <img src={Rabbit} alt="Featured Art 2" className="img-fluid rounded" />

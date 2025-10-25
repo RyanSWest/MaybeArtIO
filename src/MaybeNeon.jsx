@@ -6,15 +6,14 @@ import "./index.css";
 import Faint from "./imgs/BigOne.jpg";
 import Rabbit from "./imgs/Bunny.jpg";
 import Block from "./Block";
-import Ice from "./imgs/Ice.jpg";
-import Dap2 from "./Dap2.jsx";
-import HorizontalExample from "./Stack.jsx";
+// import Ice from "./imgs/Ice.jpg";
+ import HorizontalExample from "./Stack.jsx";
 import { Link } from "react-router-dom";
 import CanuDO from "./canUDo.jsx";
 import Home from "./Home.jsx";
 import ButlerPic from "./imgs/Butlerpic.jpg";
 import { Row, Col } from "react-bootstrap";
-// import HeroSection from   './Heroic'
+import HeroSection from   './Heroic'
 
 export default function MaybeNeon() {
   return (
@@ -22,7 +21,7 @@ export default function MaybeNeon() {
       className="scrollable"
       style={{
         width: "100%",
-        paddingTop: "23rem",
+        paddingTop: "43rem",
         height: "1000vh",
         justifyContent: "center",
       }}
@@ -39,7 +38,7 @@ export default function MaybeNeon() {
       >
         <Image className="img-fluid" src={Neon} />
       </div>
-      
+      {/* <HeroSection/> */}
 
     </Container>
   )}
