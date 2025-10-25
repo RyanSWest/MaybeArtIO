@@ -1,6 +1,6 @@
 import React from "react";
 import { Image, Card, Container } from "react-bootstrap";
-import Neon from "./imgs/maybe.jpg";
+import Neon from "./imgs/Maybe.jpg";
 import Dapp from "./Page.jsx";
 import "./index.css";
 import Faint from "./imgs/BigOne.jpg";
@@ -22,7 +22,7 @@ export default function MaybeNeon() {
       className="scrollable"
       style={{
         width: "100%",
-        paddingTop: "13rem",
+        paddingTop: "23rem",
         height: "1000vh",
         justifyContent: "center",
       }}
