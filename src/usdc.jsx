@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ArrowDownUp, Wallet } from 'lucide-react';
+import'./Login.css'
 
 export default function TokenExchange() {
   const [newAmount, setNewAmount] = useState('');
@@ -46,7 +47,7 @@ export default function TokenExchange() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 flex items-center justify-center p-4">
-      <div className="w-full max-w-md">
+      <div className="login-form">
         {/* Wallet Balance Card */}
         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 mb-6 border border-white/20">
           <div className="flex items-center gap-2 mb-4 text-white">

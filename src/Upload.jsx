@@ -3,10 +3,10 @@ import { Container, Row, Col, Form, Button, Card, Alert, Spinner } from 'react-b
 import axios from 'axios';
 import { useUser } from './util/UserContextProvider';
 import { useNavigate, useLocation } from 'react-router-dom';
-import './login.css';
+import './Login.css';
 const Upload = () => {
   const [selectedFile, setSelectedFile] = useState(null);
-  const [imageUrl, setImageUrl] = useState('');
+  const [imageUrl, setImageUrl] = useState('')
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [uploadType, setUploadType] = useState('file');
