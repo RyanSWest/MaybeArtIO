@@ -13,7 +13,7 @@ import CanuDO from "./canUDo.jsx";
 import Home from "./Home.jsx";
 import ButlerPic from "./imgs/Butlerpic.jpg";
 import { Row, Col } from "react-bootstrap";
-import HeroSection from   './Heroic'
+// import HeroSection from   './Heroic'
 
 export default function MaybeNeon() {
   return (
@@ -21,7 +21,7 @@ export default function MaybeNeon() {
       className="scrollable"
       style={{
         width: "100%",
-        paddingTop: "43rem",
+        paddingTop: "33rem",
         height: "1000vh",
         justifyContent: "center",
       }}

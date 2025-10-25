@@ -30,7 +30,7 @@ export default function Register() {
     const result = await register(email, password, name);
     if (result.success) {
       setSuccess(true);
-      setTimeout(() => navigate('/home'), 1500);
+      setTimeout(() => navigate('/upload'), 1500);
     }
   };
 
