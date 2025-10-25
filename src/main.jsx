@@ -45,8 +45,7 @@ import Header2 from './Header2.jsx';
 import MaybeNeon from './MaybeNeon.jsx'
 // import MaybeNeon from './Neon.jsx'
 import TestPayPal from './buyToken.jsx';
-import DApp from '../../../Downloads/Page.jsx'
- // import MaybeArtLanding from './Ozz.jsx'
+  // import MaybeArtLanding from './Ozz.jsx'
 // const stripePromise =  loadStripe('pk_live_51J8tvhBaRV6ucR0OPtOmn7BsXPaNLPzSt6hswYJelRzOQZUykfCHHPp1q6YXYYaMP8Ehz3IDuwqPvhVFkdHY4Zny00VOS91sxQ'
 
 // )
