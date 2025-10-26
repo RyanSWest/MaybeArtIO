@@ -86,7 +86,7 @@ const Count = () => {
     lineHeight: "1.1",
            }}
         >
-          COUNTDOWN to Auction
+          COUNTDOWN  
         </h3>
 
         <div

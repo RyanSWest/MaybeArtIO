@@ -112,7 +112,7 @@ const Upload = () => {
     return (
       <Container fluid className="d-flex justify-content-center align-items-center" style={{ minHeight: '80vh' }}>
         <Card className="text-center p-4 neon-card">
-          <h2 className="neon-title">Login Required</h2>
+          <h2 className="cyberpunk-text" >Login Required</h2>
           <p>You must be logged in to upload and view your gallery.</p>
           <Button
             variant="primary"

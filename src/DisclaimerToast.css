@@ -1,0 +1,38 @@
+/* DisclaimerToast.css */
+.toast-container {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 9999;
+  width: 300px; /* fluid enough */
+}
+
+.toast {
+  background-color: #d3d3d3; /* medium grey */
+  color: #111; /* dark text for visibility */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.toast-header {
+  background-color: #c0c0c0; /* slightly darker grey header */
+  color: #111;
+  font-weight: 700;
+  border-bottom: 1px solid #aaa;
+}
+
+.toast-body {
+  color: white;
+  padding: 0.75rem 1rem;
+}
+
+.toast-footer button {
+  background-color: #f0f0f0;
+  color: #111;
+  border: 1px solid #aaa;
+}
+
+.toast-footer button:hover {
+  background-color: #e0e0e0;
+  color: #111;
+}

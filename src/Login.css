@@ -1,46 +1,65 @@
-/* Page background */
+/* -----------------------------
+   PAGE BACKGROUND
+------------------------------ */
+ 
 .login-page {
   min-height: 100vh;
   display: flex;
-  justify-content: flex-start; /* start below navbar */
-  align-items: flex-start;
-  padding-top: 2rem; /* small space below navbar */
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 6rem; /* adjust to match your navbar height */
   background: linear-gradient(to bottom, #0c0018, #110121);
   font-family: 'Arial', sans-serif;
 }
 
-/* Centered form wrapper */
+/* -----------------------------
+   CENTERED FORM WRAPPER
+------------------------------ */
 .login-wrapper {
   background: rgba(0,0,0,0.85);
-  padding: 2.5rem;
-  border-radius: 1rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border-radius: clamp(0.75rem, 2vw, 1rem);
   box-shadow: 0 0 30px rgba(255,0,200,0.5);
-  max-width: 400px;
-  width: 100%;
+  max-width: clamp(300px, 80%, 400px);
+  width: 90%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Title */
+/* -----------------------------
+   HEADINGS
+------------------------------ */
 .login-title {
   font-family: 'Anton', sans-serif;
-  font-size: 3rem;
+  font-size: clamp(2rem, 6vw, 3rem);
   color: transparent;
   -webkit-text-stroke: 2px #ff00c8; /* pink outline */
   text-shadow: 0 0 8px #ff00c8, 0 0 16px #ff00c8, 0 0 32px #ff00c8;
-  margin-bottom: 0.5rem;
+  margin-bottom: clamp(0.5rem, 1.5vw, 0.75rem);
+  text-align: center;
+  align-self: top;
+}
+
+.login-subtitle {
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  color: #ffffffaa;
+  margin-bottom: clamp(1rem, 2.5vw, 1.5rem);
   text-align: center;
 }
 
+/* -----------------------------
+   HERO SECTION
+------------------------------ */
 .hero-section {
   position: relative;
   overflow: hidden;
 }
 
 .hero-img {
-  height: 420px;
+  height: clamp(200px, 40vw, 420px);
   object-fit: cover;
   filter: brightness(45%) saturate(110%);
 }
@@ -59,99 +78,72 @@
 
 /* Centered text overlay */
 .hero-text {
-  z-index: 2; /* make sure it’s above the overlay */
-  max-width: 800px;
+  z-index: 2;
+  max-width: clamp(250px, 80%, 800px);
   background: linear-gradient(
     135deg,
     rgba(111, 45, 168, 0.25),
     rgba(0, 0, 0, 0.6)
   );
-  padding: 1.5rem 2rem;
-  border-radius: 12px;
+  padding: clamp(1rem, 3vw, 1.5rem) clamp(1.5rem, 4vw, 2rem);
+  border-radius: clamp(8px, 2vw, 12px);
   backdrop-filter: blur(6px);
   border: 1px solid rgba(147, 51, 234, 0.25);
   box-shadow: 0 0 20px rgba(88, 28, 135, 0.3);
 }
 
-/* Headline and text colors */
 .hero-text h2 {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
   color: #c084fc; /* soft neon purple */
 }
 
 .hero-text p {
+  font-size: clamp(1rem, 3vw, 1.2rem);
   color: #e5e7eb;
 }
 
-
-.login-subtitle {
-  font-size: 1rem;
-  color: #ffffffaa;
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-
-/* Error message */
+/* -----------------------------
+   ERROR MESSAGES
+------------------------------ */
 .login-error {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.75rem 1rem;
-  margin-bottom: 1rem;
+  padding: clamp(0.5rem, 1vw, 0.75rem) clamp(0.75rem, 2vw, 1rem);
+  margin-bottom: clamp(0.5rem, 1vw, 1rem);
   background: rgba(255,0,0,0.1);
   border: 1px solid #ff0000;
-  border-radius: 0.5rem;
+  border-radius: clamp(4px, 1vw, 0.5rem);
   color: #ff6666;
 }
 
-.thing{
-    
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 2rem;
-    text-shadow: 0 0 10px rgba(0,0,0,0.8);
-/* transparent-container { */
-    opacity: 0.5; /* 50% transparent */
-}
- 
-
-.transp{
-
-
-    position: absolute;
-    font-size: smaller;
-    font-family: 'Rajdhani';color:'white';
-    width: fit-content;
-    height: fit-content;
-    
-}
-
-/* Form inputs */
+/* -----------------------------
+   FORM INPUTS
+------------------------------ */
 .login-form {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: clamp(0.5rem, 2vw, 1rem);
 }
 
 .input-group label {
   display: block;
-  margin-bottom: 0.25rem;
+  margin-bottom: clamp(0.25rem, 1vw, 0.25rem);
   font-weight: 600;
   color: #ffffffcc;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
 }
 
 .input-group input {
   width: 100%;
-  padding: 0.75rem 1rem;
-  border-radius: 0.75rem;
+  padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(0.75rem, 2vw, 1rem);
+  border-radius: clamp(0.5rem, 2vw, 0.75rem);
   border: 1px solid #ff00c8;
   background: rgba(0,0,0,0.5);
   color: #fff;
   outline: none;
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
   transition: all 0.2s ease;
 }
 
@@ -160,16 +152,18 @@
   box-shadow: 0 0 10px #00eaff;
 }
 
-/* Submit button */
+/* -----------------------------
+   BUTTON
+------------------------------ */
 .cyberpunk-button {
-  margin-top: 1rem;
-  padding: 0.75rem 1.5rem;
-  font-size: 1.1rem;
+  margin-top: clamp(0.5rem, 2vw, 1rem);
+  padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(1rem, 3vw, 1.5rem);
+  font-size: clamp(1rem, 3vw, 1.1rem);
   font-weight: 700;
   color: #fff;
   background: linear-gradient(90deg, #ff00c8, #ff69b4);
   border: 2px solid #ff00c8;
-  border-radius: 1rem;
+  border-radius: clamp(0.75rem, 2vw, 1rem);
   cursor: pointer;
   text-transform: uppercase;
   transition: all 0.2s ease;
@@ -186,13 +180,14 @@
   cursor: not-allowed;
 }
 
-/* Footer link */
+/* -----------------------------
+   FOOTER LINKS
+------------------------------ */
 .login-footer {
-  margin-top: 1.5rem;
-  font-size: 0.9rem;
+  margin-top: clamp(1rem, 4vw, 1.5rem);
+  font-size: clamp(0.8rem, 2.5vw, 0.9rem);
   color: #aaa;
   text-align: center;
-  align-content: center;
 }
 
 .register-link {
@@ -201,19 +196,80 @@
   cursor: pointer;
   background: none;
   border: 2px solid cyan;
-  border-radius:25px;
-  padding:2rem;
+  border-radius: clamp(15px, 4vw, 25px);
+  padding: clamp(0.5rem, 2vw, 2rem);
 }
 
 .register-link:hover {
   text-decoration: underline;
 }
 
-.spani{
-    font-family:'Rajdhani';
-    padding:2.5rem;
-    font-style: italic;  
-    font-size:  x-large; 
-    color:white;
-    padding-bottom: 4rem;
- }
+/* -----------------------------
+   GENERAL RESPONSIVE ELEMENTS
+------------------------------ */
+.thing {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: clamp(1rem, 5vw, 2rem);
+  text-shadow: 0 0 10px rgba(0,0,0,0.8);
+  opacity: 0.5;
+}
+
+.transp {
+  position: absolute;
+  font-size: clamp(0.6rem, 2vw, 1rem);
+  font-family: 'Rajdhani', sans-serif;
+  color: white;
+  width: fit-content;
+  height: fit-content;
+}
+
+.spani {
+  font-family:'Rajdhani';
+  padding: clamp(1rem, 4vw, 2.5rem);
+  font-style: italic;  
+  font-size: clamp(1rem, 4vw, x-large); 
+  color:white;
+  padding-bottom: clamp(1rem, 4vw, 4rem);
+}
+
+/* -----------------------------
+   CENTERED FORM WRAPPER
+------------------------------ */
+.login-wrapper {
+  background: rgba(0,0,0,0.85);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border-radius: clamp(0.75rem, 2vw, 1rem);
+  box-shadow: 0 0 30px rgba(255,0,200,0.5);
+  max-width: clamp(300px, 90%, 400px);
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+/* Expand horizontally for larger screens (tablet & up) */
+@media (min-width: 1024px) {
+  .login-wrapper {
+    flex-direction: row;       /* horizontal layout */
+    justify-content: space-around; /* space between form & possible image */
+    max-width: 80%;           /* wider wrapper */
+    padding: clamp(2rem, 4vw, 3rem);
+  }
+
+  /* Optional: make input fields take more horizontal space */
+  .login-form {
+    width: 50%; /* half the wrapper width */
+  }
+
+  /* Optional: push title & subtitle beside form */
+  .login-title, .login-subtitle {
+    text-align: left;
+    width: 45%;
+  }
+}

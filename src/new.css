@@ -42,6 +42,8 @@ h3:hover, p:hover {
 
 .hero-section {
   background: linear-gradient(to bottom, #0c0018, #110121) !important;
+  display: flex;
+  flex-direction: row;
 }
 
 .hero-section:hover {
@@ -168,6 +170,7 @@ div:hover {
     0 0 24px #ff00c8,
     0 0 48px #ff00c8;
 }
+
 
 .hero-be {
   color: #ffffff;
@@ -299,10 +302,20 @@ h3:hover, p:hover {
   color: #ccc;
   margin-bottom: 1.5rem;
 }
+/* Header offset for sticky navbar */
+.body-offset {
+  padding-top: 80px; /* Adjust based on your navbar height */
+}
+
+@media (max-width: 768px) {
+  .body-offset {
+    padding-top: 100px; /* Give more space for smaller screens */
+  }
+}
+
 
 .section8 {
-  border: 2px solid cyan;
-  width: 100%;
+   width: 100%;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -461,7 +474,7 @@ h3:hover, p:hover {
   height: 350px;
   overflow-y: scroll;
   margin: 0;
-  padding: 0; 
+  padding-top:28rem;
   background-color: #0c0018;
   /* background: transparent; */
   border-radius: 8px;
@@ -486,6 +499,19 @@ h3:hover, p:hover {
 
 .scrollable::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+/* Header offset for sticky navbar */
+.body-offset {
+  padding-top: 80px; /* Adjust based on your navbar height */
+}
+
+@media (max-width: 768px) {
+  .body-offset {
+    padding-top: 100px; /* Give more space for smaller screens */
+  }
+  .scrollable{
+    padding-top:100px;
+  }
 }
 
 /* Card styles - Mobile */
@@ -522,6 +548,43 @@ h3:hover, p:hover {
   justify-content: space-between;
   padding: 15px;
 }
+/* Responsive Image */
+.responsive-img {
+  width: 100%;        /* Full width by default */
+  max-width: 800px;   /* Max size on large screens */
+  height: auto;       /* Maintain aspect ratio */
+  display: block;
+  margin: 0 auto;     /* Center horizontally */
+}
+
+/* Small devices (phones) */
+@media (max-width: 480px) {
+  .responsive-img {
+    max-width: 90%;   /* Shrink on small screens */
+  }
+}
+
+/* Tablets */
+@media (min-width: 481px) and (max-width: 1023px) {
+  .responsive-img {
+    max-width: 70%;   /* Medium size */
+  }
+}
+
+/* Desktops */
+@media (min-width: 1024px) and (max-width: 1919px) {
+  .responsive-img {
+    max-width: 600px; /* Adjust to fit layout */
+  }
+}
+
+/* Extra large screens (1920px+) */
+@media (min-width: 1920px) {
+  .responsive-img {
+    max-width: 800px; /* Bigger images on XL */
+  }
+}
+
 
 .card-title {
   color: white;
@@ -721,7 +784,9 @@ h3:hover, p:hover {
   }
 
   .logo {
-    padding-top: 9rem;
+    padding-top: 25rem;
+    justify-content: center;
+    align-content: center;
   }
 
   .hero-buttons a {
@@ -852,10 +917,30 @@ h3:hover, p:hover {
     margin: 0 auto 2rem auto;
   }
 
+.hero-description {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  text-align: center; /* default for small screens */
+}
+
+/* Horizontal / wider on tablets and larger */
+@media (min-width: 768px) {
   .hero-description {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
+    font-size: 1.8rem;      /* larger text */
+    text-align: left;        /* left-aligned for horizontal layout */
+    max-width: 600px;        /* takes up more horizontal space */
+    margin: 0;               /* reset margin if needed */
   }
+}
+
+/* Extra large screens */
+@media (min-width: 1200px) {
+  .hero-description {
+    font-size: 2rem;        /* even bigger text */
+    max-width: 800px;       /* fill more horizontal space */
+  }
+}
+
 
   .hero-bullets {
     font-size: 1rem;
@@ -1103,6 +1188,188 @@ h3:hover, p:hover {
     width: 50%;
     max-width: 200vh;
     height: 50vh;
+  }
+
+  .hero-description {
+    font-size: 1.7rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .hero-bullets {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-bullets li {
+    margin: 6px 0;
+  }
+
+  .par {
+    font-size: 1.2rem;
+  }
+
+  .hero-buttons {
+    width: 28%;
+    margin-top: 5rem;
+    gap: 25px;
+    padding: 20px;
+  }
+
+  .logo {
+    padding-top: 15rem;
+  }
+
+  .hero-buttons a {
+    padding: 20px 36px;
+    font-size: 1.1rem;
+    box-shadow: 0 0 15px #fff;
+  }
+
+  .hero-buttons a.whitepaper {
+    box-shadow: 0 0 15px #ff007f;
+  }
+
+  .hero-buttons a.artist {
+    box-shadow: 0 0 15px #ffcc00;
+  }
+
+  .hero-buttons a.buy {
+    box-shadow: 0 0 15px #007fff;
+  }
+
+  .scrollable {
+    width: 700px;
+    height: 600px;
+  }
+
+  .scrollable::-webkit-scrollbar {
+    width: 14px;
+  }
+
+  .card {
+    box-shadow: 0 0 25px rgba(255, 0, 127, 0.4);
+    margin-bottom: 3.5rem;
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 35px rgba(255, 0, 127, 0.7);
+  }
+
+  .card-img-overlay {
+    padding: 40px;
+  }
+
+  .card-title {
+    font-size: 2rem;
+    text-shadow: 
+      0 0 18px #ff007f,
+      4px 4px 8px rgba(0, 0, 0, 1);
+  }
+
+  .card-text {
+    font-size: 1.25rem;
+    text-shadow: 
+      0 0 10px rgba(255, 0, 127, 0.9),
+      3px 3px 6px rgba(0, 0, 0, 1);
+  }
+
+  .pay-button {
+    padding: 18px 36px;
+    font-size: 1.2rem;
+    box-shadow: 0 0 12px rgba(0, 127, 255, 0.5);
+  }
+
+  .pay-button:hover {
+    box-shadow: 0 0 20px rgba(0, 127, 255, 0.8);
+  }
+}
+/* ===================================
+   EXTRA LARGE SCREENS (1920px+)
+   =================================== */
+
+@media (min-width: 1920px) {
+  .hero-section {
+    padding-top: 12rem;
+    min-height: 100vh;
+  }
+
+  .hero-title {
+    font-size: 6.5rem;
+  }
+
+  .hero-word {
+    margin: 0 0.35em;
+  }
+
+  .hero-may, .hero-art {
+    -webkit-text-stroke: 3px #ff00c8;
+    text-shadow:
+      0 0 10px #ff00c8,
+      0 0 20px #ff00c8,
+      0 0 40px #ff00c8,
+      0 0 80px #ff00c8;
+  }
+
+  .hero-be {
+    text-shadow:
+      0 0 10px #ffffff,
+      0 0 20px #ffffff,
+      0 0 40px #ffffff;
+  }
+
+  .hero-subtitle {
+    margin-top: 2rem;
+    font-size: 2.6rem;
+    text-shadow:
+      0 0 8px rgba(56,189,248,.9),
+      0 0 18px rgba(56,189,248,.6),
+      0 0 36px rgba(56,189,248,.4);
+  }
+
+  .new-title {
+    font-size: 6rem;
+    text-shadow: 0 0 25px #ff007f;
+  }
+
+  .strokeme {
+    text-shadow:
+      0 0 9px #fff,
+      0 0 12px #fff,
+      0 0 25px #fff,
+      0 0 50px #ff007f,
+      0 0 100px #ff007f,
+      0 0 110px #ff007f,
+      0 0 120px #ff007f,
+      0 0 180px #ff007f;
+  }
+
+  .new-subtitle {
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .section8 {
+    height: 60vh;
+    padding-top: 2.5rem;
+  }
+
+  .can-you {
+    padding: 2rem;
+  }
+
+  .you-do {
+    font-size: 1.2rem;
+  }
+
+  .carousel-container {
+    width: 50%;
+    max-width: 2000px; /* allow full XL expansion */
+    height: 50vh;
+    margin: 0 auto 2.5rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .hero-description {

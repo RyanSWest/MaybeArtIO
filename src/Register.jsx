@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useUser } from './util/UserContextProvider';
 import { Loader, AlertCircle, CheckCircle } from 'lucide-react';
 import './Login.css'; // reuse same cyberpunk CSS
+import DisclaimerToast from './Disclaimer.jsx'; // make sure this path is correct
 
 export default function Register() {
   const navigate = useNavigate();
@@ -37,9 +38,14 @@ export default function Register() {
   return (
     <div className="login-page">
       <div className="login-wrapper">
-        <h1 className="login-title">Create Account</h1>
+        <DisclaimerToast />  
+          <h1>"                                          
+                                    " </h1>
+                                    <div> 
+                                       <h1 className="login-title">Create Artist Page</h1>
         <p className="login-subtitle">Sign up to get started</p>
-
+                                    </div>
+        
         {success && (
           <div className="login-success">
             <CheckCircle className="icon" />

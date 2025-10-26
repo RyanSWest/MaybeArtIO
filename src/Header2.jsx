@@ -9,9 +9,9 @@ import { Link } from "react-router-dom";
 import Logo from "./imgs/Logo.png";
 import "./Header.css";
 import WalletButton from "./WalletButton";
-// import {Link} from 'react-router-dom';
 import './head.css';
-import {useUser} from './util/UserContextProvider'
+import { useUser } from './util/UserContextProvider';
+
 const navStyle = {
   color: "white",
   fontSize: "medium",
@@ -21,16 +21,26 @@ const navStyle = {
 };
 
 export default function Header2() {
-  const user =useUser()
-   return (
+  const user = useUser();
+  const [expanded, setExpanded] = useState(false); // control navbar collapse
+
+  const handleLinkClick = () => {
+    setExpanded(false); // close navbar when a link is clicked
+  };
+
+  return (
     <Navbar
       bg="dark"
       variant="dark"
       expand="lg"
       sticky="top"
       className="w-100"
+       
+      expanded={expanded} // control collapse state
       style={{
         padding: "0.5rem 1rem",
+        paddingBottom: '10rem',
+        height:'4rem'
       }}
     >
       <Container fluid>
@@ -45,30 +55,20 @@ export default function Header2() {
           </span>
         </Navbar.Brand>
 
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle
+          aria-controls="basic-navbar-nav"
+          onClick={() => setExpanded(expanded ? false : "expanded")}
+        />
 
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto gap-3">
-
-               <Link to ='/'
-               style={navStyle}>Home</Link>
-
-           
-            <Link to="/register" style={navStyle}>
-              Register
-            </Link>
-            <Link to="/buyToken" style={navStyle}>
-              Buy Token
-            </Link>
-            <Link to ='/us' style={navStyle}>Exchange </Link>
-           
-            <Link to="/login" style={navStyle}>
-              Login
-            </Link>
-            <Link to="/upload" style={navStyle}>
-              Upload
-            </Link>
-            <WalletButton/>
+            <Link to='/' style={navStyle} onClick={handleLinkClick}>Home</Link>
+            <Link to="/register" style={navStyle} onClick={handleLinkClick}>Register</Link>
+            <Link to="/buyToken" style={navStyle} onClick={handleLinkClick}>Buy Token</Link>
+            <Link to='/us' style={navStyle} onClick={handleLinkClick}>Exchange</Link>
+            <Link to="/login" style={navStyle} onClick={handleLinkClick}>Login</Link>
+            <Link to="/upload" style={navStyle} onClick={handleLinkClick}>Upload</Link>
+            <WalletButton />
           </Nav>
         </Navbar.Collapse>
       </Container>

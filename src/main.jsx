@@ -45,6 +45,7 @@ import Header2 from './Header2.jsx';
 import MaybeNeon from './MaybeNeon.jsx'
 // import MaybeNeon from './Neon.jsx'
 import TestPayPal from './buyToken.jsx';
+import Terms from './Terms.jsx';
   // import MaybeArtLanding from './Ozz.jsx'
 // const stripePromise =  loadStripe('pk_live_51J8tvhBaRV6ucR0OPtOmn7BsXPaNLPzSt6hswYJelRzOQZUykfCHHPp1q6YXYYaMP8Ehz3IDuwqPvhVFkdHY4Zny00VOS91sxQ'
 
@@ -69,6 +70,7 @@ createRoot(document.getElementById('root')).render(
                 <Routes>
                   <Route path ='/' element ={<NewPage/>} />
                   <Route path ='/copy'element={<HeroCTA/>}/>
+                  <Route path ='/terms' element ={<Terms/>}/>
                   <Route path='/new' element={<NewPage />} />
                   <Route path='/landing' element={<App />} />
                   <Route path='/home' element={<HeroCTA />} />

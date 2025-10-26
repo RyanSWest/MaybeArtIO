@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState,useEffect} from 'react';
 import { Link, Navigate } from 'react-router-dom'
 import './Login.css';
 import { Form } from 'react-bootstrap';
@@ -12,6 +12,9 @@ const Login = () => {
     email: '',
     password: '',
   });
+  useEffect(() => {
+  setFormData({ email: '', password: '' });
+}, []);
 
   // Fix: Initialize as object consistently
   const [message, setMessage] = useState({ text: '', type: '' })
@@ -92,7 +95,7 @@ const Login = () => {
       <div className="login-wrapper">
         {/* Header */}
         <div>
-          <h1 className="login-title">unity</h1>
+          <h1 className="login-title">Maybe Art</h1>
           <p className="login-subtitle">Login</p>
         </div>
 
@@ -121,6 +124,7 @@ const Login = () => {
               onChange={handleInputChange}
               placeholder="Enter your email"
               required
+              autoComplete='email'
             />
           </div>
 
@@ -135,6 +139,7 @@ const Login = () => {
               placeholder="Enter password"
               minLength="6"
               required
+              autoComplete='password'
             />
             <p className="text-gray-500 text-sm mt-2">
               Password must be at least 6 characters long.

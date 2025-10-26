@@ -1,5 +1,5 @@
 import React from 'react';
-import  White from './PDFs/Whitepaper.pdf'
+import  White from '../public/PDFs/Whitepaper.pdf'
 import {Container }from 'react-bootstrap'
 export default function PDFViewer() {
   return (

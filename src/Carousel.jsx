@@ -6,6 +6,8 @@ import'./index.css';
 import Logo from './imgs/Token.png';
 import Diego from './imgs/Diego.jpg';
 import Gorr from './imgs/Gorilla1.jpg';
+import Rodan from'./imgs/Rodan3.jpg';
+import Drag from './imgs/Dragon2.jpg';
  
 const Car = () => {
   return (
@@ -25,20 +27,25 @@ const Car = () => {
 <img src=
 
 "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.y01j4tDJpXL3-iT8v8J_1wHaKY%3Fpid%3DApi&f=1&ipt=1b9aa13bec835b47e45cfa12b7115452e9694494753d06e12c9804c9ac3ea686&ipo=images" className="d-block w-100" style={{height: '24rem', objectFit: 'contain'}} alt="..." />
-      <Carousel.Caption> <h1  className='cyber-text'>John Butler </h1> 
+      <Carousel.Caption>  
+ 
          </Carousel.Caption>
       
       </Carousel.Item>
       <Carousel.Item>
         <img src={Butlerpic} className="d-block w-100" style={{height: '24rem', objectFit: 'contain',borderRadius:'70px'}} alt="..." />
+                    <p className='cyber-text'> UNRELEASED MATERIAL from JOHN BUTLER!!</p>
 
-        <Carousel.Caption><h1 className='cyber-text'>John Butler's unreleased Material!</h1>  
+        <Carousel.Caption>
+          
+          
+          {/* <h1 className='cyber-text'>John Butler's unreleased Material!</h1>   */}
         {/* <p  style ={{color:'magenta'}}> John Butler's very first recorded album with Vitamin!!</p> */}
         </Carousel.Caption>
        </Carousel.Item>
       <Carousel.Item>
         <img src={Logo} className="d-block w-100" style={{height: '20rem', objectFit: 'contain',borderRadius:'90px'}} alt="..." />
-      </Carousel.Item>
+       </Carousel.Item>
 
 
        <Carousel.Item>
@@ -55,6 +62,18 @@ const Car = () => {
       </Carousel.Item>
        <Carousel.Item>
         <img src={Gorr}
+         className="d-block w-100" style={{height: '22rem', objectFit: 'contain',borderRadius:'70px'}} alt="..." />
+                  <p className='cyber-text'>Many New NFTs!!</p>
+
+      </Carousel.Item>
+      <Carousel.Item>
+        <img src={Rodan}
+         className="d-block w-100" style={{height: '22rem', objectFit: 'contain',borderRadius:'70px'}} alt="..." />
+                  <p className='cyber-text'>Many New NFTs!!</p>
+
+      </Carousel.Item>
+      <Carousel.Item>
+        <img src={Drag}
          className="d-block w-100" style={{height: '22rem', objectFit: 'contain',borderRadius:'70px'}} alt="..." />
                   <p className='cyber-text'>Many New NFTs!!</p>
 

@@ -1,0 +1,117 @@
+/* Hero.css */
+
+.hero-coin-section {
+  width: 100%;
+  min-height: 80vh; /* take most of viewport height */
+  padding: 4rem 2rem;
+  background: #0a0a0a; /* dark background for contrast */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-coin-container {
+  display: flex;
+  flex-direction: column; /* vertical by default */
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1400px;
+}
+
+/* Horizontal layout for laptops/desktops */
+@media (min-width: 1024px) {
+  .hero-coin-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+  }
+
+  .hero-text {
+    flex: 1; /* text takes available space */
+    text-align: left;
+  }
+
+  .coin-container {
+    flex: 0 0 250px; /* coin has fixed size but grows slightly */
+  }
+}
+
+/* Coin styles */
+.coin-container {
+  width: 200px;
+  height: 200px;
+  perspective: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coin {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ffd700, #ffb400);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: spin 3s linear infinite;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.7);
+  transform-style: preserve-3d;
+}
+
+.coin-logo {
+  width: 50%;
+  height: 50%;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+}
+
+/* Spin animation */
+@keyframes spin {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+/* Smaller screens adjustments */
+@media (max-width: 768px) {
+  .coin-container {
+    width: 150px;
+    height: 150px;
+  }
+
+  .coin-logo {
+    width: 50%;
+    height: 50%;
+  }
+
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .coin-container {
+    width: 120px;
+    height: 120px;
+  }
+
+  .hero-text h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-text p {
+    font-size: 0.9rem;
+  }
+}

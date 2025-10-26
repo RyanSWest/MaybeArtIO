@@ -18,6 +18,8 @@ import HeroCTA from './copy.jsx';
 import HeroSub from './copy2.jsx';
 import Car from './Carousel.jsx';
 import Count from './Count.jsx';
+import HeroCoin from './Coin.jsx';
+import './hero.css';
 const images = [
   './imgs/Ice.jpg',
   './imgs/Logo.png',
@@ -39,12 +41,12 @@ export default function MaybeArtHero() {
     <Container className='scrollable' fluid>  
     <div className ='logo'> <Image src ={Logo}/></div>
  
-
+   
   
   <div className ='section8'>  
     
     <div className='hero-buttons'>  
-       <Link to ="/grid" className='whitepaper'> View Gallery</Link>
+       <Link to ="/grid" className='buy'> View Gallery</Link>
  
     <Link to ='/register' className ='artist'>CREATE ARTIST PAGE</Link>
     <Link to ='/buyToken' className ='buy'> BUY $MAYBEART TOKEN </Link>
@@ -52,9 +54,9 @@ export default function MaybeArtHero() {
    
     
   <div className="carousel-container">
-    <img src= {Ice} alt="Featured Art 1"/>
-     <img src= {Rabbit} alt="Featured Art 3"/>
-     <img src={Rodan} alt='Featured Art4'/>
+    <img className ='responsive-image' src= {Ice} alt="Featured Art 1"/>
+     <img className= 'repsonsive-image'src= {Rabbit} alt="Featured Art 3"/>
+     <img  className =' responsive-image'src={Rodan} alt='Featured Art4'/>
 
   </div>
    <div className="hero-buttons">
@@ -67,6 +69,7 @@ export default function MaybeArtHero() {
     {/* <a href="/buytoken" className="buy">BUY $MAYBEART TOKEN</a> */}
   </div>
   </div>
+<HeroCoin/>
 
 <div
   style={{
@@ -133,10 +136,10 @@ export default function MaybeArtHero() {
 <Count/>
 
 
-  <HeroCTA/>
+  {/* <HeroCTA/> */}
     
     {/* <Scrollbars style ={{width:'100%',  height:'400rem'}}>  */}
-    <section className="hero-section">
+    <section className="hero-coin">
 
         <div className="maybe-art-title-wrapper">
 {/*           
@@ -161,8 +164,8 @@ export default function MaybeArtHero() {
         style={{
           color: "transparent",
           fontFamily:'Rajdhani',
-          fontSize: '6rem',
-          marginTop:'10rem',
+          fontSize: '3rem',
+          marginTop:'1rem',
           
            
 
@@ -198,14 +201,12 @@ export default function MaybeArtHero() {
     <Link to ='/buyToken' className ='buy'> BUY $MAYBEART TOKEN </Link>
     {/* <a href="/buytoken" className="buy">BUY $MAYBEART TOKEN</a> */}
   </div>
-<HeroCTA/>
-  {/* <Car/>
-  <HeroSub/> 
-  <Count/>
-   */}
+  
+   <Car/>
+    
  
  
-<Block/>
+ 
 </section>
 {/* </Scrollbars> */}
  
@@ -215,7 +216,9 @@ export default function MaybeArtHero() {
 
 <section> 
 
-
+  <Car/>
+  <HeroSub/> 
+  <Count/>
 
 
 
