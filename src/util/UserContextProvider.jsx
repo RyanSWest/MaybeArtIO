@@ -1,14 +1,11 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-
 const UserAuthContext = createContext();
 
 export const UserAuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
-  const API_URL = 'https://squi-d-lite-production.up.railway.app';
-
+  const API_URL = 'https://squi-d-lite-production.up.railway.app'
   // Check if user is already logged in on mount
   useEffect(() => {
     const checkUserSession = async () => {
@@ -116,7 +113,7 @@ export const UserAuthProvider = ({ children }) => {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'
           }
-        });
+        }); 
       }
     } catch (err) {
       console.error('Logout failed:', err);

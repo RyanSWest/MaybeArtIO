@@ -7,16 +7,7 @@ function Dap2() {
     <Container bg='dark'  >
        <div className="position-relative text-center">
   {/* Background Image */}
-  <img
-    src="https://tse1.mm.bing.net/th/id/OIP.Q7pwtVs-wZhtHTgFOygF8gHaEK?pid=Api&P=0&h=220"
-    className="img-fluid w-100"
-    alt="Background"
-    style={{
-      filter: "brightness(45%) saturate(110%)",
-      objectFit: "cover",
-      height: "400px",
-    }}
-  />
+ N
 
   {/* Gradient Overlay */}
   <div

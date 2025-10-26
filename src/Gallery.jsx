@@ -5,7 +5,7 @@ import axios from 'axios';
 
 const Gallery = ()=> {
     const[pics,setPics]=useState([])
-      const API_URL = 'https://daring-vitality-production-a0f4.up.railway.app'; // Update this when deployed!
+      const API_URL = 'https://squi-d-lite-production.up.railway.app'; // Update this when deployed!
 
 
 

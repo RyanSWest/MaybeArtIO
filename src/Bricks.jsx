@@ -1,10 +1,5 @@
-import {Container,Card, Image,} from 'react-bootstrap';
-
-
-
-
-import React from 'react'
-import {Button, ButtonGroup, Card, Container}from './bootstrap-react'
+import React from 'react';
+import { Container, Card, Image, Button, ButtonGroup } from 'react-bootstrap';
 
 function Bricks() {
   return (

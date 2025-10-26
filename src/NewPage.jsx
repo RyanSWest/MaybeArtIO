@@ -2,13 +2,15 @@
 
 import React from 'react';
 import { useEffect, useState } from 'react';
-import {Container} from 'react-bootstrap';
+import {Container,Card, Image} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import './new.css';
 import Faint from './imgs/BigOne.jpg';
 import Rabbit from './imgs/Bunny.jpg';
  import Block from './Block';
  import Ice from './imgs/Ice.jpg';
+ import Logo from './imgs/neon.png';
+ import  Rodan from './imgs/Rodan3.jpg';
 // import {Scrollbars} from 'react-scrollbars';
 import './ozz.css';
 import './maybeart.css'
@@ -35,7 +37,103 @@ export default function MaybeArtHero() {
   return (
      
     <Container className='scrollable' fluid>  
+    <div className ='logo'> <Image src ={Logo}/></div>
+ 
 
+  
+  <div className ='section8'>  
+    
+    <div className='hero-buttons'>  
+       <Link to ="/grid" className='whitepaper'> View Gallery</Link>
+ 
+    <Link to ='/register' className ='artist'>CREATE ARTIST PAGE</Link>
+    <Link to ='/buyToken' className ='buy'> BUY $MAYBEART TOKEN </Link>
+    </div>
+   
+    
+  <div className="carousel-container">
+    <img src= {Ice} alt="Featured Art 1"/>
+     <img src= {Rabbit} alt="Featured Art 3"/>
+     <img src={Rodan} alt='Featured Art4'/>
+
+  </div>
+   <div className="hero-buttons">
+    {/* <a href="/whitepaper" className="whitepaper">READ WHITEPAPER</a> */}
+
+    <Link to ="/whitepaper" className='whitepaper'> READ WHITEPAPER</Link>
+ 
+    <Link to ='/login' className ='artist'>Login to ARTIST PAGE</Link>
+    <Link to ='/buyToken' className ='buy'> John Butler Presale! </Link>
+    {/* <a href="/buytoken" className="buy">BUY $MAYBEART TOKEN</a> */}
+  </div>
+  </div>
+
+<div
+  style={{
+    position: "relative",
+    width: "100%",
+    maxWidth: "600px",
+    height: "400px",
+    margin: "2rem auto",
+    borderRadius: "12px",
+    overflow: "hidden",
+    border: "2px solid #ff007f",
+    boxShadow: "0 0 20px rgba(255, 0, 127, 0.4)",
+  }}
+>
+  {/* Background image */}
+  <img
+    src="https://tse3.mm.bing.net/th/id/OIP.2t27fF_lrU7G39IWuchPOAHaDd?pid=Api&P=0&h=220"
+    alt="Maybe Art"
+    style={{
+      width: "100%",
+      height: "100%",
+      objectFit: "cover",
+      display: "block",
+      filter: "brightness(85%)",
+    }}
+  />
+
+  {/* Text overlay */}
+  <div
+    style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      padding: "20px",
+      textAlign: "center",
+      background: "transparent",
+    }}
+  >
+    <p
+      style={{
+        color: "white",
+        fontSize: "1.3rem",
+        fontWeight: "600",
+        lineHeight: "1.5",
+        fontFamily:'Rajdhani',
+        textShadow:
+          "0 0 20px #ff007f, 3px 3px 10px black, -2px -2px 10px black, 2px 2px 10px black",
+        background: "transparent",
+        margin: 0,
+      }}
+    >
+      MAYBEART is a cryptocurrency on the Solana blockchain, backed by art,
+      blending the worlds of blockchain and creativity. Our community empowers
+      musicians, visual artists, collectors, and fans by providing a marketplace
+      where creators can showcase and sell their works.
+    </p>
+  </div>
+</div>
+<Count/>
+
+
+  <HeroCTA/>
     
     {/* <Scrollbars style ={{width:'100%',  height:'400rem'}}>  */}
     <section className="hero-section">
@@ -83,13 +181,7 @@ export default function MaybeArtHero() {
   {/* <h1 className="strokeme">MAYBEART</h1> */}
   
 
-  <div className="new-subtitle">Turning Creativity Into Currency</div>
-
-  <div className="carousel-container">
-    <img src= {Ice} alt="Featured Art 1"/>
-     <img src= {Rabbit} alt="Featured Art 3"/>
-  </div>
-
+ 
   <div className="hero-description">ARTISTS & MUSICIANS</div>
   <ul className="hero-bullets">
     <li>Upload & Get Paid</li>
@@ -107,10 +199,10 @@ export default function MaybeArtHero() {
     {/* <a href="/buytoken" className="buy">BUY $MAYBEART TOKEN</a> */}
   </div>
 <HeroCTA/>
-  <Car/>
+  {/* <Car/>
   <HeroSub/> 
   <Count/>
-  
+   */}
  
  
 <Block/>

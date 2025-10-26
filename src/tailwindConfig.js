@@ -1,5 +1,5 @@
 export default {
-  content: ["./src/MaybeArtLanding.jsx"],
+  content: ["./src/Login.jsx"],
   theme: { extend: {} },
   plugins: [],
 }

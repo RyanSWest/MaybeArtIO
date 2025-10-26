@@ -3,7 +3,7 @@ import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js';
 import { Container } from 'react-bootstrap';
 
 const PAYPAL_CLIENT_ID = 'YOUR_PAYPAL_CLIENT_ID'; // Replace with your actual PayPal client ID
-const API_URL = 'http://localhost:4000'; // Replace with your actual API URL
+const API_URL = 'https://squi-d-lite-production.up.railway.app'; // Replace with your actual API URL
 
 const TestPayPal = () => {
   const amount = '1.00'; // Minimal test amount

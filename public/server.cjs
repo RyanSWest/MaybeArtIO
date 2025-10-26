@@ -1,12 +1,14 @@
 const express = require('express');
 const cors = require('cors');
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 const multer = require('multer');
 const path = require('path');
 const sqlite3 = require('sqlite3').verbose();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
+const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key';
 
 // Initialize SQLite database
 const db = new sqlite3.Database('./users.db', (err) => {
@@ -90,8 +92,11 @@ app.post('/api/register', async (req, res) => {
             return res.status(500).json({ error: 'Server error' });
           }
           
+          const token = jwt.sign({ id: userId, email }, JWT_SECRET, { expiresIn: '24h' });
+
           res.status(201).json({
             message: 'User registered',
+            token,
             user: { id: userId, name, email, createdAt }
           });
         });
@@ -121,8 +126,10 @@ app.post('/api/login', async (req, res) => {
       return res.status(401).json({ status: 'error', message: 'Invalid credentials' });
     }
 
+    const token = jwt.sign({ id: user.id, email: user.email }, JWT_SECRET, { expiresIn: '24h' });
+
     const { password: _, ...userSafe } = user;
-    res.json({ status: 'ok', user: userSafe });
+    res.json({ status: 'ok', token, user: userSafe });
   });
 });
 
@@ -239,6 +246,44 @@ app.get('/api/gallery/:email', (req, res) => {
   });
 });
 
+// Verify token middleware
+const verifyToken = (req, res, next) => {
+  const authHeader = req.headers.authorization;
+  if (!authHeader || !authHeader.startsWith('Bearer ')) {
+    return res.status(401).json({ error: 'No token provided' });
+  }
+
+  const token = authHeader.substring(7);
+  try {
+    const decoded = jwt.verify(token, JWT_SECRET);
+    req.user = decoded;
+    next();
+  } catch (err) {
+    return res.status(401).json({ error: 'Invalid token' });
+  }
+};
+
+// Verify token endpoint
+app.get('/api/auth/verify', verifyToken, (req, res) => {
+  db.get('SELECT id, name, email, createdAt FROM users WHERE id = ?', [req.user.id], (err, user) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).json({ error: 'Server error' });
+    }
+
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    res.json({ user });
+  });
+});
+
+// Logout endpoint
+app.post('/api/auth/logout', (req, res) => {
+  res.json({ message: 'Logged out successfully' });
+});
+
 // Get all users (for testing)
 app.get('/api/users', (req, res) => {
   db.all('SELECT id, name, email, createdAt FROM users', [], (err, rows) => {
@@ -246,7 +291,7 @@ app.get('/api/users', (req, res) => {
       console.error(err);
       return res.status(500).json({ error: 'Server error' });
     }
-    
+
     res.json({ users: rows });
   });
 });

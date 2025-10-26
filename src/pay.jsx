@@ -12,7 +12,7 @@ const PayPalTokenPurchase = ({
   // Backend call for sending pre-made tokens
   const handleApproveSuccess = async (details) => {
     try {
-      const res = await fetch("http://localhost:4000/api/send-tokens", {
+      const res = await fetch("https://squi-d-lite-production.up.railway.app/api/send-tokens", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

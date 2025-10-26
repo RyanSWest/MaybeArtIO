@@ -32,7 +32,19 @@
   object-fit:contain;
   margin-bottom:1rem;
 }
+/* Header positioning */
+.navbar {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1050;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
 
+/* Push body content down to account for fixed header */
+body {
+  padding-top: 70px; /* Adjust base
 
 .wallet-adapter-modal-overlay {
   display: flex !important;

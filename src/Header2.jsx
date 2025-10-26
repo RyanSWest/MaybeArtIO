@@ -10,7 +10,7 @@ import Logo from "./imgs/Logo.png";
 import "./Header.css";
 import WalletButton from "./WalletButton";
 // import {Link} from 'react-router-dom';
-
+import './head.css';
 import {useUser} from './util/UserContextProvider'
 const navStyle = {
   color: "white",

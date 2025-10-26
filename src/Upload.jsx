@@ -15,11 +15,12 @@ const Upload = () => {
   const [messageType, setMessageType] = useState('');
   const [pics, setPics] = useState([]);
 
-  const user = useUser();
+  const { user, isAuthenticated } = useUser();
   const navigate = useNavigate();
   const location = useLocation();
 
-  const API_URL = 'https://squi-d-lite-production.up.railway.app';
+  const API_URL = 'https://squi-d-lite-production.up.railway.app'
+  
 
   const logout = async () => {
     try {
@@ -34,6 +35,7 @@ const Upload = () => {
       console.error(err);
     } finally {
       sessionStorage.removeItem('authToken');
+      navigate('/new')
     }
   };
 
@@ -48,8 +50,10 @@ const Upload = () => {
   };
 
   useEffect(() => {
-    if (user.isAuthenticated && user.user?.email) fetchUserGallery(user.user.email);
-  }, [user.isAuthenticated, user.user?.email]);
+    if (isAuthenticated && user?.email) {
+      fetchUserGallery(user.email);
+    }
+  }, [isAuthenticated, user?.email]);
 
   const handleFileSelect = (e) => {
     setSelectedFile(e.target.files[0]);
@@ -66,7 +70,7 @@ const Upload = () => {
         if (!selectedFile) throw new Error('Please select a file');
         const formData = new FormData();
         formData.append('art', selectedFile);
-        formData.append('email', user.user.email);
+        formData.append('email', user.email);
         if (title) formData.append('title', title);
         if (description) formData.append('description', description);
 
@@ -77,13 +81,13 @@ const Upload = () => {
         setSelectedFile(null);
         setTitle('');
         setDescription('');
-        await fetchUserGallery(user.user.email);
+        await fetchUserGallery(user.email);
 
       } else {
         if (!imageUrl) throw new Error('Please enter an image URL');
 
         await axios.post(`${API_URL}/api/gallery/upload`, {
-          email: user.user.email,
+          email: user.email,
           url: imageUrl,
           title: title || 'URL Upload',
           description
@@ -94,7 +98,7 @@ const Upload = () => {
         setImageUrl('');
         setTitle('');
         setDescription('');
-        await fetchUserGallery(user.user.email);
+        await fetchUserGallery(user.email);
       }
     } catch (err) {
       console.error(err);
@@ -104,7 +108,7 @@ const Upload = () => {
     setLoading(false);
   };
 
-  if (!user.isAuthenticated) {
+  if (!isAuthenticated) {
     return (
       <Container fluid className="d-flex justify-content-center align-items-center" style={{ minHeight: '80vh' }}>
         <Card className="text-center p-4 neon-card">
@@ -125,7 +129,7 @@ const Upload = () => {
 
   return (
     <Container fluid style={{ padding: '2rem', background: 'dark)', minHeight: '100vh' }}>
-      <h1 className="neon-title mb-4">Gallery for: {user.user?.email}</h1>
+      <h1 className="neon-title mb-4">Gallery for: {user?.email}</h1>
 
       <Row className="mb-4">
         {pics.length === 0 ? (

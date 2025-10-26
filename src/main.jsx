@@ -20,7 +20,7 @@ import Header from './Header.jsx'
 import Papers from './paper.jsx'
 import Landing from './Home3.jsx'
 import ImageUpload from './Upload.jsx'
-import Home from './Home'
+// import MaybeArtLandingP from './Home'
 import Gallery from './Gallery.jsx'
 import PayPalTokenPurchase from './pay.jsx'
 import DisplayPDFs from './Pdf.jsx'
@@ -67,7 +67,7 @@ createRoot(document.getElementById('root')).render(
                 <Header2 />
 
                 <Routes>
-                  <Route path ='/' element ={<MaybeNeon/>} />
+                  <Route path ='/' element ={<NewPage/>} />
                   <Route path ='/copy'element={<HeroCTA/>}/>
                   <Route path='/new' element={<NewPage />} />
                   <Route path='/landing' element={<App />} />

@@ -1,0 +1,63 @@
+/* Fix navbar covering content - All screen sizes */
+
+/* Mobile (up to 767px) */
+@media (max-width: 767px) {
+  .scrollable {
+    padding-top: 70px !important;
+  }
+  
+  .logo {
+    padding-top: 4rem !important;
+  }
+}
+
+/* Tablet (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .scrollable {
+    padding-top: 80px !important;
+  }
+  
+  .logo {
+    padding-top: 5rem !important;
+  }
+}
+
+/* Desktop (1024px - 1439px) */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .scrollable {
+    padding-top: 90px !important;
+  }
+  
+  .logo {
+    padding-top: 6rem !important;
+  }
+}
+
+/* Large Desktop (1440px - 1919px) */
+@media (min-width: 1440px) and (max-width: 1919px) {
+  .scrollable {
+    padding-top: 100px !important;
+  }
+  
+  .logo {
+    padding-top: 7rem !important;
+  }
+}
+
+/* Extra Large (1920px+) */
+@media (min-width: 1920px) {
+  .scrollable {
+    padding-top: 110px !important;
+  }
+  
+  .logo {
+    padding-top: 8rem !important;
+  }
+}
+
+/* Ensure navbar stays on top */
+.navbar {
+  z-index: 1050;
+  padding-bottom: 3rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}

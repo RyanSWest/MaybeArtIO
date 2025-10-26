@@ -49,7 +49,7 @@ export default function WalletButton() {
     if (window.solana && window.solana.isConnected) {
       setWallet(window.solana.publicKey.toString())
       getBalance()
-      // showDetails(true)
+      setShowDetails(true)
     }
   }, [])
 
@@ -60,6 +60,7 @@ export default function WalletButton() {
         setWallet(response.publicKey.toString())
         console.log("WALLET",response.publicKey.toString())
         setShowWallets(false)
+        setShowDetails(true)
         getBalance()
 
 
@@ -80,6 +81,7 @@ export default function WalletButton() {
         const response = await window.solflare.connect()
         setWallet(response.publicKey.toString())
         setShowWallets(false)
+        setShowDetails(true)
         getBalance()
       } catch (err) {
         console.error('Solflare connection failed:', err)
