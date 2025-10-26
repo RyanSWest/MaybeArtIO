@@ -1,5 +1,5 @@
 import React from 'react';
-import './Hero.css';
+import './hero.css';
 import Logo from './imgs/Logo.png';
 
 export default function HeroCoin() {
