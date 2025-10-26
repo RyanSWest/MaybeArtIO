@@ -28,10 +28,10 @@ import Bunny from'./imgs/Bunny.jpg';
 import Scrawny from'./imgs/Scrawny.jpg';
 import RUSS2 from './imgs/RUSSL/RUSS2.jpg';
 import RUSS3 from './imgs/RUSSL/RUSS3.jpg';
-import RUSS4 from './imgs/RUSSL/RUSS4.jpg';
-import RUSS6 from './imgs/RUSSL/RUSS6.jpg';
-import RUSS7 from './imgs/RUSSL/RUSS7.jpg';
-import RUSS9 from './imgs/RUSSL/RUSS9.jpeg';
+// import RUSS4 from './imgs/RUSSL/RUSS4.jpg';
+// import RUSS6 from './imgs/RUSSL/RUSS6.jpg';
+// import RUSS7 from './imgs/RUSSL/RUSS7.jpg';
+// import RUSS9 from './imgs/RUSSL/RUSS9.jpeg';
 
 
 export const Grid = () => {
@@ -48,7 +48,7 @@ export const Grid = () => {
     Baby, Taco, Bunny, Orang, Drag, Rodan, Rath, Bear, Gorilla, Raijin,
     Drag3, Chimp, AngryGorr, Drag2, Kaiju, Rhino, Scrawny, Wombat 
   ];
-  const images2= [RUSS2,RUSS3,RUSS4, RUSS6,RUSS7,RUSS9]
+  const images2= [RUSS2,RUSS3 ]
 
   return (
     <Container fluid style={{ paddingTop: '6rem', paddingBottom: '3rem', backgroundColor: 'black' }}>
