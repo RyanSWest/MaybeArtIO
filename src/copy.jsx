@@ -50,31 +50,47 @@ export default function HeroCTA({
       >
         {subheading}
       </p>
-
-      <div
-        data-w-id="d4b0a9ae-0b5e-0079-36b1-7e2693aac5d4"
-        data-wf-id='["d4b0a9ae-0b5e-0079-36b1-7e2693aac5d4"]'
-        className="button-group"
-      >
+      <div style={{display:'flex', justifyContent:'space-evenly', alignItems:'center'}}> 
+       <Link to='/grid'> <h1 className ='cyberpunk-span-blue'>Browse Art</h1>  </Link>
+      
         <Link to = '/register'
         
         >
-         <h1 className='cyberpunk-text'> Join Now</h1>
+         <p className='cyberpunk-span-blue'> Join Now</p>
         </Link>
 
 
-<Link to='/grid'> <h1 className ='cyberpunk-text'>Browse Art</h1> Browse Art</Link>
-        <a
-          href= '/grid'
-          data-w-id="d4b0a9ae-0b5e-0079-36b1-7e2693aac5d3"
-          data-wf-id='["d4b0a9ae-0b5e-0079-36b1-7e2693aac5d3"]'
-          className="button is-secondary on-inverse w-button"
-          data-palette="Link"
-          onClick={handleBrowse}
-          aria-label="Browse art"
-        >
-         {"    "} Browse art
-        </a>
+      </div>
+     
+
+      <div
+    id="w-node-a15aa3ad-b541-e3b1-545d-786b4da84a6f-4da84a69"
+    className="max-width_small w-node-d4b0a9ae-0b5e-0079-36b1-7e2693aac5d5-1629d029 hero-cta"
+    style={{
+    backgroundImage : "url(https://tse3.mm.bing.net/th/id/OIP.2t27fF_lrU7G39IWuchPOAHaDd?pid=Api&P=0&h=220')",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+      minHeight: "20vh",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+      textAlign: "center",
+      padding: "4rem 2rem",
+      color: "white",
+      border: '2px solid cyan',
+      borderRadius:'10px',
+    }}
+ 
+
+   >
+   <img src= "https://tse3.mm.bing.net/th/id/OIP.2t27fF_lrU7G39IWuchPOAHaDd?pid=Api&P=0&h=220"/>
+
+                                                   <p className="cyberpunk-text"> MAYBEART is a cryptocurrency on the Solana blockchain, backed by art. We empower artists and collectors through a marketplace where creators can sell their works, share royalties, and collaborate with a community that fuels innovation and growth.</p>
+
+
+     
       </div>
     </div>
   );
@@ -92,28 +108,6 @@ export default function HeroCTA({
 /**
  * Example App showing how to use HeroCTA.
  * Replace onJoin and onBrowse with your real navigation/modal logic.
- */
-// export default function App() {
-//   const handleJoin = (event) => {
-//     event.preventDefault();
-//     // Real app logic: open modal, route, or call auth flow
-//     console.log("Custom join handler invoked");
-//     alert("Custom join handler invoked");
-//   };
-
-//   const handleBrowse = (event) => {
-//     event.preventDefault();
-//     // Real app logic: navigate to gallery page
-//     console.log("Custom browse handler invoked");
-//     alert("Custom browse handler invoked");
-//   };
-
-//   return (
-//     <div style={{ padding: 24 }}>
-//       <HeroCTA onJoin={handleJoin} onBrowse={handleBrowse} />
-//     </div>
-//   );
-// }
  
  
 

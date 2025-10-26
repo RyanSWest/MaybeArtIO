@@ -1,3 +1,5 @@
+import './new.css';
+
 const HeroSub = ()=> {
 
 return (
@@ -8,10 +10,10 @@ return (
   data-wf-id='["d4b0a9ae-0b5e-0079-36b1-7e2693aac5cd"]'
   class="heading-responsive_wrapper w-node-d4b0a9ae-0b5e-0079-36b1-7e2693aac5cd-1629d029"
 >
-  <h1
+   <h1
   style={{color:'white'}}
     
-    class="heading-responsive_large margin-bottom_none"
+    class="heading-animated"
     color:white
   >
     Art. Crypto. Community. Opportunity.

@@ -79,7 +79,7 @@ export default function MaybeArtHero() {
     margin: "2rem auto",
     borderRadius: "clamp(8px, 1.5vw, 20px)",
     overflow: "hidden",
-    border: "2px solid #ff007f",
+    border: "2px solid  grey",
     boxShadow: "0 0 20px rgba(255, 0, 127, 0.4)",
     transition: "all 0.3s ease-in-out",
   }}
@@ -116,9 +116,9 @@ export default function MaybeArtHero() {
     <p
       style={{
         color: "white",
-        fontSize: "1.3rem",
+        fontSize: "1rem",
         fontWeight: "600",
-        lineHeight: "1.5",
+        lineHeight: "1.",
         fontFamily:'Rajdhani',
         textShadow:
           "0 0 20px #ff007f, 3px 3px 10px black, -2px -2px 10px black, 2px 2px 10px black",
@@ -216,10 +216,8 @@ export default function MaybeArtHero() {
 
 <section> 
 
-  <Car/>
-  <HeroSub/> 
-  <Count/>
-
+   <HeroSub/> 
+ 
 
 
 </section>

@@ -11,8 +11,8 @@ export default function HeroCoin() {
             <img src={Logo} alt="Logo" className="coin-logo" />
           </div>
         </div>
-        <div className="hero-text">
-          <h1>Turning creativity into currency</h1>
+        <div className="hero-word">
+          <h1 className = 'hero-title'>Turning creativity into currency</h1>
           <p>Join MaybeArt.IO and start minting, trading, and creating today.</p>
         </div>
       </div>
