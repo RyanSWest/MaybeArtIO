@@ -38,7 +38,7 @@ const Car = () => {
 
         <Carousel.Caption>
           
-          
+          <p className = 'terminal-text'> John Butler unreleased Material</p>
           {/* <h1 className='cyber-text'>John Butler's unreleased Material!</h1>   */}
         {/* <p  style ={{color:'magenta'}}> John Butler's very first recorded album with Vitamin!!</p> */}
         </Carousel.Caption>
@@ -57,7 +57,7 @@ const Car = () => {
          
          
        
-                 <p className='cyber-text'>Original Paintings Diego RIvera</p>
+                 <p className='terminal-text'>Original Paintings Diego RIvera</p>
 
       </Carousel.Item>
        <Carousel.Item>
@@ -69,7 +69,8 @@ const Car = () => {
       <Carousel.Item>
         <img src={Rodan}
          className="d-block w-100" style={{height: '22rem', objectFit: 'contain',borderRadius:'70px'}} alt="..." />
-                  <p className='cyber-text'>Many New NFTs!!</p>
+                  <p className='cyberpunk-text'>Many New NFTs!!</p>
+                  <Carousel.Caption><h1></h1> NFTS!</Carousel.Caption>
 
       </Carousel.Item>
       <Carousel.Item>
