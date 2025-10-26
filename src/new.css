@@ -39,12 +39,39 @@ h3:hover, p:hover {
 .scrollable:hover {
   background: rgb(0, 0, 0) !important;
 }
-
 .hero-section {
   background: linear-gradient(to bottom, #0c0018, #110121) !important;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* centers vertically */
+  width: 100%;
+  min-height: 85vh;
+  padding: 1rem 1rem 2rem; /* trimmed down top padding */
+  gap: 1rem; /* tighter spacing between elements */
 }
+
+/* Tablet and up: horizontal layout */
+@media (min-width: 768px) {
+  .hero-section {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1.5rem 3rem; /* still roomy, not oversized */
+    gap: 2rem;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1200px) {
+  .hero-section {
+    justify-content: space-evenly;
+    /* padding: 2rem 4rem; */
+    min-height: 80vh; /* keeps it visually full but not huge */
+  }
+}
+
+
 
 .hero-section:hover {
   background: linear-gradient(to bottom, #0c0018, #110121) !important;
@@ -139,7 +166,7 @@ div:hover {
   color: rgb(0, 1, 22);
   overflow: hidden;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: flex-start;
   text-align: center;
@@ -348,7 +375,8 @@ h3:hover, p:hover {
   height: 30vh;
   margin: 0 auto 1.5rem auto;
   position: relative;
-  border: 2px solid pink;
+  border: 2px solid whitesmoke;
+  border-radius:20px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -360,6 +388,7 @@ h3:hover, p:hover {
   height: 100%;
   object-fit: cover;
   position: absolute;
+  border-radius:20px;
   top: 0;
   left: 0;
   opacity: 0;
@@ -394,6 +423,8 @@ h3:hover, p:hover {
   color: #ffcc00;
   margin-bottom: 0.8rem;
   font-weight: bold;
+  display: flex;
+  flex-direction: row;
 }
 
 .hero-bullets {
@@ -427,11 +458,17 @@ h3:hover, p:hover {
 }
 
 .logo {
-  width: 100%;
-  padding-top: 6rem;
+  display: flex;
   justify-content: center;
-  align-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 6rem; /* adjust or remove if it’s pushing too far down */
   position: relative;
+}
+.logo img {
+  max-width: clamp(150px, 40vw, 400px);
+  height: auto;
+  display: block;
 }
 
 .hero-buttons a {

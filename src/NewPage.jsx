@@ -74,14 +74,14 @@ export default function MaybeArtHero() {
 <div
   style={{
     position: "relative",
-    width: "100%",
-    maxWidth: "600px",
-    height: "400px",
+    width: "clamp(300px, 60vw, 1000px)", // scales between 300px and 1000px depending on screen width
+    height: "clamp(200px, 40vw, 700px)", // scales height proportionally
     margin: "2rem auto",
-    borderRadius: "12px",
+    borderRadius: "clamp(8px, 1.5vw, 20px)",
     overflow: "hidden",
     border: "2px solid #ff007f",
     boxShadow: "0 0 20px rgba(255, 0, 127, 0.4)",
+    transition: "all 0.3s ease-in-out",
   }}
 >
   {/* Background image */}
@@ -136,10 +136,10 @@ export default function MaybeArtHero() {
 <Count/>
 
 
-  {/* <HeroCTA/> */}
+ <HeroCTA/>
     
     {/* <Scrollbars style ={{width:'100%',  height:'400rem'}}>  */}
-    <section className="hero-coin">
+    <section className="hero-section">
 
         <div className="maybe-art-title-wrapper">
 {/*           

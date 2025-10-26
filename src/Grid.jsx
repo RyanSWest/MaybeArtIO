@@ -1,4 +1,10 @@
- 
+import React, { useState } from 'react';
+import {
+  Container,
+  Row,
+  Col,
+  Modal
+} from 'react-bootstrap';
 import Drag from "./imgs/COLORED DRAGON13.jpg";
 import Rodan from "./imgs/Rodan3.jpg";
 import Rhino from "./imgs/RHINOGUN9.jpg";
@@ -21,204 +27,117 @@ import Wombat from'./imgs/Wombat.jpg';
 import Bunny from'./imgs/Bunny.jpg';
 import Scrawny from'./imgs/Scrawny.jpg';
 import RUSS2 from './imgs/RUSSL/RUSS2.jpg';
-import Header from './Header'
-import axios from 'axios';
-// import './Grid.css';
-import {Row,Col, Container,Modal, Card} from 'react-bootstrap';
-import {useState, useEffect} from 'react'
- 
-import'./index.css'
-// import Russ from './Russ';
- 
- export const Grid =()=>{
-const stuff=[ {pic: {Baby},pos:'47% 35%'},{pic :{Kaiju}, pos:'75% 65%'},{pic :{Kaiju}, pos:'53% 43%'},{pic :{Kaiju}, pos:'65% 65%'} ,{pic :{Kaiju}, pos:'50% 25%'},{pic :{Kaiju}, pos:'47%'},{pic :{Kaiju}, pos:'65% 35%'},]
-const [showModal, setShowModal] = useState(false);
+import RUSS3 from './imgs/RUSSL/RUSS3.jpg';
+import RUSS4 from './imgs/RUSSL/RUSS4.jpg';
+import RUSS6 from './imgs/RUSSL/RUSS6.jpg';
+import RUSS7 from './imgs/RUSSL/RUSS7.jpg';
+import RUSS9 from './imgs/RUSSL/RUSS9.jpeg';
+
+
+export const Grid = () => {
+  const [showModal, setShowModal] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
 
   const handleImageClick = (image) => {
     setSelectedImage(image);
     setShowModal(true);
-    console.log("CLICK CLICK", showModal, selectedImage)
   };
- 
 
-return ( 
-    
+  // List of images to map
+  const images = [
+    Baby, Taco, Bunny, Orang, Drag, Rodan, Rath, Bear, Gorilla, Raijin,
+    Drag3, Chimp, AngryGorr, Drag2, Kaiju, Rhino, Scrawny, Wombat 
+  ];
+  const images2= [RUSS2,RUSS3,RUSS4, RUSS6,RUSS7,RUSS9]
 
-    <Container className ='bg-dark'>  
+  return (
+    <Container fluid style={{ paddingTop: '6rem', paddingBottom: '3rem', backgroundColor: 'black' }}>
+      <h1 style={{ fontFamily: 'Rajdhani', color: 'darkslategrey', fontWeight: '700', paddingTop: '2rem', textAlign:'center' }}>NFT GALLERY</h1>
+      <h3 style={{ fontFamily: 'Rajdhani', color: 'darkslategrey', fontWeight: '700', textAlign:'center' }}>Ryan West</h3>
 
-        
-      
-      
-      
-       
-         <h1  style={{fontFamily:'Rajdhani', color:'darkslategrey',fontWeight:'700',fontStyle:'bolder',paddingTop:'3rem'}} > NFT GALLERY</h1>
+      <Row className="g-3 mt-4">
+        {images.map((img, idx) => (
+          <Col key={idx} xs={6} sm={4} md={3} lg={2}>
+             <div className="image-wrapper" style={{ overflow: 'hidden', borderRadius: '8px' }}>
+              <img
+                src={img}
+                alt={`Art ${idx + 1}`}
+                onClick={() => handleImageClick({ fullSize: img, title: `Art ${idx + 1}` })}
+                style={{ width: '100%', height: '200px', objectFit: 'cover', cursor: 'pointer' }}
+              />
+                <p
+    style={{
+      marginTop: '0.5rem',
+      color: 'lightgrey',
+      fontFamily: 'Rajdhani',
+      fontWeight: '600',
+      fontSize: '1.1rem'
+    }}
+  >
+    $100
+  </p>
+            </div>
+          </Col>
+        ))}
+      </Row>
+      <Row className="g-3 mt-4">
+ <h1 style={{ fontFamily: 'Rajdhani', color: 'darkslategrey', fontWeight: '700', paddingTop: '2rem', textAlign:'center' }}>NFT GALLERY</h1>
+      <h3 style={{ fontFamily: 'Rajdhani', color: 'darkslategrey', fontWeight: '700', textAlign:'center' }}>Russ Aigner</h3>
 
-                <h3 style={{fontFamily:'Rajdhani', color:'darkslategrey',fontWeight:'700',fontStyle:'bolder'}} >Ryan West</h3>
-         
-
-
-
-           <Container className ='bg-dark' fluid style={{paddingTop:'5rem',backgroundColor:'black'}}>
-      <Row>
-        <Col><div className="image-wrapper" 
-         
-        
-        
-        >
-                 <img src={Baby} alt="Art 1" 
-                 
-                 
-                   
-        onClick={() => handleImageClick(img)}
-              style={{ cursor: 'pointer', width: '100%' }}
-            
-                 
-                 />
-               </div>
-               <div className="image-wrapper">
-                 <img src={Taco} alt="Art 2" />
-               </div>
-              
-               <div className="image-wrapper">
-                 <img src={Bunny} alt="Art 3" />
-               </div>
-               
-               </Col>
-                <Col> <div className="image-wrapper">
-                 <img src={Bunny} alt="Art 3" />
-               </div>  
-                 <div className="image-wrapper">
-                 <img src={Orang} alt="Art 3" />
-               </div>
-                 <div className="image-wrapper">
-                 <img src={Drag} alt="Art 3" />
-               </div>
-               
-               
-               </Col>
-        <Col><div className="image-wrapper">
-                 <img src={Rodan} alt="Art 3" />
-               </div>
-               <div className="image-wrapper">
-                 <img src={Rath} alt="Art 3" />
-               </div>
-               <div className="image-wrapper">
-                 <img src={Bear} alt="Art 3" />
-               </div>
-        
-        
-        
-        
-        </Col>
-
-        <Col> 
-        <div className="image-wrapper">
-                 <img src={Gorilla} alt="Art 3" />
-               </div> 
-               <div className="image-wrapper">
-                 <img src={Raijin} alt="Art 3" />
-               </div>
-               <div className="image-wrapper">
-                 <img src={Drag} alt="Art 3" />
-               </div>
-        
-        
-        </Col>
-        <Col>  
-        <div className="image-wrapper">
-                 <img src={Rodan} alt="Art 3" />
-               </div> 
-               <div className="image-wrapper">
-                 <img src={AngryGorr} alt="Art 3" />
-               </div>
-               <div className="image-wrapper">
-                 <img src={Drag2} alt="Art 3" />
-               </div>
-        
-        </Col>
- <Col>  
-        
- 
- 
- </Col>
- <Col> 
- 
- 
-    
-                 
-                 
-                 
-                 
-                 </Col>
-                 
- <Col> 
-   <div className="image-wrapper">
-                 <img src={Drag3} alt="Art 3" />
-               </div> 
-           
-   {/* <div className='image-wrapper'> 
-                 <img src={Wombat} alt='img1'/>
-                 </div>  
-                  <div className='image-wrapper'> 
-                 <img src={RUSS2} alt='img1'/>
-                 </div>  
-                */}
-               
- 
- </Col>
-\
-      {/* <Russ/> */}
-
+        {images2.map((img, idx) => (
+          <Col key={idx} xs={6} sm={4} md={3} lg={2}>
+            <div className="image-wrapper" style={{ overflow: 'hidden', borderRadius: '8px' }}>
+              <img
+                src={img}
+                alt={`Art ${idx + 1}`}
+                onClick={() => handleImageClick({ fullSize: img, title: `Art ${idx + 1}` })}
+                style={{ width: '100%', height: '200px', objectFit: 'cover', cursor: 'pointer' }}
+              />
+                <p
+    style={{
+      marginTop: '0.5rem',
+      color: 'white',
+      fontFamily: 'Rajdhani',
+      fontWeight: '600',
+      fontSize: '1.1rem'
+    }}
+  >
+    $100
+  </p>
+            </div>
+          </Col>
+        ))}
       </Row>
 
+
+      {/* Modal */}
+      {selectedImage && (
+        <Modal show={showModal} onHide={() => setShowModal(false)} size="lg" centered>
+          <Modal.Header closeButton>
+            <Modal.Title>  Price: $100</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <img
+              src={selectedImage.fullSize}
+              alt={selectedImage.title}
+              style={{ width: '100%' }}
+            />
+              <p
+    style={{
+      marginTop: '0.5rem',
+      color: 'lightgrey',
+      fontFamily: 'Rajdhani',
+      fontWeight: '600',
+      fontSize: '1.1rem'
+    }}
+  >
+    $100
+  </p>
+          </Modal.Body>
+        </Modal>
+      )}
     </Container>
+  );
+};
 
-
-      {/* <Russ/> */}
-<>
-{showModal &&  (   
-
-
-<Modal show={showModal} onHide={() => setShowModal(false)} size="lg" centered>
-        <Modal.Header closeButton>
-          <Modal.Title>{selectedImage?.title}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <img 
-            src={selectedImage?.fullSize} 
-            alt={selectedImage?.title}
-            style={{ width: '100%' }}
-          />
-          <p className="mt-3">{selectedImage?.description}</p>
-        </Modal.Body>
-      </Modal>
-)
-   
-
-
-
-}
-<Modal show={showModal} onHide={() => setShowModal(false)} size="lg" centered>
-        <Modal.Header closeButton>
-          <Modal.Title>{selectedImage?.title}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <img 
-            src={selectedImage?.fullSize} 
-            alt={selectedImage?.title}
-            style={{ width: '100%' }}
-          />
-          <p className="mt-3">{selectedImage?.description}</p>
-        </Modal.Body>
-      </Modal>
-      
-    </>
- 
-        </Container>
- 
-)
-
-}
-
-export default Grid
+export default Grid;
