@@ -19,8 +19,8 @@ const Upload = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const API_URL = 'https://squi-d-lite-production.up.railway.app'
-  
+  // const API_URL = 'https://squi-d-lite-production.up.railway.app'
+  const API_URL ='http://3.14.126.44:3001'
 
   const logout = async () => {
     try {
@@ -45,7 +45,7 @@ const Upload = () => {
       const res = await axios.get(`${API_URL}/api/gallery/${email}`);
       setPics(res.data.gallery || []);
     } catch (err) {
-      console.error(err);
+      console.log(error)
     }
   };
 
@@ -140,7 +140,7 @@ const Upload = () => {
               <Card className="login">
                 <Card.Img
                   variant="top"
-                  src={item.type === 'file' ? `${API_URL}/api/gallery/image/${item.id}` : item.url}
+                  src={item.type === 'file' ? `${API_URL}/uploads/${item.filename}` : item.url}
                   alt={item.title || 'Art'}
                   style={{ height: '200px', objectFit: 'cover' }}
                 />

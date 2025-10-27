@@ -74,8 +74,10 @@ export default function MaybeArtHero() {
 <div
   style={{
     position: "relative",
-    width: "clamp(300px, 60vw, 1000px)", // scales between 300px and 1000px depending on screen width
-    height: "clamp(200px, 40vw, 700px)", // scales height proportionally
+    width:'100',
+    // width: "clamp(300px, 60vw, 1000px)", // scales between 300px and 1000px depending on screen width
+    // height: "clamp(200px, 40vw, 700px)", // scales height proportionally
+    height:"100vh",
     margin: "2rem auto",
     borderRadius: "clamp(8px, 1.5vw, 20px)",
     overflow: "hidden",
@@ -116,7 +118,7 @@ export default function MaybeArtHero() {
     <p
       style={{
         color: "white",
-        fontSize: "1rem",
+        fontSize: "2rem",
         fontWeight: "600",
         lineHeight: "1.",
         fontFamily:'Rajdhani',

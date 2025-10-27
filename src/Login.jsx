@@ -21,6 +21,7 @@ const Login = () => {
 
   // Fix: Add http://
   // const API_BASE = 'https://squi-d-lite-production.up.railway.app'
+  const API_BASE ='http://3.14.126.44:3001'
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;

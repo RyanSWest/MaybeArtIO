@@ -5,7 +5,8 @@ export const UserAuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const API_URL = 'https://squi-d-lite-production.up.railway.app'
+  // const API_URL = 'https://squi-d-lite-production.up.railway.app'
+  const API_URL ='http://3.14.126.44:3001'
   // Check if user is already logged in on mount
   useEffect(() => {
     const checkUserSession = async () => {

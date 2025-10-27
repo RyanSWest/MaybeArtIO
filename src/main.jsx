@@ -43,6 +43,7 @@ import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 import Header2 from './Header2.jsx';
 import MaybeNeon from './MaybeNeon.jsx'
+import Ozzy from './Ozzy.jsx';
 // import MaybeNeon from './Neon.jsx'
 import TestPayPal from './buyToken.jsx';
 import Terms from './Terms.jsx';
@@ -68,7 +69,7 @@ createRoot(document.getElementById('root')).render(
                 <Header2 />
 
                 <Routes>
-                  <Route path ='/' element ={<NewPage/>} />
+                   <Route path ='/' element ={<NewPage/>} />
                   <Route path ='/copy'element={<HeroCTA/>}/>
                   <Route path ='/terms' element ={<Terms/>}/>
                   <Route path='/new' element={<NewPage />} />
