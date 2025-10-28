@@ -1,5 +1,5 @@
 import { useState,useEffect} from 'react';
-import { Link, Navigate } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 import './Login.css';
 import { Form } from 'react-bootstrap';
 import { useUser } from './util/UserContextProvider';
@@ -7,7 +7,7 @@ import { useUser } from './util/UserContextProvider';
 const Login = () => {
   const { login } = useUser();
   const [loading, setLoading] = useState(false);
-
+ const  Navigate = useNavigate()
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -18,10 +18,10 @@ const Login = () => {
 
   // Fix: Initialize as object consistently
   const [message, setMessage] = useState({ text: '', type: '' })
-
+  const navigate = useNavigate()
   // Fix: Add http://
   // const API_BASE = 'https://squi-d-lite-production.up.railway.app'
-  const API_BASE ='http://3.14.126.44:3001'
+  const API_BASE ='https://3.14.126.44:3001'
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -71,7 +71,7 @@ const Login = () => {
 
         // Navigate to upload page after successful login
         setTimeout(() => {
-          window.location.href = '/upload'; // Use window.location for navigation
+           Navigate ('/upload'); // Use window.location for navigation
         }, 1000);
       } else {
         setMessage({

@@ -10,8 +10,8 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key';
 
-// Initialize SQLite database
-const db = new sqlite3.Database('./users.db', (err) => {
+// Use SQLite database (persistent file-based for EC2)
+const db = new sqlite3.Database('./images/users.db', (err) => {
   if (err) {
     console.error('Error opening database:', err);
   } else {
@@ -75,7 +75,7 @@ app.post('/api/register', async (req, res) => {
         console.error(err);
         return res.status(500).json({ error: 'Server error' });
       }
-      
+
       if (row) {
         return res.status(400).json({ error: 'User already exists' });
       }
@@ -91,7 +91,7 @@ app.post('/api/register', async (req, res) => {
             console.error(err);
             return res.status(500).json({ error: 'Server error' });
           }
-          
+
           const token = jwt.sign({ id: userId, email }, JWT_SECRET, { expiresIn: '24h' });
 
           res.status(201).json({
@@ -110,13 +110,13 @@ app.post('/api/register', async (req, res) => {
 // Login
 app.post('/api/login', async (req, res) => {
   const { email, password } = req.body;
-  
+
   db.get('SELECT * FROM users WHERE email = ?', [email], async (err, user) => {
     if (err) {
       console.error(err);
       return res.status(500).json({ status: 'error', message: 'Server error' });
     }
-    
+
     if (!user) {
       return res.status(401).json({ status: 'error', message: 'Invalid credentials' });
     }

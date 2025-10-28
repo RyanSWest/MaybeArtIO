@@ -26,6 +26,7 @@ import PayPalTokenPurchase from './pay.jsx'
 import DisplayPDFs from './Pdf.jsx'
 import BuyToken from './buyToken.jsx';
 import Register from './Register.jsx';
+import VitaminPresale from './Ozzie.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { ThemeProvider } from 'react-bootstrap'
 // import UserContext from './util/userContext.js'
@@ -69,7 +70,7 @@ createRoot(document.getElementById('root')).render(
                 <Header2 />
 
                 <Routes>
-                   <Route path ='/' element ={<NewPage/>} />
+                   <Route path ='/' element ={<VitaminPresale/>} />
                   <Route path ='/copy'element={<HeroCTA/>}/>
                   <Route path ='/terms' element ={<Terms/>}/>
                   <Route path='/new' element={<NewPage />} />
