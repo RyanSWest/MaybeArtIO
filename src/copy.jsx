@@ -5,6 +5,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./styles.css";
 import {Link} from 'react-router-dom';
+import {file, setFile} from 'react';
 
  
 export default function HeroCTA({
@@ -16,20 +17,15 @@ export default function HeroCTA({
     console.log("Join now clicked");
     alert("Join now clicked — replace with real handler.");
   },
-  onBrowse = (e) => {
-    e.preventDefault();
-    console.log("Browse art clicked");
-    alert("Browse art clicked — replace with real handler.");
-  },
+  
   joinHref = "/register",
   browseHref = "/grid",
 }) {
   // Internal handlers that call provided props and prevent default anchor behavior
-  const handleJoin = (e) => {
-    if (e && typeof e.preventDefault === "function") e.preventDefault();
-    if (typeof onJoin === "function") onJoin(e);
-  };
-
+     function handleChange(e) {
+        console.log(e.target.files);
+        setSelectedFile(URL.createObjectURL(e.target.files[0]));
+    }
   const handleBrowse = (e) => {
     if (e && typeof e.preventDefault === "function") e.preventDefault();
     if (typeof onBrowse === "function") onBrowse(e);
@@ -42,6 +38,14 @@ export default function HeroCTA({
       data-wf-id='["d4b0a9ae-0b5e-0079-36b1-7e2693aac5d5"]'
       className="max-width_small w-node-d4b0a9ae-0b5e-0079-36b1-7e2693aac5d5-1629d029"
     >
+
+      <img src ={file}/>
+
+      
+   <h1>Faggy</h1>
+
+        <input type="file" onChange={handleChange} />
+            {file && <img src={ file} alt="Uploaded preview" />}
       <p
         data-w-id="d4b0a9ae-0b5e-0079-36b1-7e2693aac5cf"
         data-wf-id='["d4b0a9ae-0b5e-0079-36b1-7e2693aac5cf"]'

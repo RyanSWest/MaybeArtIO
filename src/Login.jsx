@@ -21,7 +21,8 @@ const Login = () => {
   const navigate = useNavigate()
   // Fix: Add http://
   // const API_BASE = 'https://squi-d-lite-production.up.railway.app'
-  const API_BASE ='https://3.14.126.44:3001'
+  const API_BASE ='http://3.14.126.44:3001'
+  // const API_BASE = window.location.origin  // Gets https://maybeart.io automatically
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;

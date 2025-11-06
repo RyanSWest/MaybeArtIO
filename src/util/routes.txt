@@ -100,3 +100,18 @@ curl -X POST http://daring-vitality-production-a0f4.up.railway.app/api/gallery/u
 
 # Clean up test file
 rm test-image.txt
+
+# Go to home folder
+cd ~
+
+# Unzip
+unzip -o dist.zip
+
+# Delete old site files
+sudo rm -rf /usr/share/nginx/html/*
+
+# Copy new files
+sudo cp -r dist/* /usr/share/nginx/html/
+
+# Clean up
+rm -rf dist dist.zip

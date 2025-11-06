@@ -1425,9 +1425,15 @@ h3:hover, p:hover {
     gap: 25px;
     padding: 20px;
   }
+  .fagg{
+    border:2px solid red;
+    display:block;
+  }
 
   .logo {
     padding-top: 15rem;
+    width:85%;
+    border:2px solid red;
   }
 
   .hero-buttons a {

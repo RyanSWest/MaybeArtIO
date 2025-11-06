@@ -11,8 +11,16 @@ import Diego from './imgs/Diego.jpg';
 import Gorr from './imgs/Gorilla1.jpg';
 import Baby from './imgs/Baby.jpg';
 import { Button, Container, Badge } from "react-bootstrap";
-
+import {useState} from 'react';
+import axios from 'axios';
 const Block = () => {
+
+  const [file,setFile]=useState('')
+
+   function handleChange(e) {
+        console.log(e.target.files);
+        setFile(URL.createObjectURL(e.target.files[0]));
+    } 
   return (
     <Container className='hero-section' fluid>
       <div className="position-relative"> 
@@ -21,6 +29,7 @@ const Block = () => {
        
         
         >
+          <img src ={file} alt='faggy'/>
           <img
             src={Token}
             alt="Logo"
@@ -30,6 +39,13 @@ const Block = () => {
            
           />
         </div>
+
+                <div className="App">
+            <h2>Add Image:</h2>
+            <input type="file" onChange={handleChange} />
+            {file && <img src={file} alt="Uploaded preview" />}
+        </div>
+
         <img
           className="img-fluid w-100"
           src={Back}

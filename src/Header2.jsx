@@ -1,31 +1,28 @@
 import { useState } from "react";
-import {
-  Navbar,
-  Nav,
-  Image,
-  Container,
-} from "react-bootstrap";
+import { Navbar, Nav, Image, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Logo from "./imgs/Logo.png";
-import "./Header.css";
 import WalletButton from "./WalletButton";
-import './head.css';
-import { useUser } from './util/UserContextProvider';
+import { useUser } from "./util/UserContextProvider";
+import "./Header.css";
+import "./head.css";
 
 const navStyle = {
   color: "white",
-  fontSize: "medium",
+  fontSize: "1.25rem",
   fontFamily: "Rajdhani",
-  fontWeight: "700",
-  padding: "0.5rem",
+  fontWeight: 700,
+  textDecoration: "none",
+  display: "flex",
+  alignItems: "center",
 };
 
 export default function Header2() {
   const user = useUser();
-  const [expanded, setExpanded] = useState(false); // control navbar collapse
+  const [expanded, setExpanded] = useState(false);
 
   const handleLinkClick = () => {
-    setExpanded(false); // close navbar when a link is clicked
+    setExpanded(false);
   };
 
   return (
@@ -34,40 +31,66 @@ export default function Header2() {
       variant="dark"
       expand="lg"
       sticky="top"
-      className="w-100"
-       
-      expanded={expanded} // control collapse state
+      expanded={expanded}
       style={{
         padding: "0.5rem 1rem",
-        paddingBottom: '10rem',
-        height:'4rem'
+        height: "5rem",
+        borderBottom: "2px solid white",
+        display: "flex",
+        alignItems: "center",
       }}
     >
-      <Container fluid>
-        <Navbar.Brand to="/" className="d-flex align-items-center gap-2">
+      <Container
+        fluid
+        className="d-flex align-items-center justify-content-between"
+      >
+        {/* Brand Section */}
+        <Navbar.Brand
+          as={Link}
+          to="/"
+          className="d-flex align-items-center gap-2"
+        >
           <Image
             src={Logo}
             style={{ height: "3rem", width: "3rem" }}
             roundedCircle
           />
-          <span className="d-none d-sm-inline" style={{ fontWeight: "700" }}>
+          <span
+            style={{
+              fontSize: "x-large",
+              fontWeight: "700",
+              fontFamily: "Rajdhani",
+              color: "white",
+            }}
+          >
             MaybeArt.IO
           </span>
         </Navbar.Brand>
 
+        {/* Toggler for Mobile */}
         <Navbar.Toggle
           aria-controls="basic-navbar-nav"
           onClick={() => setExpanded(expanded ? false : "expanded")}
         />
 
+        {/* Collapsible Nav Links */}
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto gap-3">
-            <Link to='/' style={navStyle} onClick={handleLinkClick}>Home</Link>
-            <Link to="/register" style={navStyle} onClick={handleLinkClick}>Register</Link>
-            <Link to="/buyToken" style={navStyle} onClick={handleLinkClick}>Buy Token</Link>
-            <Link to='/us' style={navStyle} onClick={handleLinkClick}>Exchange</Link>
-            <Link to="/login" style={navStyle} onClick={handleLinkClick}>Login</Link>
-            <Link to="/upload" style={navStyle} onClick={handleLinkClick}>Upload</Link>
+          <Nav className="ms-auto gap-3 align-items-center">
+            <Link to="/" style={navStyle} onClick={handleLinkClick}>
+              Home
+            </Link>
+            <Link to="/register" style={navStyle} onClick={handleLinkClick}>
+              Register
+            </Link>
+            <Link to="/login" style={navStyle} onClick={handleLinkClick}>
+              Login
+            </Link>
+            <Link to="/buyToken" style={navStyle} onClick={handleLinkClick}>
+              PreSale
+            </Link>
+            <Link to="/upload" style={navStyle} onClick={handleLinkClick}>
+              Upload
+            </Link>
             <WalletButton />
           </Nav>
         </Navbar.Collapse>

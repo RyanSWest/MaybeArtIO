@@ -20,6 +20,7 @@ import Car from './Carousel.jsx';
 import Count from './Count.jsx';
 import HeroCoin from './Coin.jsx';
 import './hero.css';
+import './new.css';
 const images = [
   './imgs/Ice.jpg',
   './imgs/Logo.png',
@@ -39,7 +40,19 @@ export default function MaybeArtHero() {
   return (
      
     <Container className='scrollable' fluid>  
-    <div className ='logo'> <Image src ={Logo}/></div>
+    <div  
+    
+    
+    
+    
+    >  
+
+
+      <img 
+      
+      style={{objectFit:'cover', width:'100%', paddingTop:'4rem'}}
+      src={Logo}/>
+    </div>
  
    
   

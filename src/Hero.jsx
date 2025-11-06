@@ -1,10 +1,20 @@
 import { Container, Row, Col, Button, Image , Card, CardImgOverlay,CardImg,Figure} from 'react-bootstrap';
 import Token from './imgs/Token.png';
 import Car from './Carousel';
- 
+import react from 'react'
+import  {useState} from 'react';
 //  import './Home.css';
 
-const Hero = () => (
+const Hero = () => { 
+  
+  let [file, setFile]=useState('');
+  
+  function handleChange(e) {
+        console.log(e.target.files);
+        setSelectedFile(URL.createObjectURL(e.target.files[0]));
+    }
+
+  return(
   <Container fluid  >
       
       
@@ -18,6 +28,13 @@ const Hero = () => (
     <h1 className="cyber-text">MaybeArt</h1>
     <p className ='cyber-text'>Turning Creativity in to Currency</p>
   </div>
+
+
+
+   <h1>Faggy</h1>
+
+        <input type="file" onChange={handleChange} />
+            {file && <img src={ file} alt="Uploaded preview" />}
 </div>  
 
  </Row>
@@ -65,5 +82,5 @@ const Hero = () => (
      
    
   </Container>
-);
+);}
 export default Hero

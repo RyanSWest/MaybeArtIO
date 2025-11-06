@@ -14,7 +14,8 @@ import Grid from './Grid.jsx'
 import HeroCTA from './copy.jsx';
 import NewPage from './NewPage.jsx'
 import Login from './Login.jsx'
-import '../index.css'
+import '../index.css';
+// import Hero fom './Hero.jsx';
 import App from './App.jsx'
 import Header from './Header.jsx'
 import Papers from './paper.jsx'
@@ -43,10 +44,8 @@ import TokenExchange from './usdc.jsx';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 import Header2 from './Header2.jsx';
-import MaybeNeon from './MaybeNeon.jsx'
-import Ozzy from './Ozzy.jsx';
-// import MaybeNeon from './Neon.jsx'
-import TestPayPal from './buyToken.jsx';
+ import Ozzy from './Ozzy.jsx';
+ import TestPayPal from './buyToken.jsx';
 import Terms from './Terms.jsx';
   // import MaybeArtLanding from './Ozz.jsx'
 // const stripePromise =  loadStripe('pk_live_51J8tvhBaRV6ucR0OPtOmn7BsXPaNLPzSt6hswYJelRzOQZUykfCHHPp1q6YXYYaMP8Ehz3IDuwqPvhVFkdHY4Zny00VOS91sxQ'
@@ -70,9 +69,8 @@ createRoot(document.getElementById('root')).render(
                 <Header2 />
 
                 <Routes>
-                   <Route path ='/' element ={<VitaminPresale/>} />
-                  <Route path ='/copy'element={<HeroCTA/>}/>
-                  <Route path ='/terms' element ={<Terms/>}/>
+                   <Route path ='/' element ={<NewPage/>} />
+                   <Route path ='/terms' element ={<Terms/>}/>
                   <Route path='/new' element={<NewPage />} />
                   <Route path='/landing' element={<App />} />
                   <Route path='/home' element={<HeroCTA />} />

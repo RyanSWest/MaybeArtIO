@@ -4,8 +4,10 @@ import axios from 'axios';
 import { useUser } from './util/UserContextProvider';
 import { useNavigate, useLocation } from 'react-router-dom';
 import './Login.css';
+import { set } from '@coral-xyz/anchor/dist/cjs/utils/features';
 const Upload = () => {
   const [selectedFile, setSelectedFile] = useState(null);
+  const [preview, setPreview]= useState(null);
   const [imageUrl, setImageUrl] = useState('')
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
@@ -20,8 +22,9 @@ const Upload = () => {
   const location = useLocation();
 
   // const API_URL = 'https://squi-d-lite-production.up.railway.app'
-  const API_URL ='http://3.14.126.44:3001'
-
+  // const API_URL = window.location.origin 
+  // const API_URL = 'app.maybeart.io';
+  const API_URL = 'http://3.14.126.44:3001'
   const logout = async () => {
     try {
       const token = sessionStorage.getItem('authToken');
@@ -49,13 +52,27 @@ const Upload = () => {
     }
   };
 
+
+
+  //try uplloAD AGIAN
+
+
+  function handleChange(e) {
+        console.log(e.target.files);
+        setPreview(URL.createObjectURL(e.target.files[0]));
+    }
+
   useEffect(() => {
     if (isAuthenticated && user?.email) {
       fetchUserGallery(user.email);
     }
   }, [isAuthenticated, user?.email]);
 
-  const handleFileSelect = (e) => {
+  const handleFileSelect = (e) => {   
+     setPreview(URL.createObjectURL(e.target.files[0]));
+    //  setPreview(e.target.files[0]);
+
+    // setSelectedFile(preview);
     setSelectedFile(e.target.files[0]);
     setMessage('');
   };
@@ -79,13 +96,14 @@ const Upload = () => {
         setMessage('File uploaded successfully!');
         setMessageType('success');
         setSelectedFile(null);
+        setPreview(null);
         setTitle('');
         setDescription('');
         await fetchUserGallery(user.email);
 
       } else {
         if (!imageUrl) throw new Error('Please enter an image URL');
-
+        setPreview(imageUrl);
         await axios.post(`${API_URL}/api/gallery/upload`, {
           email: user.email,
           url: imageUrl,
@@ -98,6 +116,7 @@ const Upload = () => {
         setImageUrl('');
         setTitle('');
         setDescription('');
+        setPreview(null);
         await fetchUserGallery(user.email);
       }
     } catch (err) {
@@ -139,11 +158,11 @@ const Upload = () => {
             <Col md={4} key={item.id || idx} className="mb-4">
               <Card className="login">
                 <Card.Img
-                  variant="top"
-                  src={item.type === 'file' ? `${API_URL}/uploads/${item.filename}` : item.url}
-                  alt={item.title || 'Art'}
-                  style={{ height: '200px', objectFit: 'cover' }}
-                />
+  variant="top"
+  src={item.type === 'file' ? `${API_URL}/api/image/${item.id}` : item.url}
+  alt={item.title || 'Art'}
+  style={{ height: '200px', objectFit: 'cover' }}
+/>
                 <Card.Body>
                   <Card.Title className="text-light">{item.title || 'Untitled'}</Card.Title>
                   <Card.Text className="text-light">{item.description || 'No description'}</Card.Text>
@@ -161,7 +180,12 @@ const Upload = () => {
             {message}
           </Alert>
         )}
+        <h1>Faggy</h1>
 
+        {/* <input type="file" onChange={handleFileSelect} /> */}
+            {/* {selectedFile && <img src={selectedFile} alt="Uploaded preview" />} */}
+            <img src ={imageUrl}/>
+         <img src={preview}/> <h1>{uploadType}</h1>
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3">
             <Form.Label className="text-light">Upload Type</Form.Label>

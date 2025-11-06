@@ -60,4 +60,8 @@
   z-index: 1050;
   padding-bottom: 3rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  align-content: center;
+}
+.navStyle{
+  font-size: large;
 }

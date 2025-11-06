@@ -88,6 +88,30 @@ const Count = () => {
         >
           COUNTDOWN  
         </h3>
+          <h5
+          style={{
+                  color: "transparent", // hollow
+    WebkitTextStroke: "2px white", // white outline
+    textShadow: `
+      0 0 4px #b400ff,
+      0 0 8px #b400ff,
+      0 0 16px #b400ff,
+      0 0 32px #b400ff,
+      0 0 48px #ff00ff,
+      0 0 64px #ff00ff,
+      0 0 96px #ff00ff`,
+    fontFamily: "'Orbitron', sans-serif", // futuristic font
+    fontSize: "clamp(1.3rem, 6vw, 4rem)", // responsive font size
+    textAlign: "center",
+    textTransform: "uppercase",
+    letterSpacing: "0.15em",
+    margin: "1rem 0",
+    lineHeight: "1.1",
+           }}
+        >
+         to Auction
+        </h5>
+        
 
         <div
           style={{
