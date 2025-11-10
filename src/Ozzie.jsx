@@ -68,7 +68,7 @@ const VitaminPreSale = () => {
                   <div className="mbr-section-btn">
                     <a 
                       className="btn btn-primary" 
-                      href="https://mobiri.se"
+                      href=" https://maybeart.io/pre-sale"
                       style={{
                         padding: '12px 30px',
                         fontSize: '1rem',

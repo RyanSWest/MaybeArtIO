@@ -1,9 +1,9 @@
 import React from 'react';
 import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js';
 import { Container } from 'react-bootstrap';
-
+import HeroCoin from './Coin.jsx';
 const PAYPAL_CLIENT_ID = 'YOUR_PAYPAL_CLIENT_ID'; // Replace with your actual PayPal client ID
-const API_URL = 'https://squi-d-lite-production.up.railway.app'; // Replace with your actual API URL
+const API_URL = '3.14.126.44:3001'; // Replace with your actual API URL
 
 const TestPayPal = () => {
   const amount = '1.00'; // Minimal test amount
@@ -12,6 +12,7 @@ const TestPayPal = () => {
   return (
     <PayPalScriptProvider options={{ "client-id": PAYPAL_CLIENT_ID, currency: 'USD' }}>
       <div style={styles.container}>
+        <HeroCoin />
         <div style={styles.content}>
           <h2>Test PayPal Button (Always Visible)</h2>
           <p>Amount: ${amount}</p>
@@ -25,7 +26,7 @@ const TestPayPal = () => {
                       value: amount
                     },
                     description: `${tokensAmount} tokens`
-                  }
+                 }
                 ]
               });
             }}
@@ -68,7 +69,7 @@ const styles = {
   content: {
     textAlign: 'center',
     padding: '20px',
-    backgroundColor: '#fff', // Light background for content
+    backgroundColor: 'black', // Light background for content
     borderRadius: '8px',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
   }

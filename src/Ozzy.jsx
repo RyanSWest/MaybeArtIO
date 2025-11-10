@@ -1,6 +1,6 @@
 import React from 'react'
 import Logo from './imgs/Logo.png';
-
+import './Ozzie.css';
 function Ozzy() {
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat" style={{
@@ -8,6 +8,15 @@ function Ozzy() {
   backgroundSize: 'cover',
   backgroundPosition: 'center'
 }}>
+
+
+    <iframe  src= 'https://yl0ceelqcu.mobirisesite.com/'
+
+      style={{width:"100%", height:"100vh", border:'none'}}
+ 
+
+/>
+
   {/* Overlay */}
   <div className="absolute inset-0 bg-[#173D33] opacity-0 pointer-events-none"></div>
 

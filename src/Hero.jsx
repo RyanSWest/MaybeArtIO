@@ -31,10 +31,8 @@ const Hero = () => {
 
 
 
-   <h1>Faggy</h1>
-
-        <input type="file" onChange={handleChange} />
-            {file && <img src={ file} alt="Uploaded preview" />}
+  
+ 
 </div>  
 
  </Row>

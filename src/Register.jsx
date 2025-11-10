@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { useUser } from './util/UserContextProvider';
 import { Loader, AlertCircle, CheckCircle } from 'lucide-react';
 import './Login.css'; // reuse same cyberpunk CSS
+import {Link} from 'react-router-dom'
+
 import DisclaimerToast from './Disclaimer.jsx'; // make sure this path is correct
 
 export default function Register() {
@@ -35,12 +37,30 @@ export default function Register() {
     }
   };
 
+  const nav=(e)=>{
+    e.preventDefault();
+    navigate('/terms')
+  }
+
   return (
     <div className="login-page">
       <div className="login-wrapper">
-        <DisclaimerToast />  
-          <h1>"                                          
-                                    " </h1>
+        {/* <DisclaimerToast />   */}
+
+
+ 
+         <p> By registering you agree to our</p>
+
+        <a href = '/terms'> terms of servicce</a>
+           
+            <span
+            className='terms-text'
+            
+            onClick={(e)=>navigate('/terms')} >
+              Terms of Service
+              
+               </span>   
+                                      
                                     <div> 
                                        <h1 className="login-title">Create Artist Page</h1>
         <p className="login-subtitle">Sign up to get started</p>

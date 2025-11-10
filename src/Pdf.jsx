@@ -1,5 +1,5 @@
  import React from 'react';
- import  White from '../public/PDFs/Whitepaper.pdf'
+ import  White from './PDFs/Whitepaper.pdf'
  import { Document, Page } from 'react-pdf';
  import {Container,Image} from 'react-bootstrap';
  import './new.css';

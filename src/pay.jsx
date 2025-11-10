@@ -1,9 +1,10 @@
 import React from "react";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import {Link} from 'react-router-dom'
+import HeroCoin from "./Coin";
 // Optional props: amount, currency, and a callback for successful approval
 const PayPalTokenPurchase = ({
-  amount = "10.00",
+  amount = "20.00",
   currency = "USD",
   onError = (err) => console.error(err),
 }) => {
@@ -12,7 +13,7 @@ const PayPalTokenPurchase = ({
   // Backend call for sending pre-made tokens
   const handleApproveSuccess = async (details) => {
     try {
-      const res = await fetch("https://squi-d-lite-production.up.railway.app/api/send-tokens", {
+      const res = await fetch("https://3.14.126.44:3001/api/send-tokens", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -31,23 +32,31 @@ const PayPalTokenPurchase = ({
     }
   };
 
+
+  
+
   return (
 
     <>  
 
+
+
  
     <div style = {{justifyContent:'center',alignContent:'center'}}>   
-
-
+ 
        <Link to ='https://www.paypal.com/ncp/payment/JUUKRXQZAEF42
 
-'>   <h1  className ='cyberpunk-text'style={{color:'blue'}}>BUY 10$ Presale!</h1> </Link>  
+
+'>  
+
+
+ <h1  className ='cyberpunk-text'style={{color:'blue', justifySelf:'center', paddingTop:'3rem'}}>BUY 20$ Presale!</h1> </Link>  
     </div>
     <PayPalScriptProvider
       options={{ "client-id": clientId, currency, intent: "capture" }}
     >
       <PayPalButtons
-        style={{ layout: "vertical" }}
+        style={{ layout: "vertical",justifyContent:'center', alignSelf:'center' }}
         createOrder={(data, actions) =>
           actions.order.create({
             purchase_units: [{ amount: { value: amount } }],
@@ -71,6 +80,7 @@ const PayPalTokenPurchase = ({
         }}
       />
     </PayPalScriptProvider>
+    <HeroCoin />
     </>
   );
 };

@@ -15,7 +15,7 @@ export default function Terms() {
       <h1 style={{ textAlign: 'center', marginBottom: '30px' }}>Terms of Service / Whitepaper</h1>
 
       <embed
-        src="/PDFs/Dis.pdf"  // <-- put PDFs folder in public
+        src="../public/PDFs/Disclaimer.pdf"  // <-- put PDFs folder in public
         type="application/pdf"
         width="100%"
         height="800px"

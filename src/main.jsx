@@ -20,6 +20,7 @@ import App from './App.jsx'
 import Header from './Header.jsx'
 import Papers from './paper.jsx'
 import Landing from './Home3.jsx'
+import Header3 from './Header3.jsx'
 import ImageUpload from './Upload.jsx'
 // import MaybeArtLandingP from './Home'
 import Gallery from './Gallery.jsx'
@@ -33,20 +34,18 @@ import { ThemeProvider } from 'react-bootstrap'
 // import UserContext from './util/userContext.js'
 import Auction from './Auction.jsx'
 import { useState } from 'react'
-import Expo from './util/expo.js'
-import { builder } from '@builder.io/react'
-import TransferToken from './BuyIt.jsx'
+ import TransferToken from './BuyIt.jsx'
+ import Presale from './Presale.jsx'
 import Block from './Block.jsx';
- import StripeForm  from './StripeForm.jsx';
- import BuyTokens from './StripeForm.jsx';
-import StripePaymentForm from './StripeForm.jsx'
-import TokenExchange from './usdc.jsx';
+import VitaminSale from './Ozzie.jsx';
+import Ozzy from './Ozzy.jsx';
+ import TokenExchange from './usdc.jsx';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 import Header2 from './Header2.jsx';
- import Ozzy from './Ozzy.jsx';
- import TestPayPal from './buyToken.jsx';
+  import TestPayPal from './buyToken.jsx';
 import Terms from './Terms.jsx';
+import Header4 from './Header4.jsx';
   // import MaybeArtLanding from './Ozz.jsx'
 // const stripePromise =  loadStripe('pk_live_51J8tvhBaRV6ucR0OPtOmn7BsXPaNLPzSt6hswYJelRzOQZUykfCHHPp1q6YXYYaMP8Ehz3IDuwqPvhVFkdHY4Zny00VOS91sxQ'
 
@@ -71,19 +70,19 @@ createRoot(document.getElementById('root')).render(
                 <Routes>
                    <Route path ='/' element ={<NewPage/>} />
                    <Route path ='/terms' element ={<Terms/>}/>
-                  <Route path='/new' element={<NewPage />} />
+                  <Route path='/new' element={<Ozzy />} />
                   <Route path='/landing' element={<App />} />
-                  <Route path='/home' element={<HeroCTA />} />
+                  <Route path='/home' element={<VitaminSale />} />
                   <Route path ='/us'element={<TokenExchange/>}/>
                   <Route path='/login' element={<Login />} />
                   <Route path ='/register' element={<Register/>}/>
                   <Route path ='/buy' element ={<TestPayPal/>}/>
                   <Route path='/buyToken' element={<PayPalTokenPurchase />} />
                   <Route path ='/buy' element={<BuyToken />}/>
-                  <Route path ='/faggy' element ={<StripePaymentForm/>} />
-                  <Route path='/upload' element={<ImageUpload />} />
+                   <Route path='/upload' element={<ImageUpload />} />
                   <Route path='/about' element={<About />} />
                   <Route path='/grid' element={<Grid />} />
+                  <Route path='/presale' element ={<Presale/>}/>
                   <Route path='/gallery' element={<Gallery />} />
                   <Route path='/whitepaper' element={<DisplayPDFs />} />
                   <Route path='/auction' element={<Block />} />

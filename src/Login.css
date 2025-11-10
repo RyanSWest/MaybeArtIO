@@ -43,6 +43,18 @@
   align-self: top;
 }
 
+.terms-text {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  color: #00eaff;
+  font-weight: 600;
+  cursor: pointer;
+  background: none;
+  border: 2px solid cyan;
+  border-radius: clamp(15px, 4vw, 25px);
+  padding: clamp(0.25rem, 1vw, 1rem);
+  margin-bottom: 1rem;
+}
 .login-subtitle {
   font-size: clamp(0.9rem, 2.5vw, 1rem);
   color: #ffffffaa;

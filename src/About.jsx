@@ -28,7 +28,7 @@ return (
                 <Card.Title className='guy-title'>Ronald Shapiro</Card.Title>
                  <Card.Subtitle className ='guy-subtitle'>CFO Maybe-Art</Card.Subtitle>
                 <Card.Body> 
-<CardImg src={CFO} style={{objectFit:'contain', height:'10rem', borderRadius:'10px'}}  />
+<CardImg src={CFO} style={{objectFit:'cover', height:'10vh', borderRadius:'10px'}}  />
 
                     <Card.Text> 
                    Ronald Shapiro is a seasoned executive with a unique blend of technical expertise, financial acumen, and strategic insight. With over 20 years of experience across diverse industries, Ronald has a proven track record of navigating complex business landscapes, identifying critical challenges, and implementing
@@ -83,7 +83,7 @@ return (
                  <Card.Subtitle className='guy-subtitle'>Founder Maybe-Art</Card.Subtitle>
                 <Card.Body> 
 <CardImg src={MCO} 
-style={{objectFit:'contain', height:'10rem', borderRadius:'30px',padding:'1rem'}} 
+style={{objectFit:'contain', height:'10vh', borderRadius:'30px',padding:'1rem'}} 
 
 
  />

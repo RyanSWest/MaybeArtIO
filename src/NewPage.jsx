@@ -10,7 +10,8 @@ import Rabbit from './imgs/Bunny.jpg';
  import Block from './Block';
  import Ice from './imgs/Ice.jpg';
  import Logo from './imgs/neon.png';
- import  Rodan from './imgs/Rodan3.jpg';
+ import  Chimp from './imgs/Chimp2.jpg';
+//  import Russ2 from './imgs/Russ2.jpg';
 // import {Scrollbars} from 'react-scrollbars';
 import './ozz.css';
 import './maybeart.css'
@@ -69,7 +70,9 @@ export default function MaybeArtHero() {
   <div className="carousel-container">
     <img className ='responsive-image' src= {Ice} alt="Featured Art 1"/>
      <img className= 'repsonsive-image'src= {Rabbit} alt="Featured Art 3"/>
-     <img  className =' responsive-image'src={Rodan} alt='Featured Art4'/>
+     <img  className =' responsive-image'src={Chimp} alt='Featured Art4'/>
+          {/* <img  className =' responsive-image'src={Russ2} alt='Featured Art4'/> */}
+
 
   </div>
    <div className="hero-buttons">
@@ -113,40 +116,44 @@ export default function MaybeArtHero() {
   />
 
   {/* Text overlay */}
-  <div
+<div
+  style={{
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: "clamp(1rem, 5vw, 2rem)", // Responsive padding
+    textAlign: "center",
+    background: "transparent",
+  }}
+>
+  <p
     style={{
-      position: "absolute",
-      top: 0,
-      left: 0,
-      width: "100%",
-      height: "100%",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      padding: "20px",
-      textAlign: "center",
+      color: "white",
+      fontSize: "clamp(1.25rem, 5vw, 2rem)", // Scales from 1.25rem to 2rem
+      fontWeight: "600",
+      lineHeight: "1.4",
+      fontFamily: 'Rajdhani, sans-serif',
+      textShadow:
+        "0 0 20px #ff007f, 3px 3px 10px black, -2px -2px 10px black, 2px 2px 10px black",
       background: "transparent",
+      margin: 0,
+      maxWidth: "100%", // Prevents text overflow
+      wordWrap: "break-word", // Breaks long words if needed
     }}
   >
-    <p
-      style={{
-        color: "white",
-        fontSize: "2rem",
-        fontWeight: "600",
-        lineHeight: "1.",
-        fontFamily:'Rajdhani',
-        textShadow:
-          "0 0 20px #ff007f, 3px 3px 10px black, -2px -2px 10px black, 2px 2px 10px black",
-        background: "transparent",
-        margin: 0,
-      }}
-    >
-      MAYBEART is a cryptocurrency on the Solana blockchain, backed by art,
+   MAYBEART is a cryptocurrency on the Solana blockchain, backed by art,
       blending the worlds of blockchain and creativity. Our community empowers
       musicians, visual artists, collectors, and fans by providing a marketplace
       where creators can showcase and sell their works.
-    </p>
-  </div>
+  </p>
+</div>
+       
+   
 </div>
 <Count/>
 

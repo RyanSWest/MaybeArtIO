@@ -22,9 +22,9 @@ const Upload = () => {
   const location = useLocation();
 
   // const API_URL = 'https://squi-d-lite-production.up.railway.app'
-  // const API_URL = window.location.origin 
+  const API_URL = window.location.origin 
   // const API_URL = 'app.maybeart.io';
-  const API_URL = 'http://3.14.126.44:3001'
+  // const API_URL = 'http://3.14.126.44:3001'
   const logout = async () => {
     try {
       const token = sessionStorage.getItem('authToken');
@@ -161,7 +161,7 @@ const Upload = () => {
   variant="top"
   src={item.type === 'file' ? `${API_URL}/api/image/${item.id}` : item.url}
   alt={item.title || 'Art'}
-  style={{ height: '200px', objectFit: 'cover' }}
+  style={{ height: '200px', objectFit: 'contain' }}
 />
                 <Card.Body>
                   <Card.Title className="text-light">{item.title || 'Untitled'}</Card.Title>
@@ -180,12 +180,22 @@ const Upload = () => {
             {message}
           </Alert>
         )}
-        <h1>Faggy</h1>
+       
 
         {/* <input type="file" onChange={handleFileSelect} /> */}
             {/* {selectedFile && <img src={selectedFile} alt="Uploaded preview" />} */}
-            <img src ={imageUrl}/>
-         <img src={preview}/> <h1>{uploadType}</h1>
+
+            <Card> 
+
+              <Card.Img src={preview} alt="Preview" style={{ maxHeight: '400px', objectFit: 'contain' }}/>
+              <Card.ImgOverlay > PREVIEW</Card.ImgOverlay>
+            </Card>
+            {/* <img src ={imageUrl}/>
+         <img  
+         
+         style={{}}
+         
+         src={preview}/> <h1>{uploadType}</h1> */}
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3">
             <Form.Label className="text-light">Upload Type</Form.Label>
