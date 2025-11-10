@@ -42,7 +42,7 @@ function Dap2() {
 </div>
 
        <Card> 
-        <Card.Title>  PRE ORDERY NOW!!</Card.Title>
+        <Card.Title>  PRE ORDER NOW!!</Card.Title>
         < Image src='https://tse3.mm.bing.net/th/id/OIP.2t27fF_lrU7G39IWuchPOAHaDd?pid=Api&P=0&h=220' className='img-fluid'
         style ={{objectFit:'cover'}}
         

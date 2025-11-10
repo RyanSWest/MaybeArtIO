@@ -39,13 +39,12 @@ export default function HeroCTA({
       className="max-width_small w-node-d4b0a9ae-0b5e-0079-36b1-7e2693aac5d5-1629d029"
     >
 
-      <img src ={file}/>
+    
 
       
-   <h1>Faggy</h1>
+   
 
-        <input type="file" onChange={handleChange} />
-            {file && <img src={ file} alt="Uploaded preview" />}
+        
       <p
         data-w-id="d4b0a9ae-0b5e-0079-36b1-7e2693aac5cf"
         data-wf-id='["d4b0a9ae-0b5e-0079-36b1-7e2693aac5cf"]'
